@@ -1,0 +1,19 @@
+PATH:
+  data_path: /Users/zfwang/machinelearning/datasets/cats_vs_dogs/
+  data_root_path: /Users/zfwang/machinelearning/datasets/cats_vs_dogs/PetImages
+  folder_names: 
+    - Cat
+    - Dog
+  model_path: /Users/zfwang/machinelearning/deeplearning_project/computer_vision/image_classification/cats_vs_dogs_v2/models/model.png
+DATA:
+  validation_split: 0.2
+  buffer_size: 32
+  num_classes: 2
+IMAGE:
+  image_size:
+    width: 180
+    height: 180
+MODEL:
+  epochs: 50
+  batch_size: 32
+  learning_rate: 1e-3
