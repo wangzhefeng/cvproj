@@ -1,15 +1,28 @@
+# -*- coding: utf-8 -*-
 
+# ***************************************************
+# * File        : main.py
+# * Author      : Zhefeng Wang
+# * Email       : wangzhefengr@163.com
+# * Date        : 2023-04-21
+# * Version     : 0.1.042116
+# * Description : description
+# * Link        : link
+# * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
+# ***************************************************
 
-
-
-
-
-
+# python libraries
+import os
+import sys
 from pathlib import Path
+
 from PIL import Image
 import torch
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
+
+# global variable
+LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
 train_dir = "./cifar2/train/"
@@ -34,8 +47,6 @@ class Cifar2Dataset(Dataset):
         label = torch.tensor([1.0]) if "1_automobile" in file_i else torch.tensor([0.0])
 
         return tensor, label
-
-
 
 # transforms
 transform_train = transforms.Compose([
@@ -75,3 +86,14 @@ for features, labels in train_dataloader:
     print(features.shape)
     print(labels.shape)
     break
+
+
+
+
+
+# 测试代码 main 函数
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
