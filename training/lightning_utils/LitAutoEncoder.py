@@ -67,7 +67,7 @@ class LitModel(pl.LightningModule):
         loss.backward(retain_graph = True)
 
     def training_step(self, train_batch, batch_idx):
-        x, y = batch
+        x, y = train_batch
         x = x.view(x.size(0), -1)
         z = self.encoder(x)
         x_hat = self.decoder(z)
@@ -84,7 +84,7 @@ class LitModel(pl.LightningModule):
         self.log("val_loss", loss)
 
     def configure_optimizers(self):
-        optimizer = optim.Adam(self.parameters, lr = 1e-3)
+        optimizer = torch.optim.Adam(self.parameters, lr = 1e-3)
         return optimizer
 
 
