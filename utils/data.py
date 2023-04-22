@@ -19,13 +19,14 @@ import re
 import sys
 import time
 import datetime
+from tqdm import tqdm
 from pathlib import Path
 from urllib.parse import quote, unquote
 
-import numpy as np
 import requests
+import numpy as np
 from PIL import Image
-from tqdm import tqdm
+import skimage
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
@@ -47,12 +48,12 @@ def resize_and_pad_image(image, width, height):
         if img.mode == 'L':
             padding_arr = np.zeros((imgH, imgW), dtype = np.float32)
         else:
-            assert img.mode=='RGB'
+            assert img.mode == 'RGB'
             padding_arr = np.zeros((imgH, imgW,3), dtype = np.float32)
          
         padding_arr[:resized_h, :] = resized_arr
         padding_im = Image.fromarray(padding_arr.astype(np.uint8))
-        box_factor = resized_h/h
+        box_factor = resized_h / h
         return  padding_im
     else:
         resized_h = imgH
@@ -97,7 +98,9 @@ def merge_dataset_folders(from_folders, to_folder, rename_file = True):
 
 
 def get_example_image(img_name = 'park.jpg'):
-    'name can be bus.jpg / park.jpg / zidane.jpg'
+    """
+    name can be bus.jpg / park.jpg / zidane.jpg
+    """
     img_path = str(path.parent/f"assets/{img_name}")
     assert os.path.exists(img_path), 'img_name can only be bus.jpg / park.jpg / zidane.jpg'
 
@@ -105,8 +108,7 @@ def get_example_image(img_name = 'park.jpg'):
 
 
 def get_url_img(url):
-    from skimage import io
-    arr = io.imread(url)
+    arr = skimage.io.imread(url)
 
     return Image.fromarray(arr)
 
@@ -135,7 +137,7 @@ def download_baidu_pictures(keyword, needed_pics_num = 100, save_dir = None):
     spider = _BaiduPictures(keyword, needed_pics_num, save_dir)
     spider.run()
 
- 
+
 class _BaiduPictures:
 
     def __init__(self, keyword, needed_pics_num = 100, save_dir = None):

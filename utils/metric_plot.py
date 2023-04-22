@@ -14,51 +14,78 @@
 
 
 # python libraries
-import os
-import sys
+import matplotlib.pyplot as plt
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-def plot_metric(dfhistory, metric):
+def use_svg_display():
     """
-    TODO
-
-    Args:
-        dfhistory (_type_): _description_
-        metric (_type_): _description_
-
-    Returns:
-        _type_: _description_
+    Use the svg format to display a plot in Jupyter.
     """
-    import plotly.graph_objs as go
-    # metric
-    train_metrics = dfhistory["train_" + metric].values.tolist()
-    val_metrics = dfhistory['val_' + metric].values.tolist()
-    # epochs
-    epochs = list(range(1, len(train_metrics) + 1))
-    # train
-    train_scatter = go.Scatter(
-        x = epochs, 
-        y = train_metrics, 
-        mode = "lines+markers",
-        name = 'train_' + metric, 
-        marker = dict(size = 8, color = "blue"),
-        line = dict(width = 2, color = "blue", dash = "dash")
-    )
-    # validation
-    val_scatter = go.Scatter(
-        x = epochs, 
-        y = val_metrics, 
-        mode = "lines+markers",
-        name = 'val_' + metric,
-        marker = dict(size = 10, color = "red"),
-        line = dict(width = 2, color = "red", dash = "solid")
-    )
-    fig = go.Figure(data = [train_scatter, val_scatter])
+    from matplotlib_inline import backend_inline
+    backend_inline.set_matplotlib_formats('svg')
 
-    return fig 
+
+def set_figsize(figsize=(3.5, 2.5)):
+    """
+    Set the figure size for matplotlib.
+    """
+    use_svg_display()
+    plt.rcParams['figure.figsize'] = figsize
+
+
+def set_axes(axes, xlabel, ylabel, xlim, ylim, xscale, yscale, legend):
+    """
+    Set the axes for matplotlib.
+    """
+    axes.set_xlabel(xlabel)
+    axes.set_ylabel(ylabel)
+    axes.set_xscale(xscale)
+    axes.set_yscale(yscale)
+    axes.set_xlim(xlim)
+    axes.set_ylim(ylim)
+    if legend:
+        axes.legend(legend)
+    axes.grid()
+
+
+def plot(X, Y = None, 
+         xlabel = None, ylabel = None, 
+         legend = None, 
+         xlim = None, ylim = None, 
+         xscale = 'linear', yscale = 'linear',
+         fmts = ('-', 'm--', 'g-.', 'r:'), 
+         figsize = (3.5, 2.5), axes = None):
+    """
+    Plot data points.
+    """
+    if legend is None:
+        legend = []
+
+    set_figsize(figsize)
+    axes = axes if axes else plt.gca()
+
+    # Return True if `X` (tensor or list) has 1 axis
+    def has_one_axis(X):
+        return (hasattr(X, "ndim") and X.ndim == 1 or isinstance(X, list) and not hasattr(X[0], "__len__"))
+
+    if has_one_axis(X):
+        X = [X]
+    if Y is None:
+        X, Y = [[]] * len(X), X
+    elif has_one_axis(Y):
+        Y = [Y]
+    if len(X) != len(Y):
+        X = X * len(Y)
+    axes.cla()
+    for x, y, fmt in zip(X, Y, fmts):
+        if len(x):
+            axes.plot(x, y, fmt)
+        else:
+            axes.plot(y, fmt)
+    set_axes(axes, xlabel, ylabel, xlim, ylim, xscale, yscale, legend)
 
 
 def plot_importance(features, importances, topk = 20):

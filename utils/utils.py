@@ -24,7 +24,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from PIL import Image, ImageFont, ImageDraw
+import PIL
 import torch
 
 # global variable
@@ -49,70 +49,6 @@ def seed_everything(seed = 42):
     torch.cuda.manual_seed_all(seed)
 
     return seed
-
-
-def colorful(obj, color = "red", display_type = "plain"):
-    """
-    TODO
-    # =======================================
-    # 彩色输出格式：
-    # -----------
-    # 设置颜色开始 ：\033[显示方式;前景色;背景色m
-    # ---------------------------------------
-    # 说明：
-    # -----------
-    # 前景色            背景色           颜色
-    # ---------------------------------------
-    # 30                40              黑色
-    # 31                41              红色
-    # 32                42              绿色
-    # 33                43              黃色
-    # 34                44              蓝色
-    # 35                45              紫红色
-    # 36                46              青蓝色
-    # 37                47              白色
-    # ---------------------------------------
-    # 显示方式           意义
-    # ---------------------------------------
-    # 0                终端默认设置
-    # 1                高亮显示
-    # 4                使用下划线
-    # 5                闪烁
-    # 7                反白显示
-    # 8                不可见
-    # =======================================
-    Args:
-        obj (_type_): _description_
-        color (str, optional): _description_. Defaults to "red".
-        display_type (str, optional): _description_. Defaults to "plain".
-
-    Returns:
-        _type_: _description_
-    """
-    color_dict = {
-        "black": "30", 
-        "red": "31", 
-        "green": "32", 
-        "yellow": "33",
-        "blue": "34", 
-        "purple": "35",
-        "cyan":"36", 
-        "white":"37"
-    }
-    display_type_dict = {
-        "plain": "0",
-        "highlight": "1",
-        "underline": "4",
-        "shine": "5",
-        "inverse": "7",
-        "invisible": "8"
-    }
-    s = str(obj)
-    color_code = color_dict.get(color, "")
-    display  = display_type_dict.get(display_type, "")
-    out = '\033[{};{}m'.format(display, color_code) + s + '\033[0m'
-
-    return out
 
 
 def prettydf(df, nrows = 20, ncols = 20, show = True):
@@ -157,28 +93,6 @@ def prettydf(df, nrows = 20, ncols = 20, show = True):
     return table
 
 
-def namespace2dict(namespace):
-    """
-    TODO
-
-    Args:
-        namespace (_type_): _description_
-
-    Returns:
-        _type_: _description_
-    """
-    result = {}
-    for k, v in vars(namespace).items():
-        if not isinstance(v, Namespace):
-            result[k] = v
-        else:
-            v_dic = namespace2dict(v)
-            for v_key,v_value in v_dic.items():
-                result[k + "." + v_key] = v_value
-
-    return result 
-
-
 def get_call_file(): 
     """
     TODO
@@ -204,11 +118,16 @@ def getNotebookPath():
     """
     from jupyter_server import serverapp
     from jupyter_server.utils import url_path_join
-    import requests,re
+    from IPython import get_ipython
+    import requests
+    import re
     kernelIdRegex = re.compile(r"(?<=kernel-)[\w\d\-]+(?=\.json)")
     kernelId = kernelIdRegex.search(get_ipython().config["IPKernelApp"]["connection_file"])[0]
     for jupServ in serverapp.list_running_servers():
-        for session in requests.get(url_path_join(jupServ["url"], "api/sessions"), params={"token":jupServ["token"]}).json():
+        for session in requests.get(
+            url_path_join(jupServ["url"], "api/sessions"), 
+            params = {"token": jupServ["token"]}
+        ).json():
             if kernelId == session["kernel"]["id"]:
                 return str(Path(jupServ["root_dir"]) / session["notebook"]['path']) 
     raise Exception('failed to get current notebook path')
@@ -218,9 +137,7 @@ def getNotebookPath():
 
 # 测试代码 main 函数
 def main():
-    a = "test"
-    out = colorful(a)
-    print(out)
+    pass
 
 if __name__ == "__main__":
     main()
