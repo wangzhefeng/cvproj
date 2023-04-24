@@ -18,8 +18,6 @@ import os
 import sys
 
 
-
-
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 

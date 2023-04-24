@@ -27,8 +27,6 @@ data_augmentation = tf.keras.Sequential(
 
 
 
-
-
 # 测试代码 main 函数
 def main():
     import matplotlib.pyplot as plt

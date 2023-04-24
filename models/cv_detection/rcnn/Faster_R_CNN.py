@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : Faster_R_CNN.py
 # * Author      : Zhefeng Wang
@@ -11,7 +10,6 @@
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
-
 
 # python libraries
 import os
@@ -33,12 +31,14 @@ from torchvision.models.detection import (
     FasterRCNN_MobileNet_V3_Large_FPN_Weights,
 )
 
-
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-net = fasterrcnn_resnet50_fpn(weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT, progress = False)
+net = fasterrcnn_resnet50_fpn(
+    weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT, 
+    progress = False
+)
 net.eval();
 
 

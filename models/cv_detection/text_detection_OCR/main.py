@@ -24,7 +24,6 @@ import os
 import sys
 
 
-
 def one_example():
     import matplotlib.pyplot as plt
     import keras_ocr

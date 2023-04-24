@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : CRNN.py
 # * Author      : Zhefeng Wang
@@ -11,7 +10,6 @@
 # * Link        : https://arxiv.org/abs/1507.05717
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
-
 
 # python libraries
 import os

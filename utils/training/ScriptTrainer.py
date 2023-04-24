@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from utils.printlog import printlog
+from utils_log import printlog
 from utils.metrics import Accuracy
 
 # global variable

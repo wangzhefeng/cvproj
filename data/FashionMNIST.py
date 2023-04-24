@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : FashionMNIST.py
 # * Author      : Zhefeng Wang
@@ -12,15 +11,10 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
-import os
-import sys
-
 import torch
 from torchvision import datasets
 from torchvision import transforms
-
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
@@ -29,7 +23,8 @@ LOGGING_LABEL = __file__.split('/')[-1][:-3]
 train_transform = transforms.ToTensor()
 test_transform = transforms.ToTensor()
 target_transform = transforms.Lambda(
-    lambda y: torch.zeros(10, dtype = torch.float).scatter_(dim = 0, index = torch.tensor(y), value = 1)
+    lambda y: torch.zeros(10, dtype = torch.float)
+                   .scatter_(dim = 0, index = torch.tensor(y), value = 1)
 )
 
 

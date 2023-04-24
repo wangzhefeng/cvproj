@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
-# * File        : plots.py
+# * File        : metric_plot.py
 # * Author      : Zhefeng Wang
 # * Email       : wangzhefengr@163.com
 # * Date        : 2023-04-21
@@ -11,7 +10,6 @@
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
-
 
 # python libraries
 import matplotlib.pyplot as plt
@@ -139,6 +137,41 @@ def plot_score_distribution(labels, scores):
     )
 
     return fig
+
+
+def plot_metrics(history_df, metric):
+    train_metrics = history_df["train_" + metric]
+    val_metrics = history_df["val_" + metric]
+    epochs = range(1, len(train_metrics) + 1)
+    
+    plt.plot(epochs, train_metrics, "bo--")
+    plt.plot(epochs, val_metrics, "ro--")
+    plt.title("Training and Validation " + metric)
+    plt.xlabel("Epochs")
+    plt.ylabel(metric)
+    plt.legend(["train_" + metric, "val_" + metric])
+    plt.show()
+
+
+def plot_linearreg_metrics(X, Y, preds, feature_idx, subplot_idx, xlabel, ylabel):
+    plt.figure(figsize = (8, 8))
+    ax = plt.subplot(subplot_idx)
+    ax.scatter(
+        X[:, feature_idx].numpy(), 
+        Y[:, 0].numpy(), 
+        c = "b", 
+        label = "samples"
+    )
+    ax.plot(
+        X[:, feature_idx].numpy(), 
+        preds, 
+        c = "-r", 
+        linewidth = 5.0, 
+        label = "model"
+    )
+    ax.legend()
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel, rotation = 0)
 
 
 

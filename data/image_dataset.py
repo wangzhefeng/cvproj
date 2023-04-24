@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
-# * File        : files_dataset.py
+# * File        : image_dataset.py
 # * Author      : Zhefeng Wang
 # * Email       : wangzhefengr@163.com
 # * Date        : 2023-03-26
@@ -12,20 +11,16 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
-import sys
 from pathlib import Path
 
 import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
-import torch
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 from torchvision.io import read_image
-
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]

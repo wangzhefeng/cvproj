@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : data_visualize.py
 # * Author      : Zhefeng Wang
@@ -11,7 +10,6 @@
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
-
 
 # python libraries
 import os
@@ -34,8 +32,6 @@ def data_visualization(train_ds):
             plt.title(int(labels[i]))
             plt.axis("off")
             plt.show()
-
-
 
 
 # 测试代码 main 函数

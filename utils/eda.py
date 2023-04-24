@@ -24,7 +24,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from printlog import printlog
+from utils_log import printlog
 
 tqdm.pandas(desc = "progress")
 

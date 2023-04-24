@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : dir_dataset.py
 # * Author      : Zhefeng Wang
@@ -12,18 +11,12 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
-import os
-import sys
-
-import numpy as np
 from PIL import Image
 import torch
 from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision import transforms
-
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
@@ -45,6 +38,7 @@ transforms.RandomRotation(45)(img)
         - img1.png
         - img2.png
 """
+
 
 # ------------------------------
 # data
