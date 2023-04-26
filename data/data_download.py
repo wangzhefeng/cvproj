@@ -15,7 +15,6 @@
 import os
 import sys
 from urllib.parse import unquote
-from bs4 import BeautifulSoup
 
 import requests
 import skimage
@@ -53,57 +52,11 @@ def github_file(url, save_name = None):
     return save_name
 
 
-def stock_adobe():
-    # request
-    url = "https://stock.adobe.com/in/search/images?k=car%20scratch"
-    response = requests.get(url)
-    # soup
-    soup = BeautifulSoup(response.text, "html.parser")
-    # images
-    images = soup.find_all("img")
-    
-    data = {}
-    for image in images:
-        # name
-        name = image["alt"]
-        if name == "":
-            continue
-        # link
-        try:
-            link = image["data-lazy"]
-        except:
-            link = image["src"]
-        if link[-3:] in ["svg", "gif"]:
-            continue
-        
-        if not data:
-            data[name] = link
-            continue
-        
-        if name in data.keys():
-            name = name + "_1"
-        
-        data[name] = link
-    for name, link in data.items():
-        # get images
-        image_path = os.path.join(
-            "./data/car_scratch/", 
-            name.replace(" ", "-").replace("//-", "").replace("-.-", "-").replace(".-", "-").replace("...-", "-").replace("...", "-") + ".jpg"
-        )
-        if not os.path.exists(image_path):
-            with open(image_path, "wb") as f:
-                img = requests.get(link)
-                f.write(img.content)
-                print(f"downloaded: {name, link}")
-
-
-
-
 
 
 # 测试代码 main 函数
 def main():
-    stock_adobe()
+    pass
 
 if __name__ == "__main__":
     main()
