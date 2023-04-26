@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : main.py
 # * Author      : Zhefeng Wang
@@ -8,18 +7,16 @@
 # * Date        : 2022-03-29
 # * Version     : 0.1.032920
 # * Description : description
-# * Link        : https://github.com/Aman-Preet-Singh-Gulati?after=Y3Vyc29yOnYyOpK5MjAyMS0wOS0xOVQxNDo1MzowMiswODowMM4QQDPY&tab=repositories
+# * Link        : https://github.com/Aman-Preet-Singh-Gulati/face-detection-CV
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
-import sys
 
-import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 class ImageUtils:
@@ -177,46 +174,46 @@ class ImageUtils:
 # 测试代码 main 函数
 def main():
     dirname = os.path.dirname(__file__)
+    print(dirname)
+
     # haar 级联文件
     haar_cascade_face_path = os.path.join(
         dirname, 
         "haarcascades/haarcascade_frontalface_alt2.xml"
     )
-    
+
+    # Imageutils 实例
     image_utils = ImageUtils()
-    # 图像
+
+    # 测试 baby1.png 图像
     img_path = os.path.join(dirname, "data/origin/baby1.png")
     img_save_path = os.path.join(dirname, "data/detected/baby1.png")
     image = image_utils.image_load(image_path = img_path, is_show = False)
     image_utils.detect_face(
-        image, 
-        haar_cascade_face_path,
-        image_save_path = img_save_path,
-    )
-    # 测试图像
-    test_img_path = os.path.join(dirname, "data/origin/baby2.png")
-    test_img_save_path = os.path.join(dirname, "data/detected/baby2.png")
-    test_face_image = image_utils.image_load(image_path = test_img_path, is_show = False)
-    image_utils.detect_face(
-        test_face_image, 
-        haar_cascade_face_path,
-        image_save_path = test_img_save_path,
-    )
-    # 多脸测试图像
-    group_img_path = os.path.join(dirname, "data/origin/group.png")
-    group_img_save_path = os.path.join(dirname, "data/detected/group.png")
-    group_face_image = image_utils.image_load(image_path = group_img_path, is_show = False)
-    image_utils.detect_face(
-        group_face_image, 
-        haar_cascade_face_path,
-        image_save_path = group_img_save_path,
+        image = image, 
+        haar_cascade_face_path = haar_cascade_face_path, 
+        image_save_path = img_save_path
     )
 
+    # # 测试 bagy2.png 图像
+    # test_img_path = os.path.join(dirname, "data/origin/baby2.png")
+    # test_img_save_path = os.path.join(dirname, "data/detected/baby2.png")
+    # test_face_image = image_utils.image_load(image_path = test_img_path, is_show = False)
+    # image_utils.detect_face(
+    #     image = test_face_image, 
+    #     haar_cascade_face_path = haar_cascade_face_path,
+    #     image_save_path = test_img_save_path,
+    # )
 
-
-
-
+    # # 测试多脸图像 group.png
+    # group_img_path = os.path.join(dirname, "data/origin/group.png")
+    # group_img_save_path = os.path.join(dirname, "data/detected/group.png")
+    # group_face_image = image_utils.image_load(image_path = group_img_path, is_show = False)
+    # image_utils.detect_face(
+    #     group_face_image, 
+    #     haar_cascade_face_path,
+    #     image_save_path = group_img_save_path,
+    # )
 
 if __name__ == "__main__":
     main()
-

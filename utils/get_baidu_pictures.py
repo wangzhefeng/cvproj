@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 # ***************************************************
-# * File        : data.py
+# * File        : download_baidu_pictures.py
 # * Author      : Zhefeng Wang
 # * Email       : wangzhefengr@163.com
-# * Date        : 2023-04-21
-# * Version     : 0.1.042101
+# * Date        : 2023-04-25
+# * Version     : 0.1.042519
 # * Description : description
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
@@ -13,127 +13,17 @@
 
 # python libraries
 import os
-import re
 import sys
+import re
 import time
 import datetime
 from tqdm import tqdm
-from pathlib import Path
-from urllib.parse import quote, unquote
+from urllib.parse import quote
 
 import requests
-import numpy as np
-from PIL import Image
-import skimage
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-path = Path(__file__)
-
-
-def resize_and_pad_image(image, width, height):
-    img = image
-    w, h = img.size 
-    ratio = w / float(h)
-    imgH,imgW = height,width
-    
-    if imgH * ratio >= imgW:
-        resized_w = imgW
-        resized_h = np.floor(imgW / ratio).astype('int32')
-        resized_image = img.resize((resized_w, resized_h))
-        resized_arr = np.array(resized_image).astype('float32')
-
-        if img.mode == 'L':
-            padding_arr = np.zeros((imgH, imgW), dtype = np.float32)
-        else:
-            assert img.mode == 'RGB'
-            padding_arr = np.zeros((imgH, imgW,3), dtype = np.float32)
-         
-        padding_arr[:resized_h, :] = resized_arr
-        padding_im = Image.fromarray(padding_arr.astype(np.uint8))
-        box_factor = resized_h / h
-        return  padding_im
-    else:
-        resized_h = imgH
-        resized_w = np.floor(imgH * ratio).astype('int32')
-        resized_image = img.resize((resized_w, resized_h))
-        resized_arr = np.array(resized_image).astype('float32')
-        
-        if img.mode == 'L':
-            padding_arr = np.zeros((imgH, imgW), dtype = np.float32)
-        else:
-            assert img.mode == 'RGB'
-            padding_arr = np.zeros((imgH, imgW, 3), dtype = np.float32)
-         
-        padding_arr[:, :resized_w] = resized_arr
-        padding_im = Image.fromarray(padding_arr.astype(np.uint8))
-        box_factor = resized_w / w
-        return padding_im
- 
-
-def merge_dataset_folders(from_folders, to_folder, rename_file = True):
-    import shutil 
-    get_file_num = lambda x: len([y for y in Path(x).rglob('*') if y.is_file()])
-    print('before merge:')
-    for x in from_folders:
-        print(f'{x}: {get_file_num(x)} files')
-
-    done_files = set()
-    for i,folder in enumerate(from_folders):
-        shutil.copytree(folder, to_folder, dirs_exist_ok = True)
-        folder_name = Path(folder).name
-        if rename_file:
-            files = {x.absolute() for x in Path(to_folder).rglob('*') if x.is_file()}
-            todo_files = files - done_files
-            for x in todo_files:
-                new_name = folder_name + '_' + str(i) + '_' + x.name
-                y = x.rename(x.parent / new_name)
-                done_files.add(y)
-    print('\nafter merge:')
-    print(f'{to_folder}: {get_file_num(to_folder)} files')
-
-    return to_folder 
-
-
-def get_example_image(img_name = 'park.jpg'):
-    """
-    name can be bus.jpg / park.jpg / zidane.jpg
-    """
-    img_path = str(path.parent/f"assets/{img_name}")
-    assert os.path.exists(img_path), 'img_name can only be bus.jpg / park.jpg / zidane.jpg'
-
-    return Image.open(img_path)
-
-
-def get_url_img(url):
-    arr = skimage.io.imread(url)
-
-    return Image.fromarray(arr)
-
-
-def download_image(url):
-    import PIL
-    import requests
-    image = PIL.Image.open(requests.get(url, stream = True).raw)
-    image = PIL.ImageOps.exif_transpose(image)
-
-    return image
-
-
-def download_github_file(url, save_name = None):
-    import torch
-    raw_url = url.replace('://github.com/', '://raw.githubusercontent.com/').replace('/blob/', '/')
-    if save_name is None:
-        save_name = unquote(os.path.basename(raw_url))
-    torch.hub.download_url_to_file(raw_url, save_name)
-    print('saved file: ' + save_name, file = sys.stderr)
-
-    return save_name
-
-
-def download_baidu_pictures(keyword, needed_pics_num = 100, save_dir = None):
-    spider = _BaiduPictures(keyword, needed_pics_num, save_dir)
-    spider.run()
 
 
 class _BaiduPictures:
@@ -214,6 +104,11 @@ class _BaiduPictures:
             time.sleep(1.0) 
         loop.close()
         print('saved {} pictures in dir {}'.format(cnt, self.save_dir), file = sys.stderr)
+
+
+def download(keyword, needed_pics_num = 100, save_dir = None):
+    spider = _BaiduPictures(keyword, needed_pics_num, save_dir)
+    spider.run()
 
 
 

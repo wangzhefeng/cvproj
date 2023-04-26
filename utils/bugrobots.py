@@ -7,13 +7,11 @@
 # * Date        : 2023-04-21
 # * Version     : 0.1.042101
 # * Description : description
-# * Link        : link
+# * Link        : https://github.com/lyhue1991/bugrobot
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
 # python libraries
-import os
-import sys
 import smtplib
 import traceback 
 from email.mime.text import MIMEText
@@ -80,7 +78,7 @@ def monitor_run(function, receivers):
     except Exception as e:
         error_msg = traceback.format_exc()
         send_msg(receivers, "error@" + function.__name__, error_msg)
-        raise 
+        raise e
 '''
 
 

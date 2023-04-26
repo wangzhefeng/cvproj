@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : test.py
 # * Author      : Zhefeng Wang
@@ -12,19 +11,12 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
-import sys
-import argparse
 import random
-import datetime
-from copy import deepcopy
 from pathlib import Path
 
 import numpy as np
-import pandas as pd
-import PIL
 import torch
 
 # global variable

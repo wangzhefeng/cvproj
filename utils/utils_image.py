@@ -35,6 +35,46 @@ LOGGING_LABEL = __file__.split('/')[-1][:-3]
 # %config InlineBackend.figure_format = "svg"
 
 
+def resize_and_pad_image(image, width, height):
+    img = image
+    w, h = img.size 
+    ratio = w / float(h)
+    imgH, imgW = height, width
+    
+    if imgH * ratio >= imgW:
+        resized_w = imgW
+        resized_h = np.floor(imgW / ratio).astype('int32')
+        resized_image = img.resize((resized_w, resized_h))
+        resized_arr = np.array(resized_image).astype('float32')
+
+        if img.mode == 'L':
+            padding_arr = np.zeros((imgH, imgW), dtype = np.float32)
+        else:
+            assert img.mode == 'RGB'
+            padding_arr = np.zeros((imgH, imgW,3), dtype = np.float32)
+         
+        padding_arr[:resized_h, :] = resized_arr
+        padding_im = PIL.Image.fromarray(padding_arr.astype(np.uint8))
+        box_factor = resized_h / h
+        return  padding_im
+    else:
+        resized_h = imgH
+        resized_w = np.floor(imgH * ratio).astype('int32')
+        resized_image = img.resize((resized_w, resized_h))
+        resized_arr = np.array(resized_image).astype('float32')
+        
+        if img.mode == 'L':
+            padding_arr = np.zeros((imgH, imgW), dtype = np.float32)
+        else:
+            assert img.mode == 'RGB'
+            padding_arr = np.zeros((imgH, imgW, 3), dtype = np.float32)
+         
+        padding_arr[:, :resized_w] = resized_arr
+        padding_im = PIL.Image.fromarray(padding_arr.astype(np.uint8))
+        box_factor = resized_w / w
+        return padding_im
+
+
 def plot_ds_train(ds_train):
     plt.figure(figsize = (8, 8))
     for i in range(9):

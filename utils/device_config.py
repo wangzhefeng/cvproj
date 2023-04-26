@@ -62,6 +62,7 @@ def set_device_scope():
     gpus = tf.config.list_physical_devices(device_type = "GPU")
     tf.config.set_visible_devices(devices = gpus[0:2], device_type = "GPU")
     # CUDA_VISIBLE_DEVICES 也可以控制程序所使用的 GPU
+
     os.environ("CUDA_VISIBLE_DEVICES") = "1,2,3"
 
 
