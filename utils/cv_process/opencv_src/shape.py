@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : main.py
 # * Author      : Zhefeng Wang
@@ -12,63 +11,68 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
-import os
-import sys
-
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 
-
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-GLOBAL_VARIABLE = None
 
+
+# ------------------------------
 # 黑色图像模板
+# ------------------------------
 img_blank = np.zeros(shape = (512, 512, 3), dtype = np.int16)
-# plt.imshow(img_blank)
-# plt.show()
+plt.imshow(img_blank)
+plt.show()
 
+
+# ------------------------------
 # 直线
-# line_red = cv2.line(
-#     img = img_blank,
-#     pt1 = (0, 0),
-#     pt2 = (511, 511),
-#     color = (255, 0, 0),
-#     thickness = 5,
-#     lineType = 8,
-# )
-# plt.imshow(line_red)
-# plt.show()
+# ------------------------------
+line_red = cv2.line(
+    img = img_blank,
+    pt1 = (0, 0),
+    pt2 = (511, 511),
+    color = (255, 0, 0),
+    thickness = 5,
+    lineType = 8,
+)
+plt.imshow(line_red)
+plt.show()
 
-
+# ------------------------------
 # 矩形
-# img_rectangle = cv2.rectangle(
-#     img = img_blank, 
-#     pt1 = (384, 0),
-#     pt2 = (510, 128), 
-#     color = (0, 0, 255), 
-#     thickness = 5,
-#     lineType = 8,
-# )
-# plt.imshow(img_rectangle)
-# plt.show()
+# ------------------------------
+img_rectangle = cv2.rectangle(
+    img = img_blank, 
+    pt1 = (384, 0),
+    pt2 = (510, 128), 
+    color = (0, 0, 255), 
+    thickness = 5,
+    lineType = 8,
+)
+plt.imshow(img_rectangle)
+plt.show()
 
+# ------------------------------
 # 圆圈
-# img_circle = cv2.circle(
-#     img = img_blank, 
-#     center = (447, 63), 
-#     radius = 63, 
-#     color = (0, 0, 255), 
-#     thickness = -1,
-#     lineType = 8,
-# )
-# plt.imshow(img_circle)
-# plt.show()
+# ------------------------------
+img_circle = cv2.circle(
+    img = img_blank, 
+    center = (447, 63), 
+    radius = 63, 
+    color = (0, 0, 255), 
+    thickness = -1,
+    lineType = 8,
+)
+plt.imshow(img_circle)
+plt.show()
 
+# ------------------------------
 # 文字
+# ------------------------------
 font = cv2.FONT_HERSHEY_SCRIPT_SIMPLEX
 img_text = cv2.putText(
     img = img_blank,             # 图像
@@ -90,7 +94,5 @@ plt.show()
 def main():
     pass
 
-
 if __name__ == "__main__":
     main()
-

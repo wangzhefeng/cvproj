@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : main.py
 # * Author      : Zhefeng Wang
@@ -12,20 +11,12 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
-import sys
-
-import numpy as np
-import matplotlib.pyplot as plt
 import cv2
-print(cv2.__version__)
-
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-GLOBAL_VARIABLE = None
 
 
 # 创建 VideoCapture 对象
