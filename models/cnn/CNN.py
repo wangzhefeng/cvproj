@@ -24,7 +24,7 @@ import torch
 import torch.nn as nn
 from torchvision import transforms
 
-from cv_data.CIFAR10 import get_dataset, get_dataloader
+from data_provider.CIFAR10 import get_dataset, get_dataloader
 
 
 # global variable

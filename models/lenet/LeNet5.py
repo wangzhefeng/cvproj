@@ -24,7 +24,7 @@ import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
 
-from cv_data.MNIST import get_dataset, get_dataloader
+from data_provider.MNIST import get_dataset, get_dataloader
 
 
 # global variable

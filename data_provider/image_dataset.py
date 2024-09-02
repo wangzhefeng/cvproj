@@ -13,11 +13,9 @@
 
 # python libraries
 import os
-from pathlib import Path
 
 import pandas as pd
 import matplotlib.pyplot as plt
-from PIL import Image
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 from torchvision.io import read_image
@@ -26,7 +24,7 @@ from torchvision.io import read_image
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-class CustomImageDataset(Dataset):
+class ImageDataset(Dataset):
 
     def __init__(self, 
                  annotations_file, 
@@ -64,52 +62,49 @@ class CustomImageDataset(Dataset):
         return image, label
 
 
-# dataset
-train_dataset = CustomImageDataset(
-    annotations_file = "",
-    img_dir = "",
-    transform = transforms.ToTensor(),
-    target_transform = transforms.ToTensor(),
-)
-test_dataset = CustomImageDataset(
-    annotations_file = "",
-    img_dir = "",
-    transform = transforms.ToTensor(),
-    target_transform = transforms.ToTensor(),   
-)
-
-# dataloader
-train_dataloader = DataLoader(
-    train_dataset, 
-    batch_size = 64, 
-    shuffle = True,
-)
-test_dataloader = DataLoader(
-    test_dataset, 
-    batch_size = 64, 
-    shuffle = False,
-)
-
-# ------------------------------
-# test
-# ------------------------------
-# test data
-train_features, train_labels = next(iter(train_dataloader))
-print(f"Feature batch shape: {train_features.size()}")
-print(f"Labels batch shape: {train_labels.size()}")
-# test plot
-img = train_features[0].squeeze()
-label = train_labels[0]
-plt.imshow(img, cmap="gray")
-plt.show()
-print(f"Label: {label}")
-
-
 
 
 # 测试代码 main 函数
 def main():
-    pass
+    # dataset
+    train_dataset = ImageDataset(
+        annotations_file = "",
+        img_dir = "",
+        transform = transforms.ToTensor(),
+        target_transform = transforms.ToTensor(),
+    )
+    test_dataset = ImageDataset(
+        annotations_file = "",
+        img_dir = "",
+        transform = transforms.ToTensor(),
+        target_transform = transforms.ToTensor(),   
+    )
+
+    # dataloader
+    train_dataloader = DataLoader(
+        train_dataset, 
+        batch_size = 64, 
+        shuffle = True,
+    )
+    test_dataloader = DataLoader(
+        test_dataset, 
+        batch_size = 64, 
+        shuffle = False,
+    )
+
+    # ------------------------------
+    # test
+    # ------------------------------
+    # test data
+    train_features, train_labels = next(iter(train_dataloader))
+    print(f"Feature batch shape: {train_features.size()}")
+    print(f"Labels batch shape: {train_labels.size()}")
+    # test plot
+    img = train_features[0].squeeze()
+    label = train_labels[0]
+    plt.imshow(img, cmap="gray")
+    plt.show()
+    print(f"Label: {label}")
 
 if __name__ == "__main__":
     main()

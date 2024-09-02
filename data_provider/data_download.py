@@ -6,7 +6,7 @@
 # * Email       : wangzhefengr@163.com
 # * Date        : 2023-04-21
 # * Version     : 0.1.042101
-# * Description : description
+# * Description : TODO
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
@@ -26,12 +26,30 @@ LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
 def skimage_url_image(url):
+    """
+    TODO
+
+    Args:
+        url (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     arr = skimage.io.imread(url)
 
     return Image.fromarray(arr)
 
 
 def pillow_url_image(url):
+    """
+    TODO
+
+    Args:
+        url (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     image = Image.open(requests.get(url, stream = True).raw)
     image = ImageOps.exif_transpose(image)
 
@@ -39,6 +57,16 @@ def pillow_url_image(url):
 
 
 def github_file(url, save_name = None):
+    """
+    TODO
+
+    Args:
+        url (_type_): _description_
+        save_name (_type_, optional): _description_. Defaults to None.
+
+    Returns:
+        _type_: _description_
+    """
     raw_url = url \
         .replace('://github.com/', '://raw.githubusercontent.com/') \
         .replace('/blob/', '/')

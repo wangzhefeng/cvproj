@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
-# * File        : cfg_loader.py
+# * File        : config_loader.py
 # * Author      : Zhefeng Wang
 # * Email       : wangzhefengr@163.com
 # * Date        : 2022-06-29
@@ -11,7 +10,6 @@
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
-
 
 import os
 from typing import Dict
@@ -45,7 +43,7 @@ def get_params(yaml_path: str) -> Dict:
 
 # 测试代码 main 函数
 def main(): 
-    sys_cfg_path = "./sys_cfg.yaml"
+    sys_cfg_path = "config.yaml"
     cfg_params = get_params(sys_cfg_path)
     print(cfg_params)
 

@@ -23,7 +23,7 @@ import torch.nn.functional as F
 from torchvision import transforms
 from torch.utils.data.sampler import SubsetRandomSampler
 
-from cv_data.CIFAR10 import get_dataset, get_dataloader
+from data_provider.CIFAR10 import get_dataset, get_dataloader
 
 
 # global variable
