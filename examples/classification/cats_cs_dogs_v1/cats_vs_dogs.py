@@ -6,7 +6,7 @@ batch_size = 32
 learning_rate = 0.001
 
 # root
-root_dir = "/Users/zfwang/project/machinelearning/deeplearning"
+root_dir = "/Users/wangzf/project/machinelearning/deeplearning"
 # project
 project_path = os.path.join(root_dir, "deeplearning/src/project_src/cats_vs_dogs")
 # model save

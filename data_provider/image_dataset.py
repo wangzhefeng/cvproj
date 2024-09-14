@@ -3,16 +3,23 @@
 # ***************************************************
 # * File        : image_dataset.py
 # * Author      : Zhefeng Wang
-# * Email       : wangzhefengr@163.com
-# * Date        : 2023-03-26
-# * Version     : 0.1.032622
+# * Email       : zfwang7@gmail.com
+# * Date        : 2024-09-14
+# * Version     : 1.0.091417
 # * Description : create img_dir dataset
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
+# * TODO        : 1.
 # ***************************************************
+
+__all__ = []
 
 # python libraries
 import os
+import sys
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 
 import pandas as pd
 import matplotlib.pyplot as plt

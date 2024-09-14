@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-image_path = "/Users/zfwang/project/machinelearning/deeplearning/deeplearning/src/pillow_src/images"
+image_path = "/Users/wangzf/project/machinelearning/deeplearning/deeplearning/src/pillow_src/images"
 image_name = "lena"
 
 # try:

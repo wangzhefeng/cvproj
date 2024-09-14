@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
-# * File        : MobileNet_v2_todo.py
+# * File        : MobileNet_v2.py
 # * Author      : Zhefeng Wang
 # * Email       : wangzhefengr@163.com
 # * Date        : 2023-03-29
@@ -12,35 +11,30 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
 import sys
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 
-import torch
 from torchvision.models import (
+    # mobilenetv2,
     mobilenet_v2,
-    mobilenetv2,
-    MobileNetV2,
+    # MobileNetV2,
     MobileNet_V2_Weights,
     get_model_builder,
 )
-
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-
-
-
-
-
-
-
-
-
-
+net = mobilenet_v2(
+    weights = MobileNet_V2_Weights.DEFAULT,
+    progress = False,
+)
+net.eval()
 
 
 

@@ -7,7 +7,7 @@ from keras.preprocessing import image
 import matplotlib.pyplot as plt
 
 
-root_dir = "/Users/zfwang/project/machinelearning/deeplearning"
+root_dir = "/Users/wangzf/project/machinelearning/deeplearning"
 data_dir = os.path.join(root_dir, "data/cats_vs_dogs/")
 data_path = os.path.join(data_dir, "cats_and_dogs_small")
 model_path = os.path.join(project_path, "models")

@@ -13,7 +13,7 @@ print(f"Using Keras: {keras.__version__}")
 print(f"Using TensorFlow: {tensorflow.__version__}")
 
 
-root_dir = "/Users/zfwang/project/machinelearning/deeplearning"
+root_dir = "/Users/wangzf/project/machinelearning/deeplearning"
 data_path = os.path.join(root_dir, "data/cats_vs_dogs/")
 original_dataset_dir = os.path.join(data_path, "kaggle_original_data")
 small_data_dir = os.path.join(data_path, "cats_and_dogs_small")

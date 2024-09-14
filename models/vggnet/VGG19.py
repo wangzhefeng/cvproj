@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # ***************************************************
-# * File        : MobileNet_v1_todo.py
+# * File        : MobileNet_v1.py
 # * Author      : Zhefeng Wang
 # * Email       : wangzhefengr@163.com
 # * Date        : 2023-03-24
@@ -14,9 +14,14 @@
 # python libraries
 import os
 import sys
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
+
+
 
 
 

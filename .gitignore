@@ -132,3 +132,4 @@ dmypy.json
 .vscode/
 *.h5
 tf_code/
+data/

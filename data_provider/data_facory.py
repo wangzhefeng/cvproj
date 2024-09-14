@@ -1,25 +1,32 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
-# * File        : MobileNet_v1_todo.py
+# * File        : data_facory.py
 # * Author      : Zhefeng Wang
-# * Email       : wangzhefengr@163.com
-# * Date        : 2023-03-24
-# * Version     : 0.1.032402
+# * Email       : zfwang7@gmail.com
+# * Date        : 2024-09-14
+# * Version     : 1.0.091419
 # * Description : description
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
+# * TODO        : 1.
 # ***************************************************
 
+__all__ = []
 
 # python libraries
 import os
 import sys
-
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
+
+
+
+
 
 
 

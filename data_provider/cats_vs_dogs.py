@@ -18,6 +18,9 @@ ROOT = os.getcwd()
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
+import torch
+import torch.nn as nn
+
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 

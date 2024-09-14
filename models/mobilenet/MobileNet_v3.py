@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
 
 # ***************************************************
-# * File        : ResNet101.py
+# * File        : MobileNet_v3.py
 # * Author      : Zhefeng Wang
-# * Email       : zfwang7@gmail.com
-# * Date        : 2024-09-15
-# * Version     : 1.0.091504
+# * Email       : wangzhefengr@163.com
+# * Date        : 2023-03-29
+# * Version     : 0.1.032911
 # * Description : description
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
-# * TODO        : 1.
 # ***************************************************
-
-__all__ = []
 
 # python libraries
 import os
@@ -22,21 +19,23 @@ if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
 from torchvision.models import (
-    resnet101,
-    ResNet101_Weights,
-    resnext101_32x8d,
-    ResNeXt101_32X8D_Weights,
-    resnext101_64x4d,
-    ResNeXt101_64X4D_Weights,
-    Wide_ResNet101_2_Weights,
-    wide_resnet101_2,
+    # mobilenetv3,
+    mobilenet_v3_small,
+    # mobilenet_v3_large,
+    # MobileNetV3,
+    MobileNet_V3_Small_Weights,
+    # MobileNet_V3_Large_Weights,
+    get_model_builder,
 )
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-net = resnet101(weights = ResNet101_Weights.DEFAULT, progress = False)
+net = mobilenet_v3_small(
+    weights = MobileNet_V3_Small_Weights.DEFAULT,
+    progress = False,
+)
 net.eval()
 
 

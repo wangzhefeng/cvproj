@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 # ***************************************************
-# * File        : ResNet101.py
+# * File        : LogisticRegressor.py
 # * Author      : Zhefeng Wang
 # * Email       : zfwang7@gmail.com
-# * Date        : 2024-09-15
-# * Version     : 1.0.091504
+# * Date        : 2024-09-14
+# * Version     : 1.0.091417
 # * Description : description
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
@@ -21,23 +21,24 @@ ROOT = os.getcwd()
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
-from torchvision.models import (
-    resnet101,
-    ResNet101_Weights,
-    resnext101_32x8d,
-    ResNeXt101_32X8D_Weights,
-    resnext101_64x4d,
-    ResNeXt101_64X4D_Weights,
-    Wide_ResNet101_2_Weights,
-    wide_resnet101_2,
-)
+import torch
+import torch.nn as nn
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
 
 
-net = resnet101(weights = ResNet101_Weights.DEFAULT, progress = False)
-net.eval()
+class LogisticRegressor(nn.Module):
+
+    def __init__(self, input_dim, output_dim) -> None:
+        super(LogisticRegressor, self).__init__()
+        self.linear = nn.Linear(input_dim, output_dim)
+
+    def forward(self, x):
+        out = self.linear(x)
+        return out
 
 
 

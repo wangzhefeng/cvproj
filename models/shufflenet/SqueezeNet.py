@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 # ***************************************************
-# * File        : ConvNeXt_todo.py
+# * File        : SqueezeNet.py
 # * Author      : Zhefeng Wang
 # * Email       : wangzhefengr@163.com
-# * Date        : 2024-09-02
-# * Version     : 0.1.090223
+# * Date        : 2024-09-03
+# * Version     : 0.1.090300
 # * Description : description
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)

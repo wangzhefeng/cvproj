@@ -3,17 +3,25 @@
 # ***************************************************
 # * File        : CIFAR2.py
 # * Author      : Zhefeng Wang
-# * Email       : wangzhefengr@163.com
-# * Date        : 2023-04-21
-# * Version     : 0.1.042116
+# * Email       : zfwang7@gmail.com
+# * Date        : 2024-09-14
+# * Version     : 1.0.091419
 # * Description : description
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
+# * TODO        : 1.
 # ***************************************************
 
-# python libraries
-from pathlib import Path
+__all__ = []
 
+# python libraries
+import os
+import sys
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
+
+from pathlib import Path
 from PIL import Image
 import torch
 from torch.utils.data import Dataset, DataLoader
@@ -23,8 +31,9 @@ from torchvision import transforms
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-train_dir = "./cifar2/train/"
-test_dir = "./cifar2/test/"
+# data path
+train_dir = "./data/cifar2/train/"
+test_dir = "./data/cifar2/test/"
 
 
 class Cifar2Dataset(Dataset):
@@ -80,19 +89,14 @@ valid_dataloader = DataLoader(
     shuffle = True,
 )
 
-# test
-for features, labels in train_dataloader:
-    print(features.shape)
-    print(labels.shape)
-    break
-
-
-
 
 
 # 测试代码 main 函数
 def main():
-    pass
+    for features, labels in train_dataloader:
+        print(features.shape)
+        print(labels.shape)
+        break
 
 if __name__ == "__main__":
     main()

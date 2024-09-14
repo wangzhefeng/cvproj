@@ -1,17 +1,26 @@
 # -*- coding: utf-8 -*-
 
 # ***************************************************
-# * File        : data_loader.py
+# * File        : data_iter.py
 # * Author      : Zhefeng Wang
-# * Email       : wangzhefengr@163.com
-# * Date        : 2023-04-24
-# * Version     : 0.1.042423
-# * Description : TODO
+# * Email       : zfwang7@gmail.com
+# * Date        : 2024-09-14
+# * Version     : 1.0.091417
+# * Description : description
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
+# * TODO        : 1.
 # ***************************************************
 
+__all__ = []
+
 # python libraries
+import os
+import sys
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
+
 import numpy as np
 import torch
 
@@ -22,14 +31,6 @@ LOGGING_LABEL = __file__.split('/')[-1][:-3]
 def data_iter(features: torch.Tensor, labels: torch.Tensor, batch_size: int = 8):
     """
     构建数据管道迭代器
-
-    Args:
-        features (_type_): _description_
-        labels (_type_): _description_
-        batch_size (_type_): _description_
-
-    Yields:
-        _type_: _description_
     """
     num_examples = len(features)  # 样本数量
     indices = list(range(num_examples))  # 样本索引列表

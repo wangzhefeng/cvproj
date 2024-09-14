@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : CNN.py
 # * Author      : Zhefeng Wang
@@ -12,54 +11,23 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
 import sys
-_path = os.path.abspath(os.path.dirname(__file__))
-if os.path.join(_path, "..") not in sys.path:
-    sys.path.append(os.path.join(_path, ".."))
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 
 import torch
 import torch.nn as nn
-from torchvision import transforms
-
-from data_provider.CIFAR10 import get_dataset, get_dataloader
-
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-batch_size = 64
-num_classes = 10
-learning_rate = 0.001
-num_epochs = 20
+# device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}.")
 
 
-# ------------------------------
-# data
-# ------------------------------
-all_transforms = transforms.Compose([
-    transforms.Resize((32, 32)),
-    transforms.ToTensor(),
-    transforms.Normalize(
-        mean = [0.4914, 0.4822, 0.4465],
-        std = [0.2023, 0.1994, 0.2010],
-    )
-])
-train_dataset, test_dataset = get_dataset(
-    train_transforms = all_transforms,
-    test_transforms = all_transforms
-)
-train_loader, test_loader = get_dataloader(
-    train_dataset = train_dataset,
-    test_dataset = test_dataset,
-    batch_size = batch_size
-)
-
-# ------------------------------
-# model
-# ------------------------------
 class CNN(nn.Module):
 
     def __init__(self, num_classes) -> None:
@@ -91,65 +59,6 @@ class CNN(nn.Module):
         out = self.relu1(out)
         out = self.fc2(out)
         return out
-
-
-model = CNN(num_classes)
-print(model)
-# ------------------------------
-# model training
-# ------------------------------
-# loss
-loss_fn = nn.CrossEntropyLoss()
-
-# optimizer
-optimizer = torch.optim.SGD(
-    model.parameters(), 
-    lr = learning_rate, 
-    weight_decay = 0.005, 
-    momentum = 0.9
-)
-
-# run epochs
-for epoch in range(num_epochs):
-    # run batches
-    for i, (images, labels) in enumerate(train_loader):
-        # data
-        images = images.to(device)
-        labels = labels.to(device)
-        # forward
-        outputs = model(images)
-        loss = loss_fn(outputs, labels)
-        # backward
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-        print(f"Epoch [{epoch + 1} / {num_epochs}], Batch: {i}, Loss: {loss.item()}")
-    print(f"Epoch [{epoch + 1} / {num_epochs}], Loss: {loss.item()}")
-
-
-
-# ------------------------------
-# model testing
-# ------------------------------
-with torch.no_grad():
-    correct = 0
-    total = 0
-    for i, (images, labels) in enumerate(train_loader):
-        # data
-        images = images.to(device)
-        labels = labels.to(device)
-        # forward
-        outputs = model(images)
-        # predict
-        _, predicted = torch.max(outputs.data, 1)
-        # loss
-        total += labels.size(0)
-        correct += (predicted == labels).sum().item()
-        print(f"Batch: {i}, Accuracy of the network on {len(labels)}: {correct / total}")
-    print(f"Accuracy of the network on the {50000} train images: {correct / total}")
-
-
-
 
 
 # 测试代码 main 函数

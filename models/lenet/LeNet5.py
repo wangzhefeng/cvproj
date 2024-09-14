@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : LeNet5.py
 # * Author      : Zhefeng Wang
@@ -12,53 +11,26 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
 import sys
-_path = os.path.abspath(os.path.dirname(__file__))
-if os.path.join(_path, "..") not in sys.path:
-    sys.path.append(os.path.join(_path, ".."))
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 
 import torch
 import torch.nn as nn
-import torchvision.transforms as transforms
-
-from data_provider.MNIST import get_dataset, get_dataloader
-
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-num_classes = 10
-num_epochs = 10
-batch_size = 64
-learning_rate = 0.001
+# device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device {device}.")
 
 
-# ------------------------------
-# data
-# ------------------------------
-train_transform = transforms.Compose([
-    transforms.Resize((32, 32)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean = (0.1307,), std = (0.3081,))
-])
-test_transform = transforms.Compose([
-    transforms.Resize((32, 32)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean = (0.1325,), std = (0.3105,))
-])
-train_dataset, test_dataset = get_dataset(train_transform, test_transform)
-train_loader, test_loader = get_dataloader(train_dataset, test_dataset, batch_size = batch_size)
-
-# ------------------------------
-# model
-# ------------------------------
 class LeNet5(nn.Module):
 
-    def __init__(self):
+    def __init__(self, num_classes):
         super(LeNet5, self).__init__()
         # layer 1
         self.layer1 = nn.Sequential(
@@ -101,57 +73,6 @@ class LeNet5(nn.Module):
         x = self.relu1(x)
         out = self.fc3(x)  # 84 -> 10
         return out
-
-# model
-model = LeNet5()
-print(model)
-
-# ------------------------------
-# model training
-# ------------------------------
-# loss
-loss_fn = nn.CrossEntropyLoss()
-
-## optimizer
-optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate)
-
-# total step
-total_step = len(train_loader)
-for epoch in range(num_epochs):
-    for i, (images, labels) in enumerate(train_loader):
-        # data
-        images = images.to(device)
-        labels = labels.to(device)
-        # forward
-        outputs = model(images)
-        loss = loss_fn(outputs, labels)
-        # backward
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-        # error
-        if (i+1) % 400 == 0:
-            print(f"Epoch [{epoch + 1}/{num_epochs}], Step [{i + 1}/{total_step}], Loss: {loss.item()}")
-
-# ------------------------------
-# model testing
-# ------------------------------
-with torch.no_grad():
-    correct = 0
-    total = 0
-    for i, (images, labels) in enumerate(test_loader):
-        # data
-        images = images.to(device)
-        labels = labels.to(device)
-        # forward
-        outputs = model(images)
-        _, predicted = torch.max(outputs.data, 1)
-        # accuracy
-        total += labels.size(0)
-        correct += (predicted == labels).sum().item()
-    print(f'Accuracy of the network on the 10000 test images: {100 * correct / total} %')
-
-
 
 
 # 测试代码 main 函数

@@ -12,19 +12,23 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
 import sys
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
+
+from PIL import Image
 
 import torch
-from PIL import Image
 from torchvision import transforms
-
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
+# device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}.")
 
 
 # ------------------------------
@@ -54,7 +58,6 @@ labelurl, labelname, labelname_path = (
 # labels download
 if not os.path.exists(labelname_path):
     os.system(f"wget {labelurl} ; mv {labelname} {labelname_path}")
-
 # labels load
 with open(labelname_path, "r") as f:
     categories = [s.strip() for s in f.readlines()]
