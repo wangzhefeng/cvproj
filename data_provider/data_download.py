@@ -78,6 +78,7 @@ def image_download(img_url: str, img_name: str, img_path: str = "./data/cv_clf_i
     """
     # image download
     exists_status = os.path.exists(os.path.join(img_path, img_name))
+    # print(exists_status)
     if not exists_status:
         os.system(f"wget {img_url} ; mv {img_name} {img_path}")
     # load image

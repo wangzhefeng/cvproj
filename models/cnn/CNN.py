@@ -61,9 +61,45 @@ class CNN(nn.Module):
         return out
 
 
+
+
 # 测试代码 main 函数
 def main():
-    pass
+    from torchvision import transforms
+
+    from data_provider.CIFAR10 import get_dataset, get_dataloader
+    # ------------------------------
+    # params
+    # ------------------------------
+    batch_size = 64
+    num_classes = 10
+    learning_rate = 0.001
+    num_epochs = 20
+    # ------------------------------
+    # data
+    # ------------------------------
+    all_transforms = transforms.Compose([
+        transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize(
+            mean = [0.4914, 0.4822, 0.4465],
+            std = [0.2023, 0.1994, 0.2010],
+        )
+    ])
+    train_dataset, test_dataset = get_dataset(
+        train_transforms = all_transforms,
+        test_transforms = all_transforms
+    )
+    train_loader, test_loader = get_dataloader(
+        train_dataset = train_dataset,
+        test_dataset = test_dataset,
+        batch_size = batch_size
+    )
+    # ------------------------------
+    # model
+    # ------------------------------
+    model = CNN(num_classes)
+    print(model)
 
 if __name__ == "__main__":
     main()

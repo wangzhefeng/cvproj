@@ -138,9 +138,63 @@ class VGG16(nn.Module):
         return out
 
 
+
+
 # 测试代码 main 函数
 def main():
-    pass
+    import numpy as np
+    from torchvision import transforms
+    from torch.utils.data.sampler import SubsetRandomSampler
+
+    from data_provider.CIFAR100 import get_dataset, get_dataloader
+    # ------------------------------
+    # params
+    # ------------------------------
+    num_classes = 100
+    num_epochs = 20
+    batch_size = 64 
+    valid_size = 0.1
+    learning_rate = 0.005
+    random_seed = 42
+    # ------------------------------
+    # data
+    # ------------------------------
+    normalize = transforms.Normalize(
+        mean = [0.4914, 0.4822, 0.4465],
+        std = [0.2023, 0.1994, 0.2010],
+    )
+    transform = transforms.Compose([
+        transforms.Resize((227, 227)),
+        transforms.ToTensor(),
+        normalize,
+    ])
+
+    train_dataset, test_dataset, valid_dataset = get_dataset(
+        train_transforms = transform,
+        test_transforms = transform,
+        valid_transforms = transform,
+    )
+
+    # data split
+    num_train = len(train_dataset)
+    indices = list(range(num_train))
+    num_valid = int(np.floor(valid_size * num_train))
+    np.random.seed(random_seed)
+    np.random.shuffle(indices)
+    train_idx, valid_idx = indices[num_valid:], indices[:num_valid]
+    train_sampler = SubsetRandomSampler(train_idx)
+    valid_sampler = SubsetRandomSampler(valid_idx)
+    train_loader, test_loader, valid_loader = get_dataloader(
+        train_dataset = train_dataset,
+        test_dataset = test_dataset,
+        batch_size = batch_size,
+        train_sampler = train_sampler,
+        valid_dataset = valid_dataset,
+        valid_sampler = valid_sampler,
+    )
+    # model
+    model = VGG16(num_classes)
+    print(model)
 
 if __name__ == "__main__":
     main()

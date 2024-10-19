@@ -75,9 +75,36 @@ class LeNet5(nn.Module):
         return out
 
 
+
+
 # 测试代码 main 函数
 def main():
-    pass
+    import torchvision.transforms as transforms
+
+    from data_provider.MNIST import get_dataset, get_dataloader
+    # params
+    num_classes = 10
+    num_epochs = 10
+    batch_size = 64
+    learning_rate = 0.001
+    # ------------------------------
+    # data
+    # ------------------------------
+    train_transform = transforms.Compose([
+        transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean = (0.1307,), std = (0.3081,))
+    ])
+    test_transform = transforms.Compose([
+        transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean = (0.1325,), std = (0.3105,))
+    ])
+    train_dataset, test_dataset = get_dataset(train_transform, test_transform)
+    train_loader, test_loader = get_dataloader(train_dataset, test_dataset, batch_size = batch_size)
+    # model
+    model = LeNet5()
+    print(model)
 
 if __name__ == "__main__":
     main()
