@@ -24,8 +24,12 @@ ROOT = os.getcwd()
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
+import numpy as np
 import torch
 from torchvision import datasets, transforms
+from torch.utils.data.sampler import SubsetRandomSampler
+
+from utils.log_util import logger
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
@@ -41,128 +45,47 @@ transforms_cifar = transforms.Compose([
 ])
 
 
-def get_dataset(train_transforms, test_transforms, valid_transforms = None):
+def get_dataset(train, transforms, ):
     """
     Dataset
     """
-    train_dataset = datasets.CIFAR10(
-        root = "./data/",
-        train = True,
+    dataset = datasets.CIFAR10(
+        root = "./dataset/",
+        train = train,
         download = True,
-        transform = train_transforms,
+        transform = transforms,
     )
-    test_dataset = datasets.CIFAR10(
-        root = "./data/",
-        train = False,
-        download = True,
-        transform = test_transforms,
-    )
-    if valid_transforms:
-        valid_dataset = datasets.CIFAR10(
-            root = "./data/",
-            train = True,
-            download = True,
-            transform = valid_transforms,
-        )
-        return train_dataset, test_dataset, valid_dataset
-    else:
-        return train_dataset, test_dataset
+    
+    return dataset
 
 
-def get_dataloader(batch_size, 
-                   train_transforms, 
-                   test_transforms, 
-                   valid_transforms = None,
-                   train_sampler = None,
-                   valid_sampler = None,
-                   num_workers = -1):
+def get_train_valid_loader(batch_size,
+                           argument = False,
+                           shuffle = True,
+                           num_workers = 0):
     """
     DataLoader
     """
-    # Dataset
-    if valid_transforms is None:
-        train_dataset, test_dataset = get_dataset(
-            train_transforms, 
-            test_transforms
-        )
-    else:
-        train_dataset, test_dataset, valid_dataset = get_dataset(
-            train_transforms, 
-            test_transforms, 
-            valid_transforms
-        )
-    # DataLoader
-    train_loader = torch.utils.data.DataLoader(
-        train_dataset,
-        batch_size = batch_size,
-        shuffle = True,
-        sampler = train_sampler,
-        num_workers = num_workers,
-    )
-    test_loader = torch.utils.data.DataLoader(
-        test_dataset,
-        batch_size = batch_size,
-        shuffle = False,
-        num_workers = num_workers,
-    )
-    if valid_transforms:
-        valid_loader = torch.utils.data.DataLoader(
-            valid_dataset,
-            batch_size = batch_size,
-            shuffle = True,
-            sampler = valid_sampler,
-            num_workers = num_workers,
-        )
-        return train_loader, test_loader, valid_loader
-    else:
-        return train_loader, test_loader
-
-
-
-
-# 测试代码 main 函数
-def main():
-    import numpy as np
-    from torchvision import transforms
-    from torch.utils.data.sampler import SubsetRandomSampler
-    # ------------------------------
-    # params
-    # ------------------------------
-    num_classes = 10
-    batch_size = 64
-    num_epochs = 20
-    valid_size = 0.1
-    learning_rate = 0.005
-    random_seed = 42
-    # ------------------------------
-    # data
-    # ------------------------------
     # transforms
-    train_transform_augment = transforms.Compose([
-        transforms.RandomCrop(32, padding = 4),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-        transforms.Normalize(
-            mean = [0.4914, 0.4822, 0.4465],
-            std = [0.2023, 0.1994, 0.2010],
-        ),
-    ])
-    train_transform = transforms.Compose([
-        transforms.Resize((227, 227)),
-        transforms.ToTensor(),
-        transforms.Normalize(
-            mean = [0.4914, 0.4822, 0.4465],
-            std = [0.2023, 0.1994, 0.2010],
-        ),
-    ])
-    test_transform = transforms.Compose([
-        transforms.Resize((227, 227)),
-        transforms.ToTensor(),
-        transforms.Normalize(
-            mean = [0.485, 0.456, 0.406],
-            std = [0.229, 0.224, 0.225],
-        ),
-    ])
+    if argument:
+        train_transform = transforms.Compose([
+            transforms.RandomCrop(32, padding = 4),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            transforms.Normalize(
+                mean = [0.4914, 0.4822, 0.4465],
+                std = [0.2023, 0.1994, 0.2010],
+            ),
+        ])
+    else:
+        train_transform = transforms.Compose([
+            transforms.Resize((227, 227)),
+            transforms.ToTensor(),
+            transforms.Normalize(
+                mean = [0.4914, 0.4822, 0.4465],
+                std = [0.2023, 0.1994, 0.2010],
+            ),
+        ])
     valid_transform = transforms.Compose([
         transforms.Resize((227, 227)),
         transforms.ToTensor(),
@@ -171,34 +94,88 @@ def main():
             std = [0.2023, 0.1994, 0.2010],
         ),
     ])
-    # ------------------------------
-    # data split
-    # ------------------------------ 
-    train_dataset, _, _ = get_dataset(
-        train_transform,
-        test_transform, 
-        valid_transform
-    )
+    # Dataset
+    train_dataset = get_dataset(train = True, transforms = train_transform)
+    valid_dataset = get_dataset(train = True, transforms = valid_transform)
+    # data sampler
     num_train = len(train_dataset)
-    num_valid = int(np.floor(valid_size * num_train))
-
-    indices = list(range(num_train))    
-    np.random.seed(random_seed)
-    np.random.shuffle(indices)
+    num_valid = int(np.floor(0.1 * num_train)) 
+    indices = list(range(num_train))
+    if shuffle:
+        np.random.seed(42)
+        np.random.shuffle(indices)
     train_idx, valid_idx = indices[num_valid:], indices[:num_valid]
     train_sampler = SubsetRandomSampler(train_idx)
     valid_sampler = SubsetRandomSampler(valid_idx)
-
-    # data loader
-    train_loader, test_loader, valid_loader = get_dataloader(
+    # DataLoader
+    train_loader = torch.utils.data.DataLoader(
+        train_dataset,
         batch_size = batch_size,
-        train_transforms = train_transform,
-        test_transforms = test_transform,
-        valid_transforms = valid_transform,
-        train_sampler = train_sampler,
-        valid_sampler = valid_sampler,
-        num_workers = 1,
+        # shuffle = shuffle,
+        sampler = train_sampler,
+        num_workers = num_workers,
     )
+    valid_loader = torch.utils.data.DataLoader(
+        valid_dataset,
+        batch_size = batch_size,
+        # shuffle = shuffle,
+        sampler = valid_sampler,
+        num_workers = num_workers,
+    )
+    
+    return train_loader, valid_loader
+
+
+def get_test_loader(batch_size, 
+                    shuffle = False,
+                    num_workers = 0):
+    """
+    DataLoader
+    """
+    # transforms
+    test_transform = transforms.Compose([
+        transforms.Resize((227, 227)),
+        transforms.ToTensor(),
+        transforms.Normalize(
+            mean = [0.485, 0.456, 0.406],
+            std = [0.229, 0.224, 0.225],
+        ),
+    ])
+    # Dataset
+    test_dataset = get_dataset(train = False, transforms = test_transform)
+    # DataLoader
+    test_loader = torch.utils.data.DataLoader(
+        test_dataset,
+        batch_size = batch_size,
+        shuffle = shuffle,
+        num_workers = num_workers,
+    )
+    
+    return test_loader
+
+
+
+# 测试代码 main 函数
+def main():
+    # params
+    batch_size = 64
+    # data
+    train_loader, valid_loader = get_train_valid_loader(
+        batch_size = batch_size,
+        argument=False,
+        shuffle = True,
+        num_workers = 0,
+    )
+    test_loader = get_test_loader(
+        batch_size = batch_size,
+        shuffle = False,
+        num_workers = 0,
+    )
+    # test
+    for images, labels in train_loader:
+        break
+    logger.info(f"images: \n{images} \nimages.shape{images.shape}")
+    logger.info(f"labels: \n{labels} \nlabels.shape{labels.shape}")
 
 if __name__ == "__main__":
     main()

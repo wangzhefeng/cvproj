@@ -12,7 +12,9 @@
 # * TODO        : 1.
 # ***************************************************
 
-__all__ = []
+__all__ = [
+    "get_dataloader"
+]
 
 # python libraries
 import os
@@ -22,36 +24,29 @@ if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
 import torch
-from torchvision import datasets, transforms
+from torchvision import datasets
+
+from utils.log_util import logger
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-# data preprocessing
-train_transform = transforms.Compose([
-    transforms.ToTensor(),
-])
-test_transform =  transforms.Compose([
-    transforms.ToTensor(),
-])
-
-
-def __get_dataset(train_transforms, test_transforms):
+def get_dataset(train_transforms, test_transforms):
     """
     Dataset
     """
     train_dataset = datasets.MNIST(
-        root = "./data/",
+        root = "./dataset/",
         train = True,
-        download = True,
         transform = train_transforms,
+        download = True,
     )
     test_dataset = datasets.MNIST(
-        root = "./data/",
+        root = "./dataset/",
         train = False,
-        download = True,
         transform = test_transforms,
+        download = True,
     )
 
     return train_dataset, test_dataset
@@ -62,7 +57,7 @@ def get_dataloader(batch_size, train_transforms, test_transforms, num_workers = 
     DataLoader
     """
     # Dataset
-    train_dataset, test_dataset = __get_dataset(train_transforms, test_transforms)
+    train_dataset, test_dataset = get_dataset(train_transforms, test_transforms)
     # DataLoader
     train_loader = torch.utils.data.DataLoader(
         train_dataset,
@@ -84,15 +79,31 @@ def get_dataloader(batch_size, train_transforms, test_transforms, num_workers = 
 
 # 测试代码 main 函数
 def main():
+    import torchvision.transforms as transforms
+    
     # params
-    batch_size = 128
-    # DataLoader
+    batch_size = 64
+    # data
+    train_transforms = transforms.Compose([
+        transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean = (0.1307,), std = (0.3081,))
+    ])
+    test_transforms = transforms.Compose([
+        transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean = (0.1325,), std = (0.3105,))
+    ])
     train_loader, test_loader = get_dataloader(
-        batch_size = batch_size,
-        train_transforms = train_transform,
-        test_transforms = test_transform,
-        num_workers = 1,
+        batch_size=batch_size, 
+        train_transforms = train_transforms, 
+        test_transforms=test_transforms, 
+        num_workers = 0
     )
+    for batch in train_loader:
+        break
+    logger.info(f"image: \n{batch[0]} \nimage.shape{batch[0].shape}")
+    logger.info(f"labels: \n{batch[1]} \nlabels.shape{batch[0].shape}")
 
 if __name__ == "__main__":
     main()

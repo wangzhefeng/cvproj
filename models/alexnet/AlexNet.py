@@ -18,20 +18,17 @@ ROOT = os.getcwd()
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
-import torch
 import torch.nn as nn
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-# device
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
-print(f"Using device {device}.")
 
 
 class AlexNet(nn.Module):
 
-    def __init__(self, num_classes) -> None:
+    def __init__(self, args) -> None:
         super(AlexNet, self).__init__()
+        
         self.layer1 = nn.Sequential(
             nn.Conv2d(3, 96, kernel_size = 11, stride = 4, padding = 0),  # 3@227x227 -> 96@55x55
             nn.BatchNorm2d(96),
@@ -71,7 +68,7 @@ class AlexNet(nn.Module):
             nn.ReLU(),
         )
         self.fc3 = nn.Sequential(
-            nn.Linear(4096, num_classes),  # 4096 -> 10
+            nn.Linear(4096, args.num_classes),  # 4096 -> 10
         )
     
     def forward(self, x):
@@ -94,90 +91,20 @@ class AlexNet(nn.Module):
 
 # 测试代码 main 函数
 def main():
-    import numpy as np
-    from torchvision import transforms
-    from torch.utils.data.sampler import SubsetRandomSampler
-    
-    from data_provider.CIFAR10 import get_dataset, get_dataloader
-    # ------------------------------
-    # params
-    # ------------------------------
-    num_classes = 10
-    batch_size = 64
-    num_epochs = 20
-    valid_size = 0.1
-    learning_rate = 0.005
-    random_seed = 42
-    # ------------------------------
-    # data
-    # ------------------------------
-    # transforms
-    train_transform_augment = transforms.Compose([
-        transforms.RandomCrop(32, padding = 4),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-        transforms.Normalize(
-            mean = [0.4914, 0.4822, 0.4465],
-            std = [0.2023, 0.1994, 0.2010],
-        ),
-    ])
-    train_transform = transforms.Compose([
-        transforms.Resize((227, 227)),
-        transforms.ToTensor(),
-        transforms.Normalize(
-            mean = [0.4914, 0.4822, 0.4465],
-            std = [0.2023, 0.1994, 0.2010],
-        ),
-    ])
-    test_transform = transforms.Compose([
-        transforms.Resize((227, 227)),
-        transforms.ToTensor(),
-        transforms.Normalize(
-            mean = [0.485, 0.456, 0.406],
-            std = [0.229, 0.224, 0.225],
-        ),
-    ])
-    valid_transform = transforms.Compose([
-        transforms.Resize((227, 227)),
-        transforms.ToTensor(),
-        transforms.Normalize(
-            mean = [0.4914, 0.4822, 0.4465],
-            std = [0.2023, 0.1994, 0.2010],
-        ),
-    ])
-    # ------------------------------
-    # data split
-    # ------------------------------ 
-    train_dataset, _, _ = get_dataset(
-        train_transform,
-        test_transform, 
-        valid_transform
-    )
-    num_train = len(train_dataset)
-    num_valid = int(np.floor(valid_size * num_train))
-
-    indices = list(range(num_train))    
-    np.random.seed(random_seed)
-    np.random.shuffle(indices)
-    train_idx, valid_idx = indices[num_valid:], indices[:num_valid]
-    train_sampler = SubsetRandomSampler(train_idx)
-    valid_sampler = SubsetRandomSampler(valid_idx)
-
-    # data loader
-    train_loader, test_loader, valid_loader = get_dataloader(
-        batch_size = batch_size,
-        train_transforms = train_transform,
-        test_transforms = test_transform,
-        valid_transforms = valid_transform,
-        train_sampler = train_sampler,
-        valid_sampler = valid_sampler,
-        num_workers = 1,
-    )
-    # ------------------------------
+    from utils.argsparser_tools import DotDict
+    from utils.log_util import logger
+    # args
+    args = {
+        "num_classes": 10,
+        "batch_size": 64,
+        "num_epochs": 20,
+        "learning_rate": 0.005,
+        "random_seed": 42,
+    }
+    args = DotDict(args)
     # model
-    # ------------------------------
-    model = AlexNet(num_classes)
-    print(model)
+    model = AlexNet(args)
+    logger.info(f"model: \n{model}")
 
 if __name__ == "__main__":
     main()

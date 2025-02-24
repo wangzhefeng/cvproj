@@ -25,11 +25,11 @@ import gc
 import torch
 import torch.nn as nn
 
+from utils import device
+
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-# deivce
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Using device {device}.")
+
 # TODO params
 batch_size = 100
 learning_rate = 0.1
@@ -37,7 +37,6 @@ n_iters = 3000
 train_dataset = 10000
 num_epochs = int(n_iters / (len(train_dataset) / batch_size))
 num_epochs = 100
-
 
 
 def train(model, train_loader, valid_loader, num_epochs, learning_rate):

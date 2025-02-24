@@ -15,7 +15,7 @@ from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import DataLoader
 import torch
 import torch.nn as nn
-import experments.my_utils as utils
+import exps.my_utils as utils
 
 
 def get_args_parser(add_help=True):

@@ -53,7 +53,7 @@ graph = make_graph(
 # model
 onnx_model = make_model(graph)
 
-with open("saved_models/linear_regression.onnx", "wb") as f:
+with open("results/pretrained_models/linear_regression.onnx", "wb") as f:
     f.write(onnx_model.SerializeToString())
 
 

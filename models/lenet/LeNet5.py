@@ -18,24 +18,23 @@ ROOT = os.getcwd()
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
-import torch
 import torch.nn as nn
+
+from utils.log_util import logger
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-# device
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Using device {device}.")
 
 
-class LeNet5(nn.Module):
+class Model(nn.Module):
 
-    def __init__(self, num_classes):
-        super(LeNet5, self).__init__()
+    def __init__(self, args):
+        super(Model, self).__init__()
+
         # layer 1
         self.layer1 = nn.Sequential(
             # conv 6@5x5
-            nn.Conv2d(in_channels = 1, out_channels = 6, kernel_size = 5, stride = 1, padding = 0),  # 1@32x32 -> 6@28x28
+            nn.Conv2d(in_channels = args.in_channels, out_channels = 6, kernel_size = 5, stride = 1, padding = 0),  # 1@32x32 -> 6@28x28
             nn.BatchNorm2d(num_features = 6),
             nn.ReLU(),
             # pooling 2x2
@@ -58,7 +57,7 @@ class LeNet5(nn.Module):
         self.fc2 = nn.Linear(in_features = 120, out_features = 84)  # 120 -> 84
         self.relu1 = nn.ReLU()
         # layer 5
-        self.fc3 = nn.Linear(in_features = 84, out_features = num_classes)  # 84 -> 10
+        self.fc3 = nn.Linear(in_features = 84, out_features = args.num_classes)  # 84 -> 10
     
     def forward(self, x):
         """
@@ -72,6 +71,7 @@ class LeNet5(nn.Module):
         x = self.fc2(x)  # 120 -> 84
         x = self.relu1(x)
         out = self.fc3(x)  # 84 -> 10
+        
         return out
 
 
@@ -79,32 +79,16 @@ class LeNet5(nn.Module):
 
 # 测试代码 main 函数
 def main():
-    import torchvision.transforms as transforms
-
-    from data_provider.MNIST import get_dataset, get_dataloader
-    # params
-    num_classes = 10
-    num_epochs = 10
-    batch_size = 64
-    learning_rate = 0.001
-    # ------------------------------
-    # data
-    # ------------------------------
-    train_transform = transforms.Compose([
-        transforms.Resize((32, 32)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean = (0.1307,), std = (0.3081,))
-    ])
-    test_transform = transforms.Compose([
-        transforms.Resize((32, 32)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean = (0.1325,), std = (0.3105,))
-    ])
-    train_dataset, test_dataset = get_dataset(train_transform, test_transform)
-    train_loader, test_loader = get_dataloader(train_dataset, test_dataset, batch_size = batch_size)
+    from utils.argsparser_tools import DotDict
+    # args
+    args = {
+        "in_channels": 1,
+        "num_classes": 10,
+    }
+    args = DotDict(args)
     # model
-    model = LeNet5()
-    print(model)
+    model = Model(args)
+    logger.info(model)
 
 if __name__ == "__main__":
     main()
