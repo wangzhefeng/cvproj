@@ -35,6 +35,8 @@ def main():
     # params
     args = {
         "model_name": "lenet5",
+        "data_name": "mnist",
+        "use_valid": 0,
         "use_gpu": 1,
         "gpu_type": "mps",
         "use_multi_gpu": 0,
@@ -43,6 +45,7 @@ def main():
         "in_channels": 1,
         "num_classes": 10,
         "num_epochs": 10,
+        "algo": "adam",
         "learning_rate": 0.001,
         "weight_decay": 0.1,
     }
@@ -51,8 +54,8 @@ def main():
     exp = Exp_Classification(args)
     # training
     exp.train()
-    # valid
-    exp.valid()
+    # test
+    exp.test()
 
 if __name__ == "__main__":
     main()

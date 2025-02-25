@@ -45,7 +45,7 @@ transforms_cifar = transforms.Compose([
 ])
 
 
-def get_dataset(train, transforms, ):
+def get_dataset(train, transforms):
     """
     Dataset
     """
@@ -154,23 +154,31 @@ def get_test_loader(batch_size,
     return test_loader
 
 
-
-# 测试代码 main 函数
-def main():
-    # params
-    batch_size = 64
-    # data
+def get_dataloader(batch_size, num_workers = 0):
     train_loader, valid_loader = get_train_valid_loader(
         batch_size = batch_size,
         argument=False,
         shuffle = True,
-        num_workers = 0,
+        num_workers = num_workers,
     )
     test_loader = get_test_loader(
         batch_size = batch_size,
         shuffle = False,
-        num_workers = 0,
+        num_workers = num_workers,
     )
+    
+    return train_loader, valid_loader, test_loader
+
+
+
+
+# 测试代码 main 函数
+def main():
+    # params
+    use_valid = True
+    batch_size = 64
+    # data
+    train_loader, valid_loader, test_loader = get_dataloader(batch_size = batch_size)
     # test
     for images, labels in train_loader:
         break

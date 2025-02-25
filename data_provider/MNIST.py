@@ -25,6 +25,7 @@ if str(ROOT) not in sys.path:
 
 import torch
 from torchvision import datasets
+import torchvision.transforms as transforms
 
 from utils.log_util import logger
 
@@ -52,10 +53,20 @@ def get_dataset(train_transforms, test_transforms):
     return train_dataset, test_dataset
 
 
-def get_dataloader(batch_size, train_transforms, test_transforms, num_workers = -1):
+def get_dataloader(batch_size, num_workers = 0):
     """
     DataLoader
     """
+    train_transforms = transforms.Compose([
+        transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean = (0.1307,), std = (0.3081,))
+    ])
+    test_transforms = transforms.Compose([
+        transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean = (0.1325,), std = (0.3105,))
+    ])
     # Dataset
     train_dataset, test_dataset = get_dataset(train_transforms, test_transforms)
     # DataLoader
@@ -72,34 +83,17 @@ def get_dataloader(batch_size, train_transforms, test_transforms, num_workers = 
         num_workers = num_workers,
     )
 
-    return train_loader, test_loader
+    return train_loader, None, test_loader
 
 
 
 
 # 测试代码 main 函数
 def main():
-    import torchvision.transforms as transforms
-    
     # params
     batch_size = 64
     # data
-    train_transforms = transforms.Compose([
-        transforms.Resize((32, 32)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean = (0.1307,), std = (0.3081,))
-    ])
-    test_transforms = transforms.Compose([
-        transforms.Resize((32, 32)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean = (0.1325,), std = (0.3105,))
-    ])
-    train_loader, test_loader = get_dataloader(
-        batch_size=batch_size, 
-        train_transforms = train_transforms, 
-        test_transforms=test_transforms, 
-        num_workers = 0
-    )
+    train_loader, valid_loader, test_loader = get_dataloader(batch_size=batch_size)
     for batch in train_loader:
         break
     logger.info(f"image: \n{batch[0]} \nimage.shape{batch[0].shape}")

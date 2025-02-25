@@ -35,24 +35,28 @@ def main():
     # params
     args = {
         "model_name": "alexnet",
+        "data_name": "cifar10",
+        "use_valid": 1,
         "use_gpu": 1,
         "gpu_type": "mps",
         "use_multi_gpu": 0,
         "devices": "0,1,2,3",
         "batch_size": 64,
-        "in_channels": 1,
+        "in_channels": 3,
         "num_classes": 10,
         "num_epochs": 20,
+        "algo": "sgd",
         "learning_rate": 0.005,
-        "weight_decay": 0.1,
+        "weight_decay": 0.005,
+        "momentum": 0.9,
     }
     args = DotDict(args)
     # exp
     exp = Exp_Classification(args)
     # training
     exp.train()
-    # valid
-    exp.valid()
+    # test
+    exp.test()
 
 if __name__ == "__main__":
     main()

@@ -21,6 +21,8 @@ if str(ROOT) not in sys.path:
 import torch
 
 from models.lenet import LeNet5
+from models.alexnet import AlexNet
+from data_provider import MNIST, CIFAR10
 from utils.log_util import logger
 
 # global variable
@@ -33,6 +35,11 @@ class Exp_Basic(object):
         self.args = args
         self.model_dict = {
             "lenet5": LeNet5,
+            "alexnet": AlexNet,
+        }
+        self.data_dict = {
+            "mnist": MNIST,
+            "cifar10": CIFAR10, 
         }
         self.device = self._acquire_device()
         self.model = self._build_model().to(self.device)

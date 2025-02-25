@@ -23,23 +23,13 @@ if ROOT not in sys.path:
 
 import torch
 import torch.nn as nn
-import torchvision.transforms as transforms
 
 from data_provider.MNIST import get_dataloader
 from exps.exp_basic import Exp_Basic
-from models.lenet import LeNet5
-from models.alexnet import AlexNet
-from utils.argsparser_tools import DotDict
 from utils.log_util import logger
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
-
-
-model_dict = {
-    "lenet5": LeNet5,
-    "alxenet": AlexNet,
-}
 
 
 class Exp_Classification(Exp_Basic):
@@ -51,20 +41,10 @@ class Exp_Classification(Exp_Basic):
         """
         build data
         """
-        train_transforms = transforms.Compose([
-            transforms.Resize((32, 32)),
-            transforms.ToTensor(),
-            transforms.Normalize(mean = (0.1307,), std = (0.3081,))
-        ])
-        test_transforms = transforms.Compose([
-            transforms.Resize((32, 32)),
-            transforms.ToTensor(),
-            transforms.Normalize(mean = (0.1325,), std = (0.3105,))
-        ])
-        self.train_loader, self.test_loader = get_dataloader(
+        (self.train_loader, 
+         self.valid_loader, 
+         self.test_loader) = self.data_dict[self.args.data_name].get_dataloader(
             batch_size=self.args.batch_size, 
-            train_transforms = train_transforms, 
-            test_transforms=test_transforms, 
             num_workers = 0
         )
     
@@ -73,7 +53,7 @@ class Exp_Classification(Exp_Basic):
         build model
         """
         # model instance
-        model = model_dict[self.args.model_name].Model(self.args).float()
+        model = self.model_dict[self.args.model_name].Model(self.args).float()
         # 单机多卡训练
         if self.args.use_gpu and self.args.use_multi_gpu:
             model = nn.DataParallel(model, device_ids = self.args.device_ids)
@@ -87,11 +67,25 @@ class Exp_Classification(Exp_Basic):
         """
         optimizer
         """
-        optimizer = torch.optim.AdamW(
-            self.model.parameters(), 
-            lr = self.args.learning_rate, 
-            weight_decay = self.args.weight_decay
-        )
+        if self.args.algo == "adamw":
+            optimizer = torch.optim.AdamW(
+                self.model.parameters(), 
+                lr = self.args.learning_rate, 
+                weight_decay = self.args.weight_decay
+            )
+        if self.args.algo == "adam":
+            optimizer = torch.optim.Adam(
+                self.model.parameters(), 
+                lr = self.args.learning_rate, 
+                weight_decay = self.args.weight_decay
+            )
+        elif self.args.algo == "sgd":
+            optimizer = torch.optim.SGD(
+                self.model.parameters(), 
+                lr = self.args.learning_rate, 
+                momentum = self.args.momentum, 
+                weight_decay = self.args.weight_decay
+            )
 
         return optimizer
 
@@ -110,9 +104,10 @@ class Exp_Classification(Exp_Basic):
         criterion = self._select_criterion()
         # optimizer
         optimizer = self._select_optimizer()
-        # how many steps are remaining when trainign
+        # how many steps are remaining when training
         total_step = len(self.train_loader)
         for epoch in range(self.args.num_epochs):
+            # model training
             for i, (images, labels) in enumerate(self.train_loader):
                 images = images.to(self.device)
                 labels = labels.to(self.device)
@@ -124,20 +119,42 @@ class Exp_Classification(Exp_Basic):
                 loss.backward()
                 optimizer.step()
                 if (i + 1) % 400 == 0:
-                    logger.info(f"Epoch [{epoch+1}/{self.args.num_epochs}], Step [{i+1}/{total_step}], Loss: {loss.item():.4f}")
+                    logger.info(f"Epoch [{epoch+1}/{self.args.num_epochs}], Step [{i+1}/{total_step}], Train Loss: {loss.item():.4f}")
+            # model validation
+            if self.args.use_valid:
+                self.valid()
 
     def valid(self):
         with torch.no_grad():
             correct = 0
             total = 0
-            for images, labels in self.test_loader:
+            for images, labels in self.valid_loader:
+                # data to device
                 images = images.to(self.device)
                 labels = labels.to(self.device)
+                # inference
                 outputs = self.model(images)
                 _, predicted = torch.max(outputs.data, 1)
+                # collect 
                 total += labels.size(0)
                 correct += (predicted == labels).sum().item()
-            logger.info(f"Accuracy of the network on the 10000 test images: {100 * correct / total} %")
+            logger.info(f"Accuracy of the network on the {len(self.valid_loader)} validation images: {100 * correct / total} %.")
+    
+    def test(self):
+        with torch.no_grad():
+            correct = 0
+            total = 0
+            for images, labels in self.test_loader:
+                # data to device
+                images = images.to(self.device)
+                labels = labels.to(self.device)
+                # inference
+                outputs = self.model(images)
+                _, predicted = torch.max(outputs.data, 1)
+                # collect 
+                total += labels.size(0)
+                correct += (predicted == labels).sum().item()
+            logger.info(f"Accuracy of the network on the {len(self.test_loader)} test images: {100 * correct / total} %.")
 
 
 

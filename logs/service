@@ -1,164 +1,213 @@
-[2025-02-24 14:19:57,182] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 14:28:35,547] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 14:49:39,584] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 14:49:53,004] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 16:03:38,375] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 16:04:30,739] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 16:37:16,008] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 16:40:26,513] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 16:40:27,075] [INFO] [LeNet5.py:112:main] Model(
-  (layer1): Sequential(
-    (0): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
-    (1): BatchNorm2d(6, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer2): Sequential(
-    (0): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
-    (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (fc1): Linear(in_features=400, out_features=120, bias=True)
-  (relu): ReLU()
-  (fc2): Linear(in_features=120, out_features=84, bias=True)
-  (relu1): ReLU()
-  (fc3): Linear(in_features=84, out_features=10, bias=True)
-)
-[2025-02-24 17:37:41,987] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 17:38:36,615] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 17:38:36,939] [INFO] [LeNet5.py:119:main] Model(
-  (layer1): Sequential(
-    (0): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
-    (1): BatchNorm2d(6, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer2): Sequential(
-    (0): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
-    (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (fc1): Linear(in_features=400, out_features=120, bias=True)
-  (relu): ReLU()
-  (fc2): Linear(in_features=120, out_features=84, bias=True)
-  (relu1): ReLU()
-  (fc3): Linear(in_features=84, out_features=10, bias=True)
-)
-[2025-02-24 17:39:59,026] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 17:39:59,026] [INFO] [exp_basic.py:59:_acquire_device] Use CPU
-[2025-02-24 17:39:59,028] [INFO] [exp_classification.py:64:_build_model] Number of parameters: 0.06M
-[2025-02-24 19:22:22,399] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 19:22:22,399] [INFO] [exp_basic.py:59:_acquire_device] Use CPU
-[2025-02-24 19:22:22,409] [INFO] [exp_classification.py:83:_build_model] Number of parameters: 0.06M
-[2025-02-24 19:22:51,297] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 19:22:51,297] [INFO] [exp_basic.py:59:_acquire_device] Use CPU
-[2025-02-24 19:22:51,299] [INFO] [exp_classification.py:83:_build_model] Number of parameters: 0.06M
-[2025-02-24 19:24:21,108] [INFO] [device.py:35:<module>] Using device: mps
-[2025-02-24 19:24:21,109] [INFO] [exp_basic.py:59:_acquire_device] Use CPU
-[2025-02-24 19:24:21,110] [INFO] [exp_classification.py:83:_build_model] Number of parameters: 0.06M
-[2025-02-24 19:24:24,970] [INFO] [exp_classification.py:127:train] Epoch [1/10], Step [400/938], Loss: 0.1222
-[2025-02-24 19:24:28,791] [INFO] [exp_classification.py:127:train] Epoch [1/10], Step [800/938], Loss: 0.0424
-[2025-02-24 19:24:34,203] [INFO] [exp_classification.py:127:train] Epoch [2/10], Step [400/938], Loss: 0.0447
-[2025-02-24 19:24:37,948] [INFO] [exp_classification.py:127:train] Epoch [2/10], Step [800/938], Loss: 0.0081
-[2025-02-24 19:24:43,176] [INFO] [exp_classification.py:127:train] Epoch [3/10], Step [400/938], Loss: 0.0463
-[2025-02-24 19:24:47,420] [INFO] [exp_classification.py:127:train] Epoch [3/10], Step [800/938], Loss: 0.0148
-[2025-02-24 19:24:52,494] [INFO] [exp_classification.py:127:train] Epoch [4/10], Step [400/938], Loss: 0.1249
-[2025-02-24 19:24:56,222] [INFO] [exp_classification.py:127:train] Epoch [4/10], Step [800/938], Loss: 0.0009
-[2025-02-24 19:25:01,236] [INFO] [exp_classification.py:127:train] Epoch [5/10], Step [400/938], Loss: 0.0452
-[2025-02-24 19:25:04,991] [INFO] [exp_classification.py:127:train] Epoch [5/10], Step [800/938], Loss: 0.0367
-[2025-02-24 19:25:10,641] [INFO] [exp_classification.py:127:train] Epoch [6/10], Step [400/938], Loss: 0.0089
-[2025-02-24 19:25:14,772] [INFO] [exp_classification.py:127:train] Epoch [6/10], Step [800/938], Loss: 0.0167
-[2025-02-24 19:25:20,175] [INFO] [exp_classification.py:127:train] Epoch [7/10], Step [400/938], Loss: 0.0334
-[2025-02-24 19:25:24,117] [INFO] [exp_classification.py:127:train] Epoch [7/10], Step [800/938], Loss: 0.0463
-[2025-02-24 19:25:29,509] [INFO] [exp_classification.py:127:train] Epoch [8/10], Step [400/938], Loss: 0.0012
-[2025-02-24 19:25:33,585] [INFO] [exp_classification.py:127:train] Epoch [8/10], Step [800/938], Loss: 0.0053
-[2025-02-24 19:25:39,280] [INFO] [exp_classification.py:127:train] Epoch [9/10], Step [400/938], Loss: 0.0020
-[2025-02-24 19:25:43,715] [INFO] [exp_classification.py:127:train] Epoch [9/10], Step [800/938], Loss: 0.0131
-[2025-02-24 19:25:48,781] [INFO] [exp_classification.py:127:train] Epoch [10/10], Step [400/938], Loss: 0.0199
-[2025-02-24 19:25:52,543] [INFO] [exp_classification.py:127:train] Epoch [10/10], Step [800/938], Loss: 0.0738
-[2025-02-24 19:26:43,678] [INFO] [exp_basic.py:56:_acquire_device] Use GPU: mps
-[2025-02-24 19:26:43,679] [INFO] [exp_classification.py:83:_build_model] Number of parameters: 0.06M
-[2025-02-24 19:26:49,138] [INFO] [exp_classification.py:127:train] Epoch [1/10], Step [400/938], Loss: 0.0284
-[2025-02-24 19:26:52,372] [INFO] [exp_classification.py:127:train] Epoch [1/10], Step [800/938], Loss: 0.0656
-[2025-02-24 19:26:57,335] [INFO] [exp_classification.py:127:train] Epoch [2/10], Step [400/938], Loss: 0.0309
-[2025-02-24 19:27:00,604] [INFO] [exp_classification.py:127:train] Epoch [2/10], Step [800/938], Loss: 0.1443
-[2025-02-24 19:27:04,972] [INFO] [exp_classification.py:127:train] Epoch [3/10], Step [400/938], Loss: 0.0602
-[2025-02-24 19:27:08,185] [INFO] [exp_classification.py:127:train] Epoch [3/10], Step [800/938], Loss: 0.0714
-[2025-02-24 19:27:12,630] [INFO] [exp_classification.py:127:train] Epoch [4/10], Step [400/938], Loss: 0.0679
-[2025-02-24 19:27:15,924] [INFO] [exp_classification.py:127:train] Epoch [4/10], Step [800/938], Loss: 0.0014
-[2025-02-24 19:27:20,281] [INFO] [exp_classification.py:127:train] Epoch [5/10], Step [400/938], Loss: 0.1175
-[2025-02-24 19:27:23,738] [INFO] [exp_classification.py:127:train] Epoch [5/10], Step [800/938], Loss: 0.0503
-[2025-02-24 19:27:28,522] [INFO] [exp_classification.py:127:train] Epoch [6/10], Step [400/938], Loss: 0.0159
-[2025-02-24 19:27:32,011] [INFO] [exp_classification.py:127:train] Epoch [6/10], Step [800/938], Loss: 0.0027
-[2025-02-24 19:27:36,471] [INFO] [exp_classification.py:127:train] Epoch [7/10], Step [400/938], Loss: 0.0167
-[2025-02-24 19:27:39,692] [INFO] [exp_classification.py:127:train] Epoch [7/10], Step [800/938], Loss: 0.0119
-[2025-02-24 19:27:44,097] [INFO] [exp_classification.py:127:train] Epoch [8/10], Step [400/938], Loss: 0.0120
-[2025-02-24 19:27:47,519] [INFO] [exp_classification.py:127:train] Epoch [8/10], Step [800/938], Loss: 0.0114
-[2025-02-24 19:27:51,841] [INFO] [exp_classification.py:127:train] Epoch [9/10], Step [400/938], Loss: 0.0102
-[2025-02-24 19:27:55,112] [INFO] [exp_classification.py:127:train] Epoch [9/10], Step [800/938], Loss: 0.0077
-[2025-02-24 19:27:59,432] [INFO] [exp_classification.py:127:train] Epoch [10/10], Step [400/938], Loss: 0.0037
-[2025-02-24 19:28:02,630] [INFO] [exp_classification.py:127:train] Epoch [10/10], Step [800/938], Loss: 0.0020
-[2025-02-24 19:30:51,783] [INFO] [MNIST.py:105:main] image: [tensor([[[[-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
+[2025-02-25 09:59:41,269] [INFO] [exp_basic.py:56:_acquire_device] Use GPU: mps
+[2025-02-25 10:01:02,139] [INFO] [exp_basic.py:58:_acquire_device] Use GPU: mps
+[2025-02-25 10:01:02,150] [INFO] [exp_classification.py:82:_build_model] Number of parameters: 0.06M
+[2025-02-25 10:01:59,168] [INFO] [exp_basic.py:58:_acquire_device] Use GPU: mps
+[2025-02-25 10:01:59,169] [INFO] [exp_classification.py:73:_build_model] Number of parameters: 0.06M
+[2025-02-25 10:03:49,372] [INFO] [exp_basic.py:58:_acquire_device] Use GPU: mps
+[2025-02-25 10:03:49,373] [INFO] [exp_classification.py:73:_build_model] Number of parameters: 0.06M
+[2025-02-25 10:03:53,389] [INFO] [exp_classification.py:132:train] Epoch [1/10], Step [400/938], Loss: 0.3540
+[2025-02-25 10:03:56,706] [INFO] [exp_classification.py:132:train] Epoch [1/10], Step [800/938], Loss: 0.4019
+[2025-02-25 10:04:01,194] [INFO] [exp_classification.py:132:train] Epoch [2/10], Step [400/938], Loss: 0.3239
+[2025-02-25 10:04:04,401] [INFO] [exp_classification.py:132:train] Epoch [2/10], Step [800/938], Loss: 0.3160
+[2025-02-25 10:04:08,772] [INFO] [exp_classification.py:132:train] Epoch [3/10], Step [400/938], Loss: 0.3364
+[2025-02-25 10:04:12,029] [INFO] [exp_classification.py:132:train] Epoch [3/10], Step [800/938], Loss: 0.3100
+[2025-02-25 10:04:16,569] [INFO] [exp_classification.py:132:train] Epoch [4/10], Step [400/938], Loss: 0.3269
+[2025-02-25 10:04:20,238] [INFO] [exp_classification.py:132:train] Epoch [4/10], Step [800/938], Loss: 0.5154
+[2025-02-25 10:04:24,702] [INFO] [exp_classification.py:132:train] Epoch [5/10], Step [400/938], Loss: 0.3725
+[2025-02-25 10:04:28,231] [INFO] [exp_classification.py:132:train] Epoch [5/10], Step [800/938], Loss: 0.3279
+[2025-02-25 10:04:32,696] [INFO] [exp_classification.py:132:train] Epoch [6/10], Step [400/938], Loss: 0.2569
+[2025-02-25 10:04:36,158] [INFO] [exp_classification.py:132:train] Epoch [6/10], Step [800/938], Loss: 0.3388
+[2025-02-25 10:04:40,763] [INFO] [exp_classification.py:132:train] Epoch [7/10], Step [400/938], Loss: 0.3815
+[2025-02-25 10:04:44,219] [INFO] [exp_classification.py:132:train] Epoch [7/10], Step [800/938], Loss: 0.2344
+[2025-02-25 10:04:48,991] [INFO] [exp_classification.py:132:train] Epoch [8/10], Step [400/938], Loss: 0.3109
+[2025-02-25 10:04:52,542] [INFO] [exp_classification.py:132:train] Epoch [8/10], Step [800/938], Loss: 0.3363
+[2025-02-25 10:04:57,047] [INFO] [exp_classification.py:132:train] Epoch [9/10], Step [400/938], Loss: 0.3229
+[2025-02-25 10:05:00,295] [INFO] [exp_classification.py:132:train] Epoch [9/10], Step [800/938], Loss: 0.3199
+[2025-02-25 10:05:04,682] [INFO] [exp_classification.py:132:train] Epoch [10/10], Step [400/938], Loss: 0.3681
+[2025-02-25 10:05:08,006] [INFO] [exp_classification.py:132:train] Epoch [10/10], Step [800/938], Loss: 0.3770
+[2025-02-25 10:05:09,974] [INFO] [exp_classification.py:145:valid] Accuracy of the network on the 10000 test images: 95.04 %
+[2025-02-25 10:56:07,369] [INFO] [exp_basic.py:58:_acquire_device] Use GPU: mps
+[2025-02-25 10:56:07,381] [INFO] [exp_classification.py:73:_build_model] Number of parameters: 0.06M
+[2025-02-25 10:56:11,432] [INFO] [exp_classification.py:133:train] Epoch [1/10], Step [400/938], Train Loss: 0.4192
+[2025-02-25 10:56:15,054] [INFO] [exp_classification.py:133:train] Epoch [1/10], Step [800/938], Train Loss: 0.3137
+[2025-02-25 10:56:19,820] [INFO] [exp_classification.py:133:train] Epoch [2/10], Step [400/938], Train Loss: 0.4429
+[2025-02-25 10:56:23,335] [INFO] [exp_classification.py:133:train] Epoch [2/10], Step [800/938], Train Loss: 0.2525
+[2025-02-25 10:56:27,940] [INFO] [exp_classification.py:133:train] Epoch [3/10], Step [400/938], Train Loss: 0.4275
+[2025-02-25 10:56:31,492] [INFO] [exp_classification.py:133:train] Epoch [3/10], Step [800/938], Train Loss: 0.2524
+[2025-02-25 10:56:36,579] [INFO] [exp_classification.py:133:train] Epoch [4/10], Step [400/938], Train Loss: 0.3433
+[2025-02-25 10:56:40,265] [INFO] [exp_classification.py:133:train] Epoch [4/10], Step [800/938], Train Loss: 0.3660
+[2025-02-25 10:56:44,898] [INFO] [exp_classification.py:133:train] Epoch [5/10], Step [400/938], Train Loss: 0.3183
+[2025-02-25 10:56:48,293] [INFO] [exp_classification.py:133:train] Epoch [5/10], Step [800/938], Train Loss: 0.2439
+[2025-02-25 10:56:53,062] [INFO] [exp_classification.py:133:train] Epoch [6/10], Step [400/938], Train Loss: 0.3653
+[2025-02-25 10:56:56,500] [INFO] [exp_classification.py:133:train] Epoch [6/10], Step [800/938], Train Loss: 0.3028
+[2025-02-25 10:57:01,137] [INFO] [exp_classification.py:133:train] Epoch [7/10], Step [400/938], Train Loss: 0.3599
+[2025-02-25 10:57:04,607] [INFO] [exp_classification.py:133:train] Epoch [7/10], Step [800/938], Train Loss: 0.3482
+[2025-02-25 10:57:09,207] [INFO] [exp_classification.py:133:train] Epoch [8/10], Step [400/938], Train Loss: 0.2947
+[2025-02-25 10:57:12,557] [INFO] [exp_classification.py:133:train] Epoch [8/10], Step [800/938], Train Loss: 0.3474
+[2025-02-25 10:57:17,188] [INFO] [exp_classification.py:133:train] Epoch [9/10], Step [400/938], Train Loss: 0.3029
+[2025-02-25 10:57:20,835] [INFO] [exp_classification.py:133:train] Epoch [9/10], Step [800/938], Train Loss: 0.4404
+[2025-02-25 10:57:25,452] [INFO] [exp_classification.py:133:train] Epoch [10/10], Step [400/938], Train Loss: 0.4457
+[2025-02-25 10:57:28,722] [INFO] [exp_classification.py:133:train] Epoch [10/10], Step [800/938], Train Loss: 0.3718
+[2025-02-25 10:57:30,674] [INFO] [exp_classification.py:168:test] Accuracy of the network on the 157 test images: 94.98 %.
+[2025-02-25 11:11:17,937] [INFO] [CIFAR10.py:184:main] images: 
+tensor([[[[ 2.3978,  2.3978,  2.3978,  ...,  1.5448,  1.5448,  1.5448],
+          [ 2.3978,  2.3978,  2.3978,  ...,  1.5448,  1.5448,  1.5448],
+          [ 2.3978,  2.3978,  2.3978,  ...,  1.5448,  1.5448,  1.5448],
           ...,
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242]]],
+          [ 1.5642,  1.5642,  1.5642,  ..., -0.1029, -0.1029, -0.1029],
+          [ 1.5642,  1.5642,  1.5642,  ..., -0.1029, -0.1029, -0.1029],
+          [ 1.5642,  1.5642,  1.5642,  ..., -0.1029, -0.1029, -0.1029]],
 
-
-        [[[-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
+         [[ 2.4788,  2.4788,  2.4788,  ...,  1.6134,  1.6134,  1.6134],
+          [ 2.4788,  2.4788,  2.4788,  ...,  1.6134,  1.6134,  1.6134],
+          [ 2.4788,  2.4788,  2.4788,  ...,  1.6134,  1.6134,  1.6134],
           ...,
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242]]],
+          [ 1.6331,  1.6331,  1.6331,  ..., -0.0582, -0.0582, -0.0582],
+          [ 1.6331,  1.6331,  1.6331,  ..., -0.0582, -0.0582, -0.0582],
+          [ 1.6331,  1.6331,  1.6331,  ..., -0.0582, -0.0582, -0.0582]],
 
-
-        [[[-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
+         [[ 2.6367,  2.6367,  2.6367,  ...,  1.7782,  1.7782,  1.7782],
+          [ 2.6367,  2.6367,  2.6367,  ...,  1.7782,  1.7782,  1.7782],
+          [ 2.6367,  2.6367,  2.6367,  ...,  1.7782,  1.7782,  1.7782],
           ...,
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242]]],
+          [ 1.7977,  1.7977,  1.7977,  ...,  0.1198,  0.1198,  0.1198],
+          [ 1.7977,  1.7977,  1.7977,  ...,  0.1198,  0.1198,  0.1198],
+          [ 1.7977,  1.7977,  1.7977,  ...,  0.1198,  0.1198,  0.1198]]],
+
+
+        [[[ 0.5756,  0.5756,  0.5756,  ..., -0.3936, -0.3936, -0.3936],
+          [ 0.5756,  0.5756,  0.5756,  ..., -0.3936, -0.3936, -0.3936],
+          [ 0.5756,  0.5756,  0.5756,  ..., -0.3936, -0.3936, -0.3936],
+          ...,
+          [ 0.2848,  0.2848,  0.2848,  ...,  0.2267,  0.2267,  0.2267],
+          [ 0.2848,  0.2848,  0.2848,  ...,  0.2267,  0.2267,  0.2267],
+          [ 0.2848,  0.2848,  0.2848,  ...,  0.2267,  0.2267,  0.2267]],
+
+         [[ 0.7481,  0.7481,  0.7481,  ...,  0.1188,  0.1188,  0.1188],
+          [ 0.7481,  0.7481,  0.7481,  ...,  0.1188,  0.1188,  0.1188],
+          [ 0.7481,  0.7481,  0.7481,  ...,  0.1188,  0.1188,  0.1188],
+          ...,
+          [ 0.2958,  0.2958,  0.2958,  ...,  0.1974,  0.1974,  0.1974],
+          [ 0.2958,  0.2958,  0.2958,  ...,  0.1974,  0.1974,  0.1974],
+          [ 0.2958,  0.2958,  0.2958,  ...,  0.1974,  0.1974,  0.1974]],
+
+         [[ 1.5441,  1.5441,  1.5441,  ...,  1.1539,  1.1539,  1.1539],
+          [ 1.5441,  1.5441,  1.5441,  ...,  1.1539,  1.1539,  1.1539],
+          [ 1.5441,  1.5441,  1.5441,  ...,  1.1539,  1.1539,  1.1539],
+          ...,
+          [ 0.2564,  0.2564,  0.2564,  ...,  0.3149,  0.3149,  0.3149],
+          [ 0.2564,  0.2564,  0.2564,  ...,  0.3149,  0.3149,  0.3149],
+          [ 0.2564,  0.2564,  0.2564,  ...,  0.3149,  0.3149,  0.3149]]],
+
+
+        [[[-0.6844, -0.6844, -0.6844,  ..., -0.2192, -0.2192, -0.2192],
+          [-0.6844, -0.6844, -0.6844,  ..., -0.2192, -0.2192, -0.2192],
+          [-0.6844, -0.6844, -0.6844,  ..., -0.2192, -0.2192, -0.2192],
+          ...,
+          [ 0.7694,  0.7694,  0.7694,  ...,  0.6338,  0.6338,  0.6338],
+          [ 0.7694,  0.7694,  0.7694,  ...,  0.6338,  0.6338,  0.6338],
+          [ 0.7694,  0.7694,  0.7694,  ...,  0.6338,  0.6338,  0.6338]],
+
+         [[-0.6679, -0.6679, -0.6679,  ..., -0.2156, -0.2156, -0.2156],
+          [-0.6679, -0.6679, -0.6679,  ..., -0.2156, -0.2156, -0.2156],
+          [-0.6679, -0.6679, -0.6679,  ..., -0.2156, -0.2156, -0.2156],
+          ...,
+          [ 0.7874,  0.7874,  0.7874,  ...,  0.6498,  0.6498,  0.6498],
+          [ 0.7874,  0.7874,  0.7874,  ...,  0.6498,  0.6498,  0.6498],
+          [ 0.7874,  0.7874,  0.7874,  ...,  0.6498,  0.6498,  0.6498]],
+
+         [[-0.5630, -0.5630, -0.5630,  ..., -0.0753, -0.0753, -0.0753],
+          [-0.5630, -0.5630, -0.5630,  ..., -0.0753, -0.0753, -0.0753],
+          [-0.5630, -0.5630, -0.5630,  ..., -0.0753, -0.0753, -0.0753],
+          ...,
+          [ 1.0173,  1.0173,  1.0173,  ...,  0.8807,  0.8807,  0.8807],
+          [ 1.0173,  1.0173,  1.0173,  ...,  0.8807,  0.8807,  0.8807],
+          [ 1.0173,  1.0173,  1.0173,  ...,  0.8807,  0.8807,  0.8807]]],
 
 
         ...,
 
 
-        [[[-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
+        [[[ 2.2621,  2.2621,  2.2621,  ...,  2.2815,  2.2815,  2.2815],
+          [ 2.2621,  2.2621,  2.2621,  ...,  2.2815,  2.2815,  2.2815],
+          [ 2.2621,  2.2621,  2.2621,  ...,  2.2815,  2.2815,  2.2815],
           ...,
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242]]],
+          [ 2.4172,  2.4172,  2.4172,  ...,  2.4365,  2.4365,  2.4365],
+          [ 2.4172,  2.4172,  2.4172,  ...,  2.4365,  2.4365,  2.4365],
+          [ 2.4172,  2.4172,  2.4172,  ...,  2.4365,  2.4365,  2.4365]],
 
-
-        [[[-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
+         [[ 2.4001,  2.4001,  2.4001,  ...,  2.3411,  2.3411,  2.3411],
+          [ 2.4001,  2.4001,  2.4001,  ...,  2.3411,  2.3411,  2.3411],
+          [ 2.4001,  2.4001,  2.4001,  ...,  2.3411,  2.3411,  2.3411],
           ...,
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242]]],
+          [ 2.4001,  2.4001,  2.4001,  ...,  2.3608,  2.3608,  2.3608],
+          [ 2.4001,  2.4001,  2.4001,  ...,  2.3608,  2.3608,  2.3608],
+          [ 2.4001,  2.4001,  2.4001,  ...,  2.3608,  2.3608,  2.3608]],
 
-
-        [[[-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
+         [[ 2.5391,  2.5391,  2.5391,  ...,  2.5586,  2.5586,  2.5586],
+          [ 2.5391,  2.5391,  2.5391,  ...,  2.5586,  2.5586,  2.5586],
+          [ 2.5391,  2.5391,  2.5391,  ...,  2.5586,  2.5586,  2.5586],
           ...,
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
-          [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242]]]]), tensor([4, 0, 0, 7, 1, 2, 0, 8, 1, 0, 7, 2, 4, 2, 3, 7, 1, 4, 7, 2, 7, 4, 3, 8,
-        0, 4, 6, 0, 0, 6, 9, 7, 0, 7, 2, 2, 2, 8, 8, 9, 9, 1, 9, 8, 4, 0, 6, 6,
-        2, 8, 4, 6, 5, 7, 6, 0, 2, 6, 0, 0, 0, 7, 3, 7])]
-[2025-02-24 19:31:06,226] [INFO] [MNIST.py:105:main] image: 2
-[2025-02-24 19:32:20,356] [INFO] [MNIST.py:105:main] image: 
+          [ 2.6172,  2.6172,  2.6172,  ...,  2.5781,  2.5781,  2.5781],
+          [ 2.6172,  2.6172,  2.6172,  ...,  2.5781,  2.5781,  2.5781],
+          [ 2.6172,  2.6172,  2.6172,  ...,  2.5781,  2.5781,  2.5781]]],
+
+
+        [[[-1.6149, -1.6149, -1.6149,  ..., -1.1884, -1.1884, -1.1884],
+          [-1.6149, -1.6149, -1.6149,  ..., -1.1884, -1.1884, -1.1884],
+          [-1.6149, -1.6149, -1.6149,  ..., -1.1884, -1.1884, -1.1884],
+          ...,
+          [-1.9251, -1.9251, -1.9251,  ..., -1.2272, -1.2272, -1.2272],
+          [-1.9251, -1.9251, -1.9251,  ..., -1.2272, -1.2272, -1.2272],
+          [-1.9251, -1.9251, -1.9251,  ..., -1.2272, -1.2272, -1.2272]],
+
+         [[-1.0022, -1.0022, -1.0022,  ..., -0.8449, -0.8449, -0.8449],
+          [-1.0022, -1.0022, -1.0022,  ..., -0.8449, -0.8449, -0.8449],
+          [-1.0022, -1.0022, -1.0022,  ..., -0.8449, -0.8449, -0.8449],
+          ...,
+          [-1.6512, -1.6512, -1.6512,  ..., -0.8842, -0.8842, -0.8842],
+          [-1.6512, -1.6512, -1.6512,  ..., -0.8842, -0.8842, -0.8842],
+          [-1.6512, -1.6512, -1.6512,  ..., -0.8842, -0.8842, -0.8842]],
+
+         [[-1.7531, -1.7531, -1.7531,  ..., -0.8752, -0.8752, -0.8752],
+          [-1.7531, -1.7531, -1.7531,  ..., -0.8752, -0.8752, -0.8752],
+          [-1.7531, -1.7531, -1.7531,  ..., -0.8752, -0.8752, -0.8752],
+          ...,
+          [-1.3434, -1.3434, -1.3434,  ..., -0.6215, -0.6215, -0.6215],
+          [-1.3434, -1.3434, -1.3434,  ..., -0.6215, -0.6215, -0.6215],
+          [-1.3434, -1.3434, -1.3434,  ..., -0.6215, -0.6215, -0.6215]]],
+
+
+        [[[ 0.5756,  0.5756,  0.5756,  ..., -0.7038, -0.7038, -0.7038],
+          [ 0.5756,  0.5756,  0.5756,  ..., -0.7038, -0.7038, -0.7038],
+          [ 0.5756,  0.5756,  0.5756,  ..., -0.7038, -0.7038, -0.7038],
+          ...,
+          [ 0.0328,  0.0328,  0.0328,  ...,  1.3898,  1.3898,  1.3898],
+          [ 0.0328,  0.0328,  0.0328,  ...,  1.3898,  1.3898,  1.3898],
+          [ 0.0328,  0.0328,  0.0328,  ...,  1.3898,  1.3898,  1.3898]],
+
+         [[ 0.7284,  0.7284,  0.7284,  ..., -0.5302, -0.5302, -0.5302],
+          [ 0.7284,  0.7284,  0.7284,  ..., -0.5302, -0.5302, -0.5302],
+          [ 0.7284,  0.7284,  0.7284,  ..., -0.5302, -0.5302, -0.5302],
+          ...,
+          [-0.0189, -0.0189, -0.0189,  ...,  1.6331,  1.6331,  1.6331],
+          [-0.0189, -0.0189, -0.0189,  ...,  1.6331,  1.6331,  1.6331],
+          [-0.0189, -0.0189, -0.0189,  ...,  1.6331,  1.6331,  1.6331]],
+
+         [[ 1.0368,  1.0368,  1.0368,  ..., -0.4850, -0.4850, -0.4850],
+          [ 1.0368,  1.0368,  1.0368,  ..., -0.4850, -0.4850, -0.4850],
+          [ 1.0368,  1.0368,  1.0368,  ..., -0.4850, -0.4850, -0.4850],
+          ...,
+          [ 0.0613,  0.0613,  0.0613,  ...,  0.6076,  0.6076,  0.6076],
+          [ 0.0613,  0.0613,  0.0613,  ...,  0.6076,  0.6076,  0.6076],
+          [ 0.0613,  0.0613,  0.0613,  ...,  0.6076,  0.6076,  0.6076]]]]) 
+images.shapetorch.Size([64, 3, 227, 227])
+[2025-02-25 11:11:17,938] [INFO] [CIFAR10.py:185:main] labels: 
+tensor([0, 1, 1, 5, 1, 1, 0, 8, 5, 1, 0, 9, 9, 8, 2, 7, 6, 5, 2, 6, 0, 3, 2, 1,
+        5, 7, 4, 5, 1, 1, 5, 7, 0, 3, 3, 2, 1, 8, 8, 9, 3, 2, 7, 5, 1, 8, 2, 2,
+        6, 5, 2, 7, 9, 0, 8, 8, 1, 5, 9, 2, 7, 5, 4, 4]) 
+labels.shapetorch.Size([64])
+[2025-02-25 11:12:11,829] [INFO] [MNIST.py:99:main] image: 
 tensor([[[[-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
           [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
           [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
@@ -215,1004 +264,508 @@ tensor([[[[-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
           [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242],
           [-0.4242, -0.4242, -0.4242,  ..., -0.4242, -0.4242, -0.4242]]]]) 
 image.shapetorch.Size([64, 1, 32, 32])
-[2025-02-24 19:32:20,356] [INFO] [MNIST.py:106:main] labels: 
-tensor([0, 1, 4, 2, 6, 3, 8, 9, 3, 3, 5, 0, 1, 0, 3, 4, 8, 0, 6, 9, 7, 8, 7, 1,
-        2, 2, 3, 3, 4, 8, 2, 9, 6, 3, 0, 7, 7, 6, 7, 9, 8, 2, 5, 6, 6, 9, 9, 6,
-        8, 3, 1, 9, 3, 3, 6, 5, 5, 7, 8, 1, 2, 0, 9, 3]) 
+[2025-02-25 11:12:11,830] [INFO] [MNIST.py:100:main] labels: 
+tensor([5, 9, 8, 3, 7, 8, 7, 1, 1, 7, 5, 4, 6, 9, 8, 9, 6, 5, 7, 7, 1, 0, 1, 3,
+        4, 1, 5, 2, 8, 8, 8, 7, 5, 8, 6, 9, 3, 9, 0, 6, 7, 7, 0, 0, 1, 3, 5, 0,
+        4, 9, 0, 2, 5, 3, 0, 4, 5, 5, 6, 4, 7, 7, 0, 3]) 
 labels.shapetorch.Size([64, 1, 32, 32])
-[2025-02-24 19:33:31,600] [INFO] [LeNet5.py:94:main] Model(
-  (layer1): Sequential(
-    (0): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
-    (1): BatchNorm2d(6, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer2): Sequential(
-    (0): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
-    (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (fc1): Linear(in_features=400, out_features=120, bias=True)
-  (relu): ReLU()
-  (fc2): Linear(in_features=120, out_features=84, bias=True)
-  (relu1): ReLU()
-  (fc3): Linear(in_features=84, out_features=10, bias=True)
-)
-[2025-02-24 19:50:53,273] [INFO] [exp_basic.py:56:_acquire_device] Use GPU: mps
-[2025-02-24 19:50:53,286] [INFO] [exp_classification.py:81:_build_model] Number of parameters: 0.06M
-[2025-02-24 19:51:28,645] [INFO] [exp_basic.py:56:_acquire_device] Use GPU: mps
-[2025-02-24 19:51:28,646] [INFO] [exp_classification.py:81:_build_model] Number of parameters: 0.06M
-[2025-02-24 19:51:32,299] [INFO] [exp_classification.py:126:train] Epoch [1/10], Step [400/938], Loss: 0.1283
-[2025-02-24 19:51:35,424] [INFO] [exp_classification.py:126:train] Epoch [1/10], Step [800/938], Loss: 0.0655
-[2025-02-24 19:51:39,802] [INFO] [exp_classification.py:126:train] Epoch [2/10], Step [400/938], Loss: 0.0232
-[2025-02-24 19:51:42,963] [INFO] [exp_classification.py:126:train] Epoch [2/10], Step [800/938], Loss: 0.0318
-[2025-02-24 19:51:47,312] [INFO] [exp_classification.py:126:train] Epoch [3/10], Step [400/938], Loss: 0.0086
-[2025-02-24 19:51:50,502] [INFO] [exp_classification.py:126:train] Epoch [3/10], Step [800/938], Loss: 0.0527
-[2025-02-24 19:51:54,977] [INFO] [exp_classification.py:126:train] Epoch [4/10], Step [400/938], Loss: 0.0331
-[2025-02-24 19:51:58,177] [INFO] [exp_classification.py:126:train] Epoch [4/10], Step [800/938], Loss: 0.0062
-[2025-02-24 19:52:02,456] [INFO] [exp_classification.py:126:train] Epoch [5/10], Step [400/938], Loss: 0.0300
-[2025-02-24 19:52:05,639] [INFO] [exp_classification.py:126:train] Epoch [5/10], Step [800/938], Loss: 0.0080
-[2025-02-24 19:52:09,943] [INFO] [exp_classification.py:126:train] Epoch [6/10], Step [400/938], Loss: 0.0033
-[2025-02-24 19:52:13,121] [INFO] [exp_classification.py:126:train] Epoch [6/10], Step [800/938], Loss: 0.0181
-[2025-02-24 19:52:17,425] [INFO] [exp_classification.py:126:train] Epoch [7/10], Step [400/938], Loss: 0.0483
-[2025-02-24 19:52:20,625] [INFO] [exp_classification.py:126:train] Epoch [7/10], Step [800/938], Loss: 0.0323
-[2025-02-24 19:52:24,903] [INFO] [exp_classification.py:126:train] Epoch [8/10], Step [400/938], Loss: 0.0434
-[2025-02-24 19:52:28,111] [INFO] [exp_classification.py:126:train] Epoch [8/10], Step [800/938], Loss: 0.0056
-[2025-02-24 19:52:32,415] [INFO] [exp_classification.py:126:train] Epoch [9/10], Step [400/938], Loss: 0.0669
-[2025-02-24 19:52:35,624] [INFO] [exp_classification.py:126:train] Epoch [9/10], Step [800/938], Loss: 0.0018
-[2025-02-24 19:52:39,930] [INFO] [exp_classification.py:126:train] Epoch [10/10], Step [400/938], Loss: 0.0038
-[2025-02-24 19:52:43,122] [INFO] [exp_classification.py:126:train] Epoch [10/10], Step [800/938], Loss: 0.0279
-[2025-02-24 19:52:45,535] [INFO] [exp_classification.py:139:valid] Accuracy of the network on the 10000 test images: 99.18 %
-[2025-02-24 21:41:41,499] [INFO] [AlexNet.py:103:main] model: AlexNet(
-  (layer1): Sequential(
-    (0): Conv2d(3, 96, kernel_size=(11, 11), stride=(4, 4))
-    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer2): Sequential(
-    (0): Conv2d(96, 256, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
-    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer3): Sequential(
-    (0): Conv2d(256, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-  )
-  (layer4): Sequential(
-    (0): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-  )
-  (layer5): Sequential(
-    (0): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (fc1): Sequential(
-    (0): Dropout(p=0.5, inplace=False)
-    (1): Linear(in_features=9216, out_features=4096, bias=True)
-    (2): ReLU()
-  )
-  (fc2): Sequential(
-    (0): Dropout(p=0.5, inplace=False)
-    (1): Linear(in_features=4096, out_features=4096, bias=True)
-    (2): ReLU()
-  )
-  (fc3): Sequential(
-    (0): Linear(in_features=4096, out_features=10, bias=True)
-  )
-)
-[2025-02-24 21:42:26,429] [INFO] [AlexNet.py:103:main] model: AlexNet(
-  (layer1): Sequential(
-    (0): Conv2d(3, 96, kernel_size=(11, 11), stride=(4, 4))
-    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer2): Sequential(
-    (0): Conv2d(96, 256, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
-    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer3): Sequential(
-    (0): Conv2d(256, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-  )
-  (layer4): Sequential(
-    (0): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-  )
-  (layer5): Sequential(
-    (0): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (fc1): Sequential(
-    (0): Dropout(p=0.5, inplace=False)
-    (1): Linear(in_features=9216, out_features=4096, bias=True)
-    (2): ReLU()
-  )
-  (fc2): Sequential(
-    (0): Dropout(p=0.5, inplace=False)
-    (1): Linear(in_features=4096, out_features=4096, bias=True)
-    (2): ReLU()
-  )
-  (fc3): Sequential(
-    (0): Linear(in_features=4096, out_features=10, bias=True)
-  )
-)
-[2025-02-24 21:45:19,052] [INFO] [AlexNet.py:103:main] model: 
-AlexNet(
-  (layer1): Sequential(
-    (0): Conv2d(3, 96, kernel_size=(11, 11), stride=(4, 4))
-    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer2): Sequential(
-    (0): Conv2d(96, 256, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
-    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer3): Sequential(
-    (0): Conv2d(256, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-  )
-  (layer4): Sequential(
-    (0): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-  )
-  (layer5): Sequential(
-    (0): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (fc1): Sequential(
-    (0): Dropout(p=0.5, inplace=False)
-    (1): Linear(in_features=9216, out_features=4096, bias=True)
-    (2): ReLU()
-  )
-  (fc2): Sequential(
-    (0): Dropout(p=0.5, inplace=False)
-    (1): Linear(in_features=4096, out_features=4096, bias=True)
-    (2): ReLU()
-  )
-  (fc3): Sequential(
-    (0): Linear(in_features=4096, out_features=10, bias=True)
-  )
-)
-[2025-02-24 23:28:01,131] [INFO] [AlexNet.py:107:main] model: 
-AlexNet(
-  (layer1): Sequential(
-    (0): Conv2d(3, 96, kernel_size=(11, 11), stride=(4, 4))
-    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer2): Sequential(
-    (0): Conv2d(96, 256, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
-    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (layer3): Sequential(
-    (0): Conv2d(256, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-  )
-  (layer4): Sequential(
-    (0): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-  )
-  (layer5): Sequential(
-    (0): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU()
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (fc1): Sequential(
-    (0): Dropout(p=0.5, inplace=False)
-    (1): Linear(in_features=9216, out_features=4096, bias=True)
-    (2): ReLU()
-  )
-  (fc2): Sequential(
-    (0): Dropout(p=0.5, inplace=False)
-    (1): Linear(in_features=4096, out_features=4096, bias=True)
-    (2): ReLU()
-  )
-  (fc3): Sequential(
-    (0): Linear(in_features=4096, out_features=10, bias=True)
-  )
-)
-[2025-02-24 23:30:21,208] [INFO] [CIFAR10.py:205:main] images: 
-tensor([[[[-1.2466, -1.2466, -1.2466,  ..., -1.3241, -1.3241, -1.3241],
-          [-1.2466, -1.2466, -1.2466,  ..., -1.3241, -1.3241, -1.3241],
-          [-1.2466, -1.2466, -1.2466,  ..., -1.3241, -1.3241, -1.3241],
+[2025-02-25 11:48:49,052] [INFO] [CIFAR10.py:186:main] images: 
+tensor([[[[-1.9057e+00, -1.9057e+00, -1.9057e+00,  ..., -2.1919e-01,
+           -2.1919e-01, -2.1919e-01],
+          [-1.9057e+00, -1.9057e+00, -1.9057e+00,  ..., -2.1919e-01,
+           -2.1919e-01, -2.1919e-01],
+          [-1.9057e+00, -1.9057e+00, -1.9057e+00,  ..., -2.1919e-01,
+           -2.1919e-01, -2.1919e-01],
           ...,
-          [-0.4130, -0.4130, -0.4130,  ..., -0.7232, -0.7232, -0.7232],
-          [-0.4130, -0.4130, -0.4130,  ..., -0.7232, -0.7232, -0.7232],
-          [-0.4130, -0.4130, -0.4130,  ..., -0.7232, -0.7232, -0.7232]],
+          [ 1.5255e+00,  1.5255e+00,  1.5255e+00,  ...,  1.5061e+00,
+            1.5061e+00,  1.5061e+00],
+          [ 1.5255e+00,  1.5255e+00,  1.5255e+00,  ...,  1.5061e+00,
+            1.5061e+00,  1.5061e+00],
+          [ 1.5255e+00,  1.5255e+00,  1.5255e+00,  ...,  1.5061e+00,
+            1.5061e+00,  1.5061e+00]],
 
-         [[-1.1989, -1.1989, -1.1989,  ..., -1.2579, -1.2579, -1.2579],
-          [-1.1989, -1.1989, -1.1989,  ..., -1.2579, -1.2579, -1.2579],
-          [-1.1989, -1.1989, -1.1989,  ..., -1.2579, -1.2579, -1.2579],
+         [[-1.7299e+00, -1.7299e+00, -1.7299e+00,  ...,  7.6703e-04,
+            7.6703e-04,  7.6703e-04],
+          [-1.7299e+00, -1.7299e+00, -1.7299e+00,  ...,  7.6703e-04,
+            7.6703e-04,  7.6703e-04],
+          [-1.7299e+00, -1.7299e+00, -1.7299e+00,  ...,  7.6703e-04,
+            7.6703e-04,  7.6703e-04],
           ...,
-          [-0.5696, -0.5696, -0.5696,  ..., -0.7662, -0.7662, -0.7662],
-          [-0.5696, -0.5696, -0.5696,  ..., -0.7662, -0.7662, -0.7662],
-          [-0.5696, -0.5696, -0.5696,  ..., -0.7662, -0.7662, -0.7662]],
+          [ 1.5348e+00,  1.5348e+00,  1.5348e+00,  ...,  1.5741e+00,
+            1.5741e+00,  1.5741e+00],
+          [ 1.5348e+00,  1.5348e+00,  1.5348e+00,  ...,  1.5741e+00,
+            1.5741e+00,  1.5741e+00],
+          [ 1.5348e+00,  1.5348e+00,  1.5348e+00,  ...,  1.5741e+00,
+            1.5741e+00,  1.5741e+00]],
 
-         [[-0.4655, -0.4655, -0.4655,  ..., -0.6411, -0.6411, -0.6411],
-          [-0.4655, -0.4655, -0.4655,  ..., -0.6411, -0.6411, -0.6411],
-          [-0.4655, -0.4655, -0.4655,  ..., -0.6411, -0.6411, -0.6411],
+         [[-1.6556e+00, -1.6556e+00, -1.6556e+00,  ..., -8.7518e-01,
+           -8.7518e-01, -8.7518e-01],
+          [-1.6556e+00, -1.6556e+00, -1.6556e+00,  ..., -8.7518e-01,
+           -8.7518e-01, -8.7518e-01],
+          [-1.6556e+00, -1.6556e+00, -1.6556e+00,  ..., -8.7518e-01,
+           -8.7518e-01, -8.7518e-01],
           ...,
-          [-0.0558, -0.0558, -0.0558,  ..., -0.2704, -0.2704, -0.2704],
-          [-0.0558, -0.0558, -0.0558,  ..., -0.2704, -0.2704, -0.2704],
-          [-0.0558, -0.0558, -0.0558,  ..., -0.2704, -0.2704, -0.2704]]],
+          [-9.4771e-02, -9.4771e-02, -9.4771e-02,  ...,  1.0033e-01,
+            1.0033e-01,  1.0033e-01],
+          [-9.4771e-02, -9.4771e-02, -9.4771e-02,  ...,  1.0033e-01,
+            1.0033e-01,  1.0033e-01],
+          [-9.4771e-02, -9.4771e-02, -9.4771e-02,  ...,  1.0033e-01,
+            1.0033e-01,  1.0033e-01]]],
 
 
-        [[[ 0.0134,  0.0134,  0.0134,  ..., -1.0334, -1.0334, -1.0334],
-          [ 0.0134,  0.0134,  0.0134,  ..., -1.0334, -1.0334, -1.0334],
-          [ 0.0134,  0.0134,  0.0134,  ..., -1.0334, -1.0334, -1.0334],
+        [[[ 2.5141e+00,  2.5141e+00,  2.5141e+00,  ...,  2.4559e+00,
+            2.4559e+00,  2.4559e+00],
+          [ 2.5141e+00,  2.5141e+00,  2.5141e+00,  ...,  2.4559e+00,
+            2.4559e+00,  2.4559e+00],
+          [ 2.5141e+00,  2.5141e+00,  2.5141e+00,  ...,  2.4559e+00,
+            2.4559e+00,  2.4559e+00],
           ...,
-          [-0.8201, -0.8201, -0.8201,  ..., -0.1029, -0.1029, -0.1029],
-          [-0.8201, -0.8201, -0.8201,  ..., -0.1029, -0.1029, -0.1029],
-          [-0.8201, -0.8201, -0.8201,  ..., -0.1029, -0.1029, -0.1029]],
+          [-1.4017e+00, -1.4017e+00, -1.4017e+00,  ...,  4.9806e-01,
+            4.9806e-01,  4.9806e-01],
+          [-1.4017e+00, -1.4017e+00, -1.4017e+00,  ...,  4.9806e-01,
+            4.9806e-01,  4.9806e-01],
+          [-1.4017e+00, -1.4017e+00, -1.4017e+00,  ...,  4.9806e-01,
+            4.9806e-01,  4.9806e-01]],
 
-         [[ 0.0794,  0.0794,  0.0794,  ..., -0.8056, -0.8056, -0.8056],
-          [ 0.0794,  0.0794,  0.0794,  ..., -0.8056, -0.8056, -0.8056],
-          [ 0.0794,  0.0794,  0.0794,  ..., -0.8056, -0.8056, -0.8056],
+         [[ 2.5968e+00,  2.5968e+00,  2.5968e+00,  ...,  2.5378e+00,
+            2.5378e+00,  2.5378e+00],
+          [ 2.5968e+00,  2.5968e+00,  2.5968e+00,  ...,  2.5378e+00,
+            2.5378e+00,  2.5378e+00],
+          [ 2.5968e+00,  2.5968e+00,  2.5968e+00,  ...,  2.5378e+00,
+            2.5378e+00,  2.5378e+00],
           ...,
-          [-0.9039, -0.9039, -0.9039,  ..., -0.3336, -0.3336, -0.3336],
-          [-0.9039, -0.9039, -0.9039,  ..., -0.3336, -0.3336, -0.3336],
-          [-0.9039, -0.9039, -0.9039,  ..., -0.3336, -0.3336, -0.3336]],
+          [-1.0809e+00, -1.0809e+00, -1.0809e+00,  ...,  7.4811e-01,
+            7.4811e-01,  7.4811e-01],
+          [-1.0809e+00, -1.0809e+00, -1.0809e+00,  ...,  7.4811e-01,
+            7.4811e-01,  7.4811e-01],
+          [-1.0809e+00, -1.0809e+00, -1.0809e+00,  ...,  7.4811e-01,
+            7.4811e-01,  7.4811e-01]],
 
-         [[ 0.3930,  0.3930,  0.3930,  ..., -0.6020, -0.6020, -0.6020],
-          [ 0.3930,  0.3930,  0.3930,  ..., -0.6020, -0.6020, -0.6020],
-          [ 0.3930,  0.3930,  0.3930,  ..., -0.6020, -0.6020, -0.6020],
+         [[ 2.7537e+00,  2.7537e+00,  2.7537e+00,  ...,  2.6952e+00,
+            2.6952e+00,  2.6952e+00],
+          [ 2.7537e+00,  2.7537e+00,  2.7537e+00,  ...,  2.6952e+00,
+            2.6952e+00,  2.6952e+00],
+          [ 2.7537e+00,  2.7537e+00,  2.7537e+00,  ...,  2.6952e+00,
+            2.6952e+00,  2.6952e+00],
           ...,
-          [-0.6411, -0.6411, -0.6411,  ..., -0.4069, -0.4069, -0.4069],
-          [-0.6411, -0.6411, -0.6411,  ..., -0.4069, -0.4069, -0.4069],
-          [-0.6411, -0.6411, -0.6411,  ..., -0.4069, -0.4069, -0.4069]]],
+          [-9.3371e-01, -9.3371e-01, -9.3371e-01,  ...,  9.5878e-01,
+            9.5878e-01,  9.5878e-01],
+          [-9.3371e-01, -9.3371e-01, -9.3371e-01,  ...,  9.5878e-01,
+            9.5878e-01,  9.5878e-01],
+          [-9.3371e-01, -9.3371e-01, -9.3371e-01,  ...,  9.5878e-01,
+            9.5878e-01,  9.5878e-01]]],
 
 
-        [[[ 1.8938,  1.8938,  1.8938,  ..., -0.1416, -0.1416, -0.1416],
-          [ 1.8938,  1.8938,  1.8938,  ..., -0.1416, -0.1416, -0.1416],
-          [ 1.8938,  1.8938,  1.8938,  ..., -0.1416, -0.1416, -0.1416],
+        [[[ 2.2621e+00,  2.2621e+00,  2.2621e+00,  ...,  2.2427e+00,
+            2.2427e+00,  2.2427e+00],
+          [ 2.2621e+00,  2.2621e+00,  2.2621e+00,  ...,  2.2427e+00,
+            2.2427e+00,  2.2427e+00],
+          [ 2.2621e+00,  2.2621e+00,  2.2621e+00,  ...,  2.2427e+00,
+            2.2427e+00,  2.2427e+00],
           ...,
-          [ 1.7775,  1.7775,  1.7775,  ...,  1.4285,  1.4285,  1.4285],
-          [ 1.7775,  1.7775,  1.7775,  ...,  1.4285,  1.4285,  1.4285],
-          [ 1.7775,  1.7775,  1.7775,  ...,  1.4285,  1.4285,  1.4285]],
+          [ 6.7252e-01,  6.7252e-01,  6.7252e-01,  ...,  7.1129e-01,
+            7.1129e-01,  7.1129e-01],
+          [ 6.7252e-01,  6.7252e-01,  6.7252e-01,  ...,  7.1129e-01,
+            7.1129e-01,  7.1129e-01],
+          [ 6.7252e-01,  6.7252e-01,  6.7252e-01,  ...,  7.1129e-01,
+            7.1129e-01,  7.1129e-01]],
 
-         [[ 1.9675,  1.9675,  1.9675,  ...,  0.9448,  0.9448,  0.9448],
-          [ 1.9675,  1.9675,  1.9675,  ...,  0.9448,  0.9448,  0.9448],
-          [ 1.9675,  1.9675,  1.9675,  ...,  0.9448,  0.9448,  0.9448],
+         [[ 2.3411e+00,  2.3411e+00,  2.3411e+00,  ...,  2.3215e+00,
+            2.3215e+00,  2.3215e+00],
+          [ 2.3411e+00,  2.3411e+00,  2.3411e+00,  ...,  2.3215e+00,
+            2.3215e+00,  2.3215e+00],
+          [ 2.3411e+00,  2.3411e+00,  2.3411e+00,  ...,  2.3215e+00,
+            2.3215e+00,  2.3215e+00],
           ...,
-          [ 2.0068,  2.0068,  2.0068,  ...,  1.8495,  1.8495,  1.8495],
-          [ 2.0068,  2.0068,  2.0068,  ...,  1.8495,  1.8495,  1.8495],
-          [ 2.0068,  2.0068,  2.0068,  ...,  1.8495,  1.8495,  1.8495]],
+          [ 7.8744e-01,  7.8744e-01,  7.8744e-01,  ...,  8.2677e-01,
+            8.2677e-01,  8.2677e-01],
+          [ 7.8744e-01,  7.8744e-01,  7.8744e-01,  ...,  8.2677e-01,
+            8.2677e-01,  8.2677e-01],
+          [ 7.8744e-01,  7.8744e-01,  7.8744e-01,  ...,  8.2677e-01,
+            8.2677e-01,  8.2677e-01]],
 
-         [[ 2.3245,  2.3245,  2.3245,  ..., -0.0558, -0.0558, -0.0558],
-          [ 2.3245,  2.3245,  2.3245,  ..., -0.0558, -0.0558, -0.0558],
-          [ 2.3245,  2.3245,  2.3245,  ..., -0.0558, -0.0558, -0.0558],
+         [[ 2.5001e+00,  2.5001e+00,  2.5001e+00,  ...,  2.4806e+00,
+            2.4806e+00,  2.4806e+00],
+          [ 2.5001e+00,  2.5001e+00,  2.5001e+00,  ...,  2.4806e+00,
+            2.4806e+00,  2.4806e+00],
+          [ 2.5001e+00,  2.5001e+00,  2.5001e+00,  ...,  2.4806e+00,
+            2.4806e+00,  2.4806e+00],
           ...,
-          [ 2.3440,  2.3440,  2.3440,  ...,  1.6026,  1.6026,  1.6026],
-          [ 2.3440,  2.3440,  2.3440,  ...,  1.6026,  1.6026,  1.6026],
-          [ 2.3440,  2.3440,  2.3440,  ...,  1.6026,  1.6026,  1.6026]]],
+          [ 1.1344e+00,  1.1344e+00,  1.1344e+00,  ...,  1.1734e+00,
+            1.1734e+00,  1.1734e+00],
+          [ 1.1344e+00,  1.1344e+00,  1.1344e+00,  ...,  1.1734e+00,
+            1.1734e+00,  1.1734e+00],
+          [ 1.1344e+00,  1.1344e+00,  1.1344e+00,  ...,  1.1734e+00,
+            1.1734e+00,  1.1734e+00]]],
 
 
         ...,
 
 
-        [[[ 1.9325,  1.9325,  1.9325,  ..., -1.6924, -1.6924, -1.6924],
-          [ 1.9325,  1.9325,  1.9325,  ..., -1.6924, -1.6924, -1.6924],
-          [ 1.9325,  1.9325,  1.9325,  ..., -1.6924, -1.6924, -1.6924],
-          ...,
-          [-1.0334, -1.0334, -1.0334,  ...,  0.4011,  0.4011,  0.4011],
-          [-1.0334, -1.0334, -1.0334,  ...,  0.4011,  0.4011,  0.4011],
-          [-1.0334, -1.0334, -1.0334,  ...,  0.4011,  0.4011,  0.4011]],
-
-         [[ 2.0068,  2.0068,  2.0068,  ..., -1.0809, -1.0809, -1.0809],
-          [ 2.0068,  2.0068,  2.0068,  ..., -1.0809, -1.0809, -1.0809],
-          [ 2.0068,  2.0068,  2.0068,  ..., -1.0809, -1.0809, -1.0809],
-          ...,
-          [-1.0612, -1.0612, -1.0612,  ...,  0.1581,  0.1581,  0.1581],
-          [-1.0612, -1.0612, -1.0612,  ...,  0.1581,  0.1581,  0.1581],
-          [-1.0612, -1.0612, -1.0612,  ...,  0.1581,  0.1581,  0.1581]],
-
-         [[ 2.1684,  2.1684,  2.1684,  ..., -1.7922, -1.7922, -1.7922],
-          [ 2.1684,  2.1684,  2.1684,  ..., -1.7922, -1.7922, -1.7922],
-          [ 2.1684,  2.1684,  2.1684,  ..., -1.7922, -1.7922, -1.7922],
-          ...,
-          [-0.9727, -0.9727, -0.9727,  ..., -0.0362, -0.0362, -0.0362],
-          [-0.9727, -0.9727, -0.9727,  ..., -0.0362, -0.0362, -0.0362],
-          [-0.9727, -0.9727, -0.9727,  ..., -0.0362, -0.0362, -0.0362]]],
-
-
-        [[[-1.4017, -1.4017, -1.4017,  ..., -0.6069, -0.6069, -0.6069],
-          [-1.4017, -1.4017, -1.4017,  ..., -0.6069, -0.6069, -0.6069],
-          [-1.4017, -1.4017, -1.4017,  ..., -0.6069, -0.6069, -0.6069],
-          ...,
-          [-0.9752, -0.9752, -0.9752,  ..., -2.2546, -2.2546, -2.2546],
-          [-0.9752, -0.9752, -0.9752,  ..., -2.2546, -2.2546, -2.2546],
-          [-0.9752, -0.9752, -0.9752,  ..., -2.2546, -2.2546, -2.2546]],
-
-         [[-1.0809, -1.0809, -1.0809,  ..., -0.2942, -0.2942, -0.2942],
-          [-1.0809, -1.0809, -1.0809,  ..., -0.2942, -0.2942, -0.2942],
-          [-1.0809, -1.0809, -1.0809,  ..., -0.2942, -0.2942, -0.2942],
-          ...,
-          [-0.4909, -0.4909, -0.4909,  ..., -2.3593, -2.3593, -2.3593],
-          [-0.4909, -0.4909, -0.4909,  ..., -2.3593, -2.3593, -2.3593],
-          [-0.4909, -0.4909, -0.4909,  ..., -2.3593, -2.3593, -2.3593]],
-
-         [[-1.1093, -1.1093, -1.1093,  ..., -0.8362, -0.8362, -0.8362],
-          [-1.1093, -1.1093, -1.1093,  ..., -0.8362, -0.8362, -0.8362],
-          [-1.1093, -1.1093, -1.1093,  ..., -0.8362, -0.8362, -0.8362],
-          ...,
-          [-0.8362, -0.8362, -0.8362,  ..., -2.1824, -2.1824, -2.1824],
-          [-0.8362, -0.8362, -0.8362,  ..., -2.1824, -2.1824, -2.1824],
-          [-0.8362, -0.8362, -0.8362,  ..., -2.1824, -2.1824, -2.1824]]],
-
-
-        [[[ 1.1571,  1.1571,  1.1571,  ...,  0.1104,  0.1104,  0.1104],
-          [ 1.1571,  1.1571,  1.1571,  ...,  0.1104,  0.1104,  0.1104],
-          [ 1.1571,  1.1571,  1.1571,  ...,  0.1104,  0.1104,  0.1104],
-          ...,
-          [ 1.2541,  1.2541,  1.2541,  ...,  1.3316,  1.3316,  1.3316],
-          [ 1.2541,  1.2541,  1.2541,  ...,  1.3316,  1.3316,  1.3316],
-          [ 1.2541,  1.2541,  1.2541,  ...,  1.3316,  1.3316,  1.3316]],
-
-         [[ 1.6134,  1.6134,  1.6134,  ...,  0.8464,  0.8464,  0.8464],
-          [ 1.6134,  1.6134,  1.6134,  ...,  0.8464,  0.8464,  0.8464],
-          [ 1.6134,  1.6134,  1.6134,  ...,  0.8464,  0.8464,  0.8464],
-          ...,
-          [ 1.3971,  1.3971,  1.3971,  ...,  1.5544,  1.5544,  1.5544],
-          [ 1.3971,  1.3971,  1.3971,  ...,  1.5544,  1.5544,  1.5544],
-          [ 1.3971,  1.3971,  1.3971,  ...,  1.5544,  1.5544,  1.5544]],
-
-         [[ 1.7782,  1.7782,  1.7782,  ...,  1.3880,  1.3880,  1.3880],
-          [ 1.7782,  1.7782,  1.7782,  ...,  1.3880,  1.3880,  1.3880],
-          [ 1.7782,  1.7782,  1.7782,  ...,  1.3880,  1.3880,  1.3880],
-          ...,
-          [ 1.5246,  1.5246,  1.5246,  ...,  1.6026,  1.6026,  1.6026],
-          [ 1.5246,  1.5246,  1.5246,  ...,  1.6026,  1.6026,  1.6026],
-          [ 1.5246,  1.5246,  1.5246,  ...,  1.6026,  1.6026,  1.6026]]]]) 
-images.shapetensor([[[[-1.2466, -1.2466, -1.2466,  ..., -1.3241, -1.3241, -1.3241],
-          [-1.2466, -1.2466, -1.2466,  ..., -1.3241, -1.3241, -1.3241],
-          [-1.2466, -1.2466, -1.2466,  ..., -1.3241, -1.3241, -1.3241],
-          ...,
-          [-0.4130, -0.4130, -0.4130,  ..., -0.7232, -0.7232, -0.7232],
-          [-0.4130, -0.4130, -0.4130,  ..., -0.7232, -0.7232, -0.7232],
-          [-0.4130, -0.4130, -0.4130,  ..., -0.7232, -0.7232, -0.7232]],
-
-         [[-1.1989, -1.1989, -1.1989,  ..., -1.2579, -1.2579, -1.2579],
-          [-1.1989, -1.1989, -1.1989,  ..., -1.2579, -1.2579, -1.2579],
-          [-1.1989, -1.1989, -1.1989,  ..., -1.2579, -1.2579, -1.2579],
-          ...,
-          [-0.5696, -0.5696, -0.5696,  ..., -0.7662, -0.7662, -0.7662],
-          [-0.5696, -0.5696, -0.5696,  ..., -0.7662, -0.7662, -0.7662],
-          [-0.5696, -0.5696, -0.5696,  ..., -0.7662, -0.7662, -0.7662]],
-
-         [[-0.4655, -0.4655, -0.4655,  ..., -0.6411, -0.6411, -0.6411],
-          [-0.4655, -0.4655, -0.4655,  ..., -0.6411, -0.6411, -0.6411],
-          [-0.4655, -0.4655, -0.4655,  ..., -0.6411, -0.6411, -0.6411],
-          ...,
-          [-0.0558, -0.0558, -0.0558,  ..., -0.2704, -0.2704, -0.2704],
-          [-0.0558, -0.0558, -0.0558,  ..., -0.2704, -0.2704, -0.2704],
-          [-0.0558, -0.0558, -0.0558,  ..., -0.2704, -0.2704, -0.2704]]],
-
-
-        [[[ 0.0134,  0.0134,  0.0134,  ..., -1.0334, -1.0334, -1.0334],
-          [ 0.0134,  0.0134,  0.0134,  ..., -1.0334, -1.0334, -1.0334],
-          [ 0.0134,  0.0134,  0.0134,  ..., -1.0334, -1.0334, -1.0334],
-          ...,
-          [-0.8201, -0.8201, -0.8201,  ..., -0.1029, -0.1029, -0.1029],
-          [-0.8201, -0.8201, -0.8201,  ..., -0.1029, -0.1029, -0.1029],
-          [-0.8201, -0.8201, -0.8201,  ..., -0.1029, -0.1029, -0.1029]],
-
-         [[ 0.0794,  0.0794,  0.0794,  ..., -0.8056, -0.8056, -0.8056],
-          [ 0.0794,  0.0794,  0.0794,  ..., -0.8056, -0.8056, -0.8056],
-          [ 0.0794,  0.0794,  0.0794,  ..., -0.8056, -0.8056, -0.8056],
-          ...,
-          [-0.9039, -0.9039, -0.9039,  ..., -0.3336, -0.3336, -0.3336],
-          [-0.9039, -0.9039, -0.9039,  ..., -0.3336, -0.3336, -0.3336],
-          [-0.9039, -0.9039, -0.9039,  ..., -0.3336, -0.3336, -0.3336]],
-
-         [[ 0.3930,  0.3930,  0.3930,  ..., -0.6020, -0.6020, -0.6020],
-          [ 0.3930,  0.3930,  0.3930,  ..., -0.6020, -0.6020, -0.6020],
-          [ 0.3930,  0.3930,  0.3930,  ..., -0.6020, -0.6020, -0.6020],
-          ...,
-          [-0.6411, -0.6411, -0.6411,  ..., -0.4069, -0.4069, -0.4069],
-          [-0.6411, -0.6411, -0.6411,  ..., -0.4069, -0.4069, -0.4069],
-          [-0.6411, -0.6411, -0.6411,  ..., -0.4069, -0.4069, -0.4069]]],
-
-
-        [[[ 1.8938,  1.8938,  1.8938,  ..., -0.1416, -0.1416, -0.1416],
-          [ 1.8938,  1.8938,  1.8938,  ..., -0.1416, -0.1416, -0.1416],
-          [ 1.8938,  1.8938,  1.8938,  ..., -0.1416, -0.1416, -0.1416],
-          ...,
-          [ 1.7775,  1.7775,  1.7775,  ...,  1.4285,  1.4285,  1.4285],
-          [ 1.7775,  1.7775,  1.7775,  ...,  1.4285,  1.4285,  1.4285],
-          [ 1.7775,  1.7775,  1.7775,  ...,  1.4285,  1.4285,  1.4285]],
-
-         [[ 1.9675,  1.9675,  1.9675,  ...,  0.9448,  0.9448,  0.9448],
-          [ 1.9675,  1.9675,  1.9675,  ...,  0.9448,  0.9448,  0.9448],
-          [ 1.9675,  1.9675,  1.9675,  ...,  0.9448,  0.9448,  0.9448],
-          ...,
-          [ 2.0068,  2.0068,  2.0068,  ...,  1.8495,  1.8495,  1.8495],
-          [ 2.0068,  2.0068,  2.0068,  ...,  1.8495,  1.8495,  1.8495],
-          [ 2.0068,  2.0068,  2.0068,  ...,  1.8495,  1.8495,  1.8495]],
-
-         [[ 2.3245,  2.3245,  2.3245,  ..., -0.0558, -0.0558, -0.0558],
-          [ 2.3245,  2.3245,  2.3245,  ..., -0.0558, -0.0558, -0.0558],
-          [ 2.3245,  2.3245,  2.3245,  ..., -0.0558, -0.0558, -0.0558],
-          ...,
-          [ 2.3440,  2.3440,  2.3440,  ...,  1.6026,  1.6026,  1.6026],
-          [ 2.3440,  2.3440,  2.3440,  ...,  1.6026,  1.6026,  1.6026],
-          [ 2.3440,  2.3440,  2.3440,  ...,  1.6026,  1.6026,  1.6026]]],
-
-
-        ...,
-
-
-        [[[ 1.9325,  1.9325,  1.9325,  ..., -1.6924, -1.6924, -1.6924],
-          [ 1.9325,  1.9325,  1.9325,  ..., -1.6924, -1.6924, -1.6924],
-          [ 1.9325,  1.9325,  1.9325,  ..., -1.6924, -1.6924, -1.6924],
-          ...,
-          [-1.0334, -1.0334, -1.0334,  ...,  0.4011,  0.4011,  0.4011],
-          [-1.0334, -1.0334, -1.0334,  ...,  0.4011,  0.4011,  0.4011],
-          [-1.0334, -1.0334, -1.0334,  ...,  0.4011,  0.4011,  0.4011]],
-
-         [[ 2.0068,  2.0068,  2.0068,  ..., -1.0809, -1.0809, -1.0809],
-          [ 2.0068,  2.0068,  2.0068,  ..., -1.0809, -1.0809, -1.0809],
-          [ 2.0068,  2.0068,  2.0068,  ..., -1.0809, -1.0809, -1.0809],
-          ...,
-          [-1.0612, -1.0612, -1.0612,  ...,  0.1581,  0.1581,  0.1581],
-          [-1.0612, -1.0612, -1.0612,  ...,  0.1581,  0.1581,  0.1581],
-          [-1.0612, -1.0612, -1.0612,  ...,  0.1581,  0.1581,  0.1581]],
-
-         [[ 2.1684,  2.1684,  2.1684,  ..., -1.7922, -1.7922, -1.7922],
-          [ 2.1684,  2.1684,  2.1684,  ..., -1.7922, -1.7922, -1.7922],
-          [ 2.1684,  2.1684,  2.1684,  ..., -1.7922, -1.7922, -1.7922],
-          ...,
-          [-0.9727, -0.9727, -0.9727,  ..., -0.0362, -0.0362, -0.0362],
-          [-0.9727, -0.9727, -0.9727,  ..., -0.0362, -0.0362, -0.0362],
-          [-0.9727, -0.9727, -0.9727,  ..., -0.0362, -0.0362, -0.0362]]],
-
-
-        [[[-1.4017, -1.4017, -1.4017,  ..., -0.6069, -0.6069, -0.6069],
-          [-1.4017, -1.4017, -1.4017,  ..., -0.6069, -0.6069, -0.6069],
-          [-1.4017, -1.4017, -1.4017,  ..., -0.6069, -0.6069, -0.6069],
-          ...,
-          [-0.9752, -0.9752, -0.9752,  ..., -2.2546, -2.2546, -2.2546],
-          [-0.9752, -0.9752, -0.9752,  ..., -2.2546, -2.2546, -2.2546],
-          [-0.9752, -0.9752, -0.9752,  ..., -2.2546, -2.2546, -2.2546]],
-
-         [[-1.0809, -1.0809, -1.0809,  ..., -0.2942, -0.2942, -0.2942],
-          [-1.0809, -1.0809, -1.0809,  ..., -0.2942, -0.2942, -0.2942],
-          [-1.0809, -1.0809, -1.0809,  ..., -0.2942, -0.2942, -0.2942],
-          ...,
-          [-0.4909, -0.4909, -0.4909,  ..., -2.3593, -2.3593, -2.3593],
-          [-0.4909, -0.4909, -0.4909,  ..., -2.3593, -2.3593, -2.3593],
-          [-0.4909, -0.4909, -0.4909,  ..., -2.3593, -2.3593, -2.3593]],
-
-         [[-1.1093, -1.1093, -1.1093,  ..., -0.8362, -0.8362, -0.8362],
-          [-1.1093, -1.1093, -1.1093,  ..., -0.8362, -0.8362, -0.8362],
-          [-1.1093, -1.1093, -1.1093,  ..., -0.8362, -0.8362, -0.8362],
-          ...,
-          [-0.8362, -0.8362, -0.8362,  ..., -2.1824, -2.1824, -2.1824],
-          [-0.8362, -0.8362, -0.8362,  ..., -2.1824, -2.1824, -2.1824],
-          [-0.8362, -0.8362, -0.8362,  ..., -2.1824, -2.1824, -2.1824]]],
-
-
-        [[[ 1.1571,  1.1571,  1.1571,  ...,  0.1104,  0.1104,  0.1104],
-          [ 1.1571,  1.1571,  1.1571,  ...,  0.1104,  0.1104,  0.1104],
-          [ 1.1571,  1.1571,  1.1571,  ...,  0.1104,  0.1104,  0.1104],
-          ...,
-          [ 1.2541,  1.2541,  1.2541,  ...,  1.3316,  1.3316,  1.3316],
-          [ 1.2541,  1.2541,  1.2541,  ...,  1.3316,  1.3316,  1.3316],
-          [ 1.2541,  1.2541,  1.2541,  ...,  1.3316,  1.3316,  1.3316]],
-
-         [[ 1.6134,  1.6134,  1.6134,  ...,  0.8464,  0.8464,  0.8464],
-          [ 1.6134,  1.6134,  1.6134,  ...,  0.8464,  0.8464,  0.8464],
-          [ 1.6134,  1.6134,  1.6134,  ...,  0.8464,  0.8464,  0.8464],
-          ...,
-          [ 1.3971,  1.3971,  1.3971,  ...,  1.5544,  1.5544,  1.5544],
-          [ 1.3971,  1.3971,  1.3971,  ...,  1.5544,  1.5544,  1.5544],
-          [ 1.3971,  1.3971,  1.3971,  ...,  1.5544,  1.5544,  1.5544]],
-
-         [[ 1.7782,  1.7782,  1.7782,  ...,  1.3880,  1.3880,  1.3880],
-          [ 1.7782,  1.7782,  1.7782,  ...,  1.3880,  1.3880,  1.3880],
-          [ 1.7782,  1.7782,  1.7782,  ...,  1.3880,  1.3880,  1.3880],
-          ...,
-          [ 1.5246,  1.5246,  1.5246,  ...,  1.6026,  1.6026,  1.6026],
-          [ 1.5246,  1.5246,  1.5246,  ...,  1.6026,  1.6026,  1.6026],
-          [ 1.5246,  1.5246,  1.5246,  ...,  1.6026,  1.6026,  1.6026]]]])
-[2025-02-24 23:30:21,209] [INFO] [CIFAR10.py:206:main] labels: 
-tensor([8, 3, 1, 7, 9, 4, 0, 1, 2, 3, 8, 2, 6, 0, 3, 9, 3, 3, 0, 0, 5, 9, 2, 0,
-        0, 5, 5, 3, 3, 2, 2, 3, 9, 5, 7, 6, 9, 1, 4, 8, 2, 9, 4, 7, 1, 1, 7, 8,
-        4, 5, 7, 5, 8, 3, 2, 6, 8, 7, 8, 7, 6, 9, 4, 8]) 
-labels.shapetensor([8, 3, 1, 7, 9, 4, 0, 1, 2, 3, 8, 2, 6, 0, 3, 9, 3, 3, 0, 0, 5, 9, 2, 0,
-        0, 5, 5, 3, 3, 2, 2, 3, 9, 5, 7, 6, 9, 1, 4, 8, 2, 9, 4, 7, 1, 1, 7, 8,
-        4, 5, 7, 5, 8, 3, 2, 6, 8, 7, 8, 7, 6, 9, 4, 8])
-[2025-02-24 23:31:43,460] [INFO] [CIFAR10.py:177:main] images: 
-tensor([[[[ 2.0682,  2.0682,  2.0682,  ..., -0.8977, -0.8977, -0.8977],
-          [ 2.0682,  2.0682,  2.0682,  ..., -0.8977, -0.8977, -0.8977],
-          [ 2.0682,  2.0682,  2.0682,  ..., -0.8977, -0.8977, -0.8977],
-          ...,
-          [ 2.0489,  2.0489,  2.0489,  ..., -2.0801, -2.0801, -2.0801],
-          [ 2.0489,  2.0489,  2.0489,  ..., -2.0801, -2.0801, -2.0801],
-          [ 2.0489,  2.0489,  2.0489,  ..., -2.0801, -2.0801, -2.0801]],
-
-         [[ 2.1838,  2.1838,  2.1838,  ...,  1.6134,  1.6134,  1.6134],
-          [ 2.1838,  2.1838,  2.1838,  ...,  1.6134,  1.6134,  1.6134],
-          [ 2.1838,  2.1838,  2.1838,  ...,  1.6134,  1.6134,  1.6134],
-          ...,
-          [ 1.3971,  1.3971,  1.3971,  ..., -2.1823, -2.1823, -2.1823],
-          [ 1.3971,  1.3971,  1.3971,  ..., -2.1823, -2.1823, -2.1823],
-          [ 1.3971,  1.3971,  1.3971,  ..., -2.1823, -2.1823, -2.1823]],
-
-         [[ 2.2855,  2.2855,  2.2855,  ...,  2.6562,  2.6562,  2.6562],
-          [ 2.2855,  2.2855,  2.2855,  ...,  2.6562,  2.6562,  2.6562],
-          [ 2.2855,  2.2855,  2.2855,  ...,  2.6562,  2.6562,  2.6562],
-          ...,
-          [-0.7191, -0.7191, -0.7191,  ..., -2.1238, -2.1238, -2.1238],
-          [-0.7191, -0.7191, -0.7191,  ..., -2.1238, -2.1238, -2.1238],
-          [-0.7191, -0.7191, -0.7191,  ..., -2.1238, -2.1238, -2.1238]]],
-
-
-        [[[-0.3936, -0.3936, -0.3936,  ...,  0.8276,  0.8276,  0.8276],
-          [-0.3936, -0.3936, -0.3936,  ...,  0.8276,  0.8276,  0.8276],
-          [-0.3936, -0.3936, -0.3936,  ...,  0.8276,  0.8276,  0.8276],
-          ...,
-          [ 1.5642,  1.5642,  1.5642,  ...,  1.5061,  1.5061,  1.5061],
-          [ 1.5642,  1.5642,  1.5642,  ...,  1.5061,  1.5061,  1.5061],
-          [ 1.5642,  1.5642,  1.5642,  ...,  1.5061,  1.5061,  1.5061]],
-
-         [[-0.3729, -0.3729, -0.3729,  ...,  1.0628,  1.0628,  1.0628],
-          [-0.3729, -0.3729, -0.3729,  ...,  1.0628,  1.0628,  1.0628],
-          [-0.3729, -0.3729, -0.3729,  ...,  1.0628,  1.0628,  1.0628],
-          ...,
-          [ 1.6921,  1.6921,  1.6921,  ...,  1.5544,  1.5544,  1.5544],
-          [ 1.6921,  1.6921,  1.6921,  ...,  1.5544,  1.5544,  1.5544],
-          [ 1.6921,  1.6921,  1.6921,  ...,  1.5544,  1.5544,  1.5544]],
-
-         [[ 0.2954,  0.2954,  0.2954,  ...,  1.7977,  1.7977,  1.7977],
-          [ 0.2954,  0.2954,  0.2954,  ...,  1.7977,  1.7977,  1.7977],
-          [ 0.2954,  0.2954,  0.2954,  ...,  1.7977,  1.7977,  1.7977],
-          ...,
-          [ 1.9733,  1.9733,  1.9733,  ...,  1.8172,  1.8172,  1.8172],
-          [ 1.9733,  1.9733,  1.9733,  ...,  1.8172,  1.8172,  1.8172],
-          [ 1.9733,  1.9733,  1.9733,  ...,  1.8172,  1.8172,  1.8172]]],
-
-
-        [[[-1.3241, -1.3241, -1.3241,  ..., -0.6263, -0.6263, -0.6263],
-          [-1.3241, -1.3241, -1.3241,  ..., -0.6263, -0.6263, -0.6263],
-          [-1.3241, -1.3241, -1.3241,  ..., -0.6263, -0.6263, -0.6263],
-          ...,
-          [-0.1610, -0.1610, -0.1610,  ..., -1.0721, -1.0721, -1.0721],
-          [-0.1610, -0.1610, -0.1610,  ..., -1.0721, -1.0721, -1.0721],
-          [-0.1610, -0.1610, -0.1610,  ..., -1.0721, -1.0721, -1.0721]],
-
-         [[-1.2186, -1.2186, -1.2186,  ..., -0.2942, -0.2942, -0.2942],
-          [-1.2186, -1.2186, -1.2186,  ..., -0.2942, -0.2942, -0.2942],
-          [-1.2186, -1.2186, -1.2186,  ..., -0.2942, -0.2942, -0.2942],
-          ...,
-          [ 0.0794,  0.0794,  0.0794,  ..., -1.0612, -1.0612, -1.0612],
-          [ 0.0794,  0.0794,  0.0794,  ..., -1.0612, -1.0612, -1.0612],
-          [ 0.0794,  0.0794,  0.0794,  ..., -1.0612, -1.0612, -1.0612]],
-
-         [[-1.0508, -1.0508, -1.0508,  ..., -0.5630, -0.5630, -0.5630],
-          [-1.0508, -1.0508, -1.0508,  ..., -0.5630, -0.5630, -0.5630],
-          [-1.0508, -1.0508, -1.0508,  ..., -0.5630, -0.5630, -0.5630],
-          ...,
-          [ 0.0223,  0.0223,  0.0223,  ..., -0.9142, -0.9142, -0.9142],
-          [ 0.0223,  0.0223,  0.0223,  ..., -0.9142, -0.9142, -0.9142],
-          [ 0.0223,  0.0223,  0.0223,  ..., -0.9142, -0.9142, -0.9142]]],
-
-
-        ...,
-
-
-        [[[ 2.0101,  2.0101,  2.0101,  ...,  1.8744,  1.8744,  1.8744],
-          [ 2.0101,  2.0101,  2.0101,  ...,  1.8744,  1.8744,  1.8744],
-          [ 2.0101,  2.0101,  2.0101,  ...,  1.8744,  1.8744,  1.8744],
-          ...,
-          [ 2.0295,  2.0295,  2.0295,  ...,  0.4011,  0.4011,  0.4011],
-          [ 2.0295,  2.0295,  2.0295,  ...,  0.4011,  0.4011,  0.4011],
-          [ 2.0295,  2.0295,  2.0295,  ...,  0.4011,  0.4011,  0.4011]],
-
-         [[ 1.9281,  1.9281,  1.9281,  ...,  1.8298,  1.8298,  1.8298],
-          [ 1.9281,  1.9281,  1.9281,  ...,  1.8298,  1.8298,  1.8298],
-          [ 1.9281,  1.9281,  1.9281,  ...,  1.8298,  1.8298,  1.8298],
-          ...,
-          [ 1.9871,  1.9871,  1.9871,  ...,  0.3351,  0.3351,  0.3351],
-          [ 1.9871,  1.9871,  1.9871,  ...,  0.3351,  0.3351,  0.3351],
-          [ 1.9871,  1.9871,  1.9871,  ...,  0.3351,  0.3351,  0.3351]],
-
-         [[ 1.8172,  1.8172,  1.8172,  ...,  1.7002,  1.7002,  1.7002],
-          [ 1.8172,  1.8172,  1.8172,  ...,  1.7002,  1.7002,  1.7002],
-          [ 1.8172,  1.8172,  1.8172,  ...,  1.7002,  1.7002,  1.7002],
-          ...,
-          [ 1.8563,  1.8563,  1.8563,  ...,  0.1784,  0.1784,  0.1784],
-          [ 1.8563,  1.8563,  1.8563,  ...,  0.1784,  0.1784,  0.1784],
-          [ 1.8563,  1.8563,  1.8563,  ...,  0.1784,  0.1784,  0.1784]]],
-
-
-        [[[ 1.4673,  1.4673,  1.4673,  ...,  0.1104,  0.1104,  0.1104],
-          [ 1.4673,  1.4673,  1.4673,  ...,  0.1104,  0.1104,  0.1104],
-          [ 1.4673,  1.4673,  1.4673,  ...,  0.1104,  0.1104,  0.1104],
-          ...,
-          [-0.5681, -0.5681, -0.5681,  ..., -1.2078, -1.2078, -1.2078],
-          [-0.5681, -0.5681, -0.5681,  ..., -1.2078, -1.2078, -1.2078],
-          [-0.5681, -0.5681, -0.5681,  ..., -1.2078, -1.2078, -1.2078]],
-
-         [[ 1.8101,  1.8101,  1.8101,  ...,  0.4334,  0.4334,  0.4334],
-          [ 1.8101,  1.8101,  1.8101,  ...,  0.4334,  0.4334,  0.4334],
-          [ 1.8101,  1.8101,  1.8101,  ...,  0.4334,  0.4334,  0.4334],
-          ...,
-          [-0.5106, -0.5106, -0.5106,  ..., -1.5922, -1.5922, -1.5922],
-          [-0.5106, -0.5106, -0.5106,  ..., -1.5922, -1.5922, -1.5922],
-          [-0.5106, -0.5106, -0.5106,  ..., -1.5922, -1.5922, -1.5922]],
-
-         [[ 2.0319,  2.0319,  2.0319,  ...,  0.0223,  0.0223,  0.0223],
-          [ 2.0319,  2.0319,  2.0319,  ...,  0.0223,  0.0223,  0.0223],
-          [ 2.0319,  2.0319,  2.0319,  ...,  0.0223,  0.0223,  0.0223],
-          ...,
-          [-0.3679, -0.3679, -0.3679,  ..., -1.4605, -1.4605, -1.4605],
-          [-0.3679, -0.3679, -0.3679,  ..., -1.4605, -1.4605, -1.4605],
-          [-0.3679, -0.3679, -0.3679,  ..., -1.4605, -1.4605, -1.4605]]],
-
-
-        [[[-0.8007, -0.8007, -0.8007,  ..., -0.8395, -0.8395, -0.8395],
-          [-0.8007, -0.8007, -0.8007,  ..., -0.8395, -0.8395, -0.8395],
-          [-0.8007, -0.8007, -0.8007,  ..., -0.8395, -0.8395, -0.8395],
-          ...,
-          [-0.0253, -0.0253, -0.0253,  ...,  0.5756,  0.5756,  0.5756],
-          [-0.0253, -0.0253, -0.0253,  ...,  0.5756,  0.5756,  0.5756],
-          [-0.0253, -0.0253, -0.0253,  ...,  0.5756,  0.5756,  0.5756]],
-
-         [[ 0.1384,  0.1384,  0.1384,  ...,  0.1778,  0.1778,  0.1778],
-          [ 0.1384,  0.1384,  0.1384,  ...,  0.1778,  0.1778,  0.1778],
-          [ 0.1384,  0.1384,  0.1384,  ...,  0.1778,  0.1778,  0.1778],
-          ...,
-          [ 0.3548,  0.3548,  0.3548,  ...,  0.6891,  0.6891,  0.6891],
-          [ 0.3548,  0.3548,  0.3548,  ...,  0.6891,  0.6891,  0.6891],
-          [ 0.3548,  0.3548,  0.3548,  ...,  0.6891,  0.6891,  0.6891]],
-
-         [[ 1.1344,  1.1344,  1.1344,  ...,  1.1734,  1.1734,  1.1734],
-          [ 1.1344,  1.1344,  1.1344,  ...,  1.1734,  1.1734,  1.1734],
-          [ 1.1344,  1.1344,  1.1344,  ...,  1.1734,  1.1734,  1.1734],
-          ...,
-          [ 0.8612,  0.8612,  0.8612,  ...,  1.2319,  1.2319,  1.2319],
-          [ 0.8612,  0.8612,  0.8612,  ...,  1.2319,  1.2319,  1.2319],
-          [ 0.8612,  0.8612,  0.8612,  ...,  1.2319,  1.2319,  1.2319]]]]) 
-images.shapetensor([[[[ 2.0682,  2.0682,  2.0682,  ..., -0.8977, -0.8977, -0.8977],
-          [ 2.0682,  2.0682,  2.0682,  ..., -0.8977, -0.8977, -0.8977],
-          [ 2.0682,  2.0682,  2.0682,  ..., -0.8977, -0.8977, -0.8977],
-          ...,
-          [ 2.0489,  2.0489,  2.0489,  ..., -2.0801, -2.0801, -2.0801],
-          [ 2.0489,  2.0489,  2.0489,  ..., -2.0801, -2.0801, -2.0801],
-          [ 2.0489,  2.0489,  2.0489,  ..., -2.0801, -2.0801, -2.0801]],
-
-         [[ 2.1838,  2.1838,  2.1838,  ...,  1.6134,  1.6134,  1.6134],
-          [ 2.1838,  2.1838,  2.1838,  ...,  1.6134,  1.6134,  1.6134],
-          [ 2.1838,  2.1838,  2.1838,  ...,  1.6134,  1.6134,  1.6134],
-          ...,
-          [ 1.3971,  1.3971,  1.3971,  ..., -2.1823, -2.1823, -2.1823],
-          [ 1.3971,  1.3971,  1.3971,  ..., -2.1823, -2.1823, -2.1823],
-          [ 1.3971,  1.3971,  1.3971,  ..., -2.1823, -2.1823, -2.1823]],
-
-         [[ 2.2855,  2.2855,  2.2855,  ...,  2.6562,  2.6562,  2.6562],
-          [ 2.2855,  2.2855,  2.2855,  ...,  2.6562,  2.6562,  2.6562],
-          [ 2.2855,  2.2855,  2.2855,  ...,  2.6562,  2.6562,  2.6562],
-          ...,
-          [-0.7191, -0.7191, -0.7191,  ..., -2.1238, -2.1238, -2.1238],
-          [-0.7191, -0.7191, -0.7191,  ..., -2.1238, -2.1238, -2.1238],
-          [-0.7191, -0.7191, -0.7191,  ..., -2.1238, -2.1238, -2.1238]]],
-
-
-        [[[-0.3936, -0.3936, -0.3936,  ...,  0.8276,  0.8276,  0.8276],
-          [-0.3936, -0.3936, -0.3936,  ...,  0.8276,  0.8276,  0.8276],
-          [-0.3936, -0.3936, -0.3936,  ...,  0.8276,  0.8276,  0.8276],
-          ...,
-          [ 1.5642,  1.5642,  1.5642,  ...,  1.5061,  1.5061,  1.5061],
-          [ 1.5642,  1.5642,  1.5642,  ...,  1.5061,  1.5061,  1.5061],
-          [ 1.5642,  1.5642,  1.5642,  ...,  1.5061,  1.5061,  1.5061]],
-
-         [[-0.3729, -0.3729, -0.3729,  ...,  1.0628,  1.0628,  1.0628],
-          [-0.3729, -0.3729, -0.3729,  ...,  1.0628,  1.0628,  1.0628],
-          [-0.3729, -0.3729, -0.3729,  ...,  1.0628,  1.0628,  1.0628],
-          ...,
-          [ 1.6921,  1.6921,  1.6921,  ...,  1.5544,  1.5544,  1.5544],
-          [ 1.6921,  1.6921,  1.6921,  ...,  1.5544,  1.5544,  1.5544],
-          [ 1.6921,  1.6921,  1.6921,  ...,  1.5544,  1.5544,  1.5544]],
-
-         [[ 0.2954,  0.2954,  0.2954,  ...,  1.7977,  1.7977,  1.7977],
-          [ 0.2954,  0.2954,  0.2954,  ...,  1.7977,  1.7977,  1.7977],
-          [ 0.2954,  0.2954,  0.2954,  ...,  1.7977,  1.7977,  1.7977],
-          ...,
-          [ 1.9733,  1.9733,  1.9733,  ...,  1.8172,  1.8172,  1.8172],
-          [ 1.9733,  1.9733,  1.9733,  ...,  1.8172,  1.8172,  1.8172],
-          [ 1.9733,  1.9733,  1.9733,  ...,  1.8172,  1.8172,  1.8172]]],
-
-
-        [[[-1.3241, -1.3241, -1.3241,  ..., -0.6263, -0.6263, -0.6263],
-          [-1.3241, -1.3241, -1.3241,  ..., -0.6263, -0.6263, -0.6263],
-          [-1.3241, -1.3241, -1.3241,  ..., -0.6263, -0.6263, -0.6263],
-          ...,
-          [-0.1610, -0.1610, -0.1610,  ..., -1.0721, -1.0721, -1.0721],
-          [-0.1610, -0.1610, -0.1610,  ..., -1.0721, -1.0721, -1.0721],
-          [-0.1610, -0.1610, -0.1610,  ..., -1.0721, -1.0721, -1.0721]],
-
-         [[-1.2186, -1.2186, -1.2186,  ..., -0.2942, -0.2942, -0.2942],
-          [-1.2186, -1.2186, -1.2186,  ..., -0.2942, -0.2942, -0.2942],
-          [-1.2186, -1.2186, -1.2186,  ..., -0.2942, -0.2942, -0.2942],
-          ...,
-          [ 0.0794,  0.0794,  0.0794,  ..., -1.0612, -1.0612, -1.0612],
-          [ 0.0794,  0.0794,  0.0794,  ..., -1.0612, -1.0612, -1.0612],
-          [ 0.0794,  0.0794,  0.0794,  ..., -1.0612, -1.0612, -1.0612]],
-
-         [[-1.0508, -1.0508, -1.0508,  ..., -0.5630, -0.5630, -0.5630],
-          [-1.0508, -1.0508, -1.0508,  ..., -0.5630, -0.5630, -0.5630],
-          [-1.0508, -1.0508, -1.0508,  ..., -0.5630, -0.5630, -0.5630],
-          ...,
-          [ 0.0223,  0.0223,  0.0223,  ..., -0.9142, -0.9142, -0.9142],
-          [ 0.0223,  0.0223,  0.0223,  ..., -0.9142, -0.9142, -0.9142],
-          [ 0.0223,  0.0223,  0.0223,  ..., -0.9142, -0.9142, -0.9142]]],
-
-
-        ...,
-
-
-        [[[ 2.0101,  2.0101,  2.0101,  ...,  1.8744,  1.8744,  1.8744],
-          [ 2.0101,  2.0101,  2.0101,  ...,  1.8744,  1.8744,  1.8744],
-          [ 2.0101,  2.0101,  2.0101,  ...,  1.8744,  1.8744,  1.8744],
-          ...,
-          [ 2.0295,  2.0295,  2.0295,  ...,  0.4011,  0.4011,  0.4011],
-          [ 2.0295,  2.0295,  2.0295,  ...,  0.4011,  0.4011,  0.4011],
-          [ 2.0295,  2.0295,  2.0295,  ...,  0.4011,  0.4011,  0.4011]],
-
-         [[ 1.9281,  1.9281,  1.9281,  ...,  1.8298,  1.8298,  1.8298],
-          [ 1.9281,  1.9281,  1.9281,  ...,  1.8298,  1.8298,  1.8298],
-          [ 1.9281,  1.9281,  1.9281,  ...,  1.8298,  1.8298,  1.8298],
-          ...,
-          [ 1.9871,  1.9871,  1.9871,  ...,  0.3351,  0.3351,  0.3351],
-          [ 1.9871,  1.9871,  1.9871,  ...,  0.3351,  0.3351,  0.3351],
-          [ 1.9871,  1.9871,  1.9871,  ...,  0.3351,  0.3351,  0.3351]],
-
-         [[ 1.8172,  1.8172,  1.8172,  ...,  1.7002,  1.7002,  1.7002],
-          [ 1.8172,  1.8172,  1.8172,  ...,  1.7002,  1.7002,  1.7002],
-          [ 1.8172,  1.8172,  1.8172,  ...,  1.7002,  1.7002,  1.7002],
-          ...,
-          [ 1.8563,  1.8563,  1.8563,  ...,  0.1784,  0.1784,  0.1784],
-          [ 1.8563,  1.8563,  1.8563,  ...,  0.1784,  0.1784,  0.1784],
-          [ 1.8563,  1.8563,  1.8563,  ...,  0.1784,  0.1784,  0.1784]]],
-
-
-        [[[ 1.4673,  1.4673,  1.4673,  ...,  0.1104,  0.1104,  0.1104],
-          [ 1.4673,  1.4673,  1.4673,  ...,  0.1104,  0.1104,  0.1104],
-          [ 1.4673,  1.4673,  1.4673,  ...,  0.1104,  0.1104,  0.1104],
-          ...,
-          [-0.5681, -0.5681, -0.5681,  ..., -1.2078, -1.2078, -1.2078],
-          [-0.5681, -0.5681, -0.5681,  ..., -1.2078, -1.2078, -1.2078],
-          [-0.5681, -0.5681, -0.5681,  ..., -1.2078, -1.2078, -1.2078]],
-
-         [[ 1.8101,  1.8101,  1.8101,  ...,  0.4334,  0.4334,  0.4334],
-          [ 1.8101,  1.8101,  1.8101,  ...,  0.4334,  0.4334,  0.4334],
-          [ 1.8101,  1.8101,  1.8101,  ...,  0.4334,  0.4334,  0.4334],
-          ...,
-          [-0.5106, -0.5106, -0.5106,  ..., -1.5922, -1.5922, -1.5922],
-          [-0.5106, -0.5106, -0.5106,  ..., -1.5922, -1.5922, -1.5922],
-          [-0.5106, -0.5106, -0.5106,  ..., -1.5922, -1.5922, -1.5922]],
-
-         [[ 2.0319,  2.0319,  2.0319,  ...,  0.0223,  0.0223,  0.0223],
-          [ 2.0319,  2.0319,  2.0319,  ...,  0.0223,  0.0223,  0.0223],
-          [ 2.0319,  2.0319,  2.0319,  ...,  0.0223,  0.0223,  0.0223],
-          ...,
-          [-0.3679, -0.3679, -0.3679,  ..., -1.4605, -1.4605, -1.4605],
-          [-0.3679, -0.3679, -0.3679,  ..., -1.4605, -1.4605, -1.4605],
-          [-0.3679, -0.3679, -0.3679,  ..., -1.4605, -1.4605, -1.4605]]],
-
-
-        [[[-0.8007, -0.8007, -0.8007,  ..., -0.8395, -0.8395, -0.8395],
-          [-0.8007, -0.8007, -0.8007,  ..., -0.8395, -0.8395, -0.8395],
-          [-0.8007, -0.8007, -0.8007,  ..., -0.8395, -0.8395, -0.8395],
-          ...,
-          [-0.0253, -0.0253, -0.0253,  ...,  0.5756,  0.5756,  0.5756],
-          [-0.0253, -0.0253, -0.0253,  ...,  0.5756,  0.5756,  0.5756],
-          [-0.0253, -0.0253, -0.0253,  ...,  0.5756,  0.5756,  0.5756]],
-
-         [[ 0.1384,  0.1384,  0.1384,  ...,  0.1778,  0.1778,  0.1778],
-          [ 0.1384,  0.1384,  0.1384,  ...,  0.1778,  0.1778,  0.1778],
-          [ 0.1384,  0.1384,  0.1384,  ...,  0.1778,  0.1778,  0.1778],
-          ...,
-          [ 0.3548,  0.3548,  0.3548,  ...,  0.6891,  0.6891,  0.6891],
-          [ 0.3548,  0.3548,  0.3548,  ...,  0.6891,  0.6891,  0.6891],
-          [ 0.3548,  0.3548,  0.3548,  ...,  0.6891,  0.6891,  0.6891]],
-
-         [[ 1.1344,  1.1344,  1.1344,  ...,  1.1734,  1.1734,  1.1734],
-          [ 1.1344,  1.1344,  1.1344,  ...,  1.1734,  1.1734,  1.1734],
-          [ 1.1344,  1.1344,  1.1344,  ...,  1.1734,  1.1734,  1.1734],
-          ...,
-          [ 0.8612,  0.8612,  0.8612,  ...,  1.2319,  1.2319,  1.2319],
-          [ 0.8612,  0.8612,  0.8612,  ...,  1.2319,  1.2319,  1.2319],
-          [ 0.8612,  0.8612,  0.8612,  ...,  1.2319,  1.2319,  1.2319]]]])
-[2025-02-24 23:31:43,461] [INFO] [CIFAR10.py:178:main] labels: 
-tensor([9, 6, 6, 2, 8, 4, 8, 4, 0, 4, 1, 9, 5, 1, 4, 7, 4, 1, 8, 4, 2, 9, 3, 1,
-        8, 0, 3, 8, 5, 8, 0, 6, 0, 0, 3, 9, 1, 7, 1, 6, 5, 5, 3, 4, 9, 4, 9, 4,
-        3, 7, 5, 5, 1, 3, 3, 8, 4, 6, 8, 2, 9, 4, 3, 0]) 
-labels.shapetensor([9, 6, 6, 2, 8, 4, 8, 4, 0, 4, 1, 9, 5, 1, 4, 7, 4, 1, 8, 4, 2, 9, 3, 1,
-        8, 0, 3, 8, 5, 8, 0, 6, 0, 0, 3, 9, 1, 7, 1, 6, 5, 5, 3, 4, 9, 4, 9, 4,
-        3, 7, 5, 5, 1, 3, 3, 8, 4, 6, 8, 2, 9, 4, 3, 0])
-[2025-02-24 23:32:30,226] [INFO] [CIFAR10.py:177:main] images: 
-tensor([[[[ 2.5141,  2.5141,  2.5141,  ...,  1.4479,  1.4479,  1.4479],
-          [ 2.5141,  2.5141,  2.5141,  ...,  1.4479,  1.4479,  1.4479],
-          [ 2.5141,  2.5141,  2.5141,  ...,  1.4479,  1.4479,  1.4479],
-          ...,
-          [-0.3355, -0.3355, -0.3355,  ..., -0.2192, -0.2192, -0.2192],
-          [-0.3355, -0.3355, -0.3355,  ..., -0.2192, -0.2192, -0.2192],
-          [-0.3355, -0.3355, -0.3355,  ..., -0.2192, -0.2192, -0.2192]],
-
-         [[ 2.5968,  2.5968,  2.5968,  ...,  1.6331,  1.6331,  1.6331],
-          [ 2.5968,  2.5968,  2.5968,  ...,  1.6331,  1.6331,  1.6331],
-          [ 2.5968,  2.5968,  2.5968,  ...,  1.6331,  1.6331,  1.6331],
-          ...,
-          [-0.1959, -0.1959, -0.1959,  ..., -0.0779, -0.0779, -0.0779],
-          [-0.1959, -0.1959, -0.1959,  ..., -0.0779, -0.0779, -0.0779],
-          [-0.1959, -0.1959, -0.1959,  ..., -0.0779, -0.0779, -0.0779]],
-
-         [[ 2.7537,  2.7537,  2.7537,  ...,  1.7002,  1.7002,  1.7002],
-          [ 2.7537,  2.7537,  2.7537,  ...,  1.7002,  1.7002,  1.7002],
-          [ 2.7537,  2.7537,  2.7537,  ...,  1.7002,  1.7002,  1.7002],
-          ...,
-          [-0.1143, -0.1143, -0.1143,  ..., -0.0948, -0.0948, -0.0948],
-          [-0.1143, -0.1143, -0.1143,  ..., -0.0948, -0.0948, -0.0948],
-          [-0.1143, -0.1143, -0.1143,  ..., -0.0948, -0.0948, -0.0948]]],
-
-
-        [[[ 0.0910,  0.0910,  0.0910,  ..., -0.0641, -0.0641, -0.0641],
-          [ 0.0910,  0.0910,  0.0910,  ..., -0.0641, -0.0641, -0.0641],
-          [ 0.0910,  0.0910,  0.0910,  ..., -0.0641, -0.0641, -0.0641],
-          ...,
-          [-2.2740, -2.2740, -2.2740,  ...,  2.1652,  2.1652,  2.1652],
-          [-2.2740, -2.2740, -2.2740,  ...,  2.1652,  2.1652,  2.1652],
-          [-2.2740, -2.2740, -2.2740,  ...,  2.1652,  2.1652,  2.1652]],
-
-         [[ 1.4758,  1.4758,  1.4758,  ...,  1.3381,  1.3381,  1.3381],
-          [ 1.4758,  1.4758,  1.4758,  ...,  1.3381,  1.3381,  1.3381],
-          [ 1.4758,  1.4758,  1.4758,  ...,  1.3381,  1.3381,  1.3381],
-          ...,
-          [-2.2806, -2.2806, -2.2806,  ...,  1.6921,  1.6921,  1.6921],
-          [-2.2806, -2.2806, -2.2806,  ...,  1.6921,  1.6921,  1.6921],
-          [-2.2806, -2.2806, -2.2806,  ...,  1.6921,  1.6921,  1.6921]],
-
-         [[ 2.2660,  2.2660,  2.2660,  ...,  2.2855,  2.2855,  2.2855],
-          [ 2.2660,  2.2660,  2.2660,  ...,  2.2855,  2.2855,  2.2855],
-          [ 2.2660,  2.2660,  2.2660,  ...,  2.2855,  2.2855,  2.2855],
-          ...,
-          [-1.9678, -1.9678, -1.9678,  ...,  1.3490,  1.3490,  1.3490],
-          [-1.9678, -1.9678, -1.9678,  ...,  1.3490,  1.3490,  1.3490],
-          [-1.9678, -1.9678, -1.9678,  ...,  1.3490,  1.3490,  1.3490]]],
-
-
-        [[[ 1.0990,  1.0990,  1.0990,  ...,  1.7193,  1.7193,  1.7193],
-          [ 1.0990,  1.0990,  1.0990,  ...,  1.7193,  1.7193,  1.7193],
-          [ 1.0990,  1.0990,  1.0990,  ...,  1.7193,  1.7193,  1.7193],
-          ...,
-          [ 1.6805,  1.6805,  1.6805,  ...,  2.1652,  2.1652,  2.1652],
-          [ 1.6805,  1.6805,  1.6805,  ...,  2.1652,  2.1652,  2.1652],
-          [ 1.6805,  1.6805,  1.6805,  ...,  2.1652,  2.1652,  2.1652]],
-
-         [[ 0.2564,  0.2564,  0.2564,  ...,  0.7874,  0.7874,  0.7874],
-          [ 0.2564,  0.2564,  0.2564,  ...,  0.7874,  0.7874,  0.7874],
-          [ 0.2564,  0.2564,  0.2564,  ...,  0.7874,  0.7874,  0.7874],
-          ...,
-          [ 1.1414,  1.1414,  1.1414,  ...,  1.9085,  1.9085,  1.9085],
-          [ 1.1414,  1.1414,  1.1414,  ...,  1.9085,  1.9085,  1.9085],
-          [ 1.1414,  1.1414,  1.1414,  ...,  1.9085,  1.9085,  1.9085]],
-
-         [[ 0.0808,  0.0808,  0.0808,  ...,  0.4710,  0.4710,  0.4710],
-          [ 0.0808,  0.0808,  0.0808,  ...,  0.4710,  0.4710,  0.4710],
-          [ 0.0808,  0.0808,  0.0808,  ...,  0.4710,  0.4710,  0.4710],
-          ...,
-          [ 1.0563,  1.0563,  1.0563,  ...,  1.8367,  1.8367,  1.8367],
-          [ 1.0563,  1.0563,  1.0563,  ...,  1.8367,  1.8367,  1.8367],
-          [ 1.0563,  1.0563,  1.0563,  ...,  1.8367,  1.8367,  1.8367]]],
-
-
-        ...,
-
-
-        [[[ 2.5141,  2.5141,  2.5141,  ...,  2.5141,  2.5141,  2.5141],
-          [ 2.5141,  2.5141,  2.5141,  ...,  2.5141,  2.5141,  2.5141],
-          [ 2.5141,  2.5141,  2.5141,  ...,  2.5141,  2.5141,  2.5141],
-          ...,
-          [ 0.6144,  0.6144,  0.6144,  ...,  0.6531,  0.6531,  0.6531],
-          [ 0.6144,  0.6144,  0.6144,  ...,  0.6531,  0.6531,  0.6531],
-          [ 0.6144,  0.6144,  0.6144,  ...,  0.6531,  0.6531,  0.6531]],
-
-         [[ 2.5968,  2.5968,  2.5968,  ...,  2.5968,  2.5968,  2.5968],
-          [ 2.5968,  2.5968,  2.5968,  ...,  2.5968,  2.5968,  2.5968],
-          [ 2.5968,  2.5968,  2.5968,  ...,  2.5968,  2.5968,  2.5968],
-          ...,
-          [ 0.5711,  0.5711,  0.5711,  ...,  0.9054,  0.9054,  0.9054],
-          [ 0.5711,  0.5711,  0.5711,  ...,  0.9054,  0.9054,  0.9054],
-          [ 0.5711,  0.5711,  0.5711,  ...,  0.9054,  0.9054,  0.9054]],
-
-         [[ 2.7537,  2.7537,  2.7537,  ...,  2.7537,  2.7537,  2.7537],
-          [ 2.7537,  2.7537,  2.7537,  ...,  2.7537,  2.7537,  2.7537],
-          [ 2.7537,  2.7537,  2.7537,  ...,  2.7537,  2.7537,  2.7537],
-          ...,
-          [-0.0558, -0.0558, -0.0558,  ...,  0.0613,  0.0613,  0.0613],
-          [-0.0558, -0.0558, -0.0558,  ...,  0.0613,  0.0613,  0.0613],
-          [-0.0558, -0.0558, -0.0558,  ...,  0.0613,  0.0613,  0.0613]]],
-
-
-        [[[-1.0915, -1.0915, -1.0915,  ..., -1.7506, -1.7506, -1.7506],
-          [-1.0915, -1.0915, -1.0915,  ..., -1.7506, -1.7506, -1.7506],
-          [-1.0915, -1.0915, -1.0915,  ..., -1.7506, -1.7506, -1.7506],
-          ...,
-          [-0.3355, -0.3355, -0.3355,  ..., -1.4017, -1.4017, -1.4017],
-          [-0.3355, -0.3355, -0.3355,  ..., -1.4017, -1.4017, -1.4017],
-          [-0.3355, -0.3355, -0.3355,  ..., -1.4017, -1.4017, -1.4017]],
-
-         [[-1.6512, -1.6512, -1.6512,  ..., -2.1036, -2.1036, -2.1036],
-          [-1.6512, -1.6512, -1.6512,  ..., -2.1036, -2.1036, -2.1036],
-          [-1.6512, -1.6512, -1.6512,  ..., -2.1036, -2.1036, -2.1036],
-          ...,
-          [-0.3729, -0.3729, -0.3729,  ..., -1.4152, -1.4152, -1.4152],
-          [-0.3729, -0.3729, -0.3729,  ..., -1.4152, -1.4152, -1.4152],
-          [-0.3729, -0.3729, -0.3729,  ..., -1.4152, -1.4152, -1.4152]],
-
-         [[-2.1043, -2.1043, -2.1043,  ..., -2.1824, -2.1824, -2.1824],
-          [-2.1043, -2.1043, -2.1043,  ..., -2.1824, -2.1824, -2.1824],
-          [-2.1043, -2.1043, -2.1043,  ..., -2.1824, -2.1824, -2.1824],
-          ...,
-          [-0.4264, -0.4264, -0.4264,  ..., -1.8312, -1.8312, -1.8312],
-          [-0.4264, -0.4264, -0.4264,  ..., -1.8312, -1.8312, -1.8312],
-          [-0.4264, -0.4264, -0.4264,  ..., -1.8312, -1.8312, -1.8312]]],
-
-
-        [[[-2.4097, -2.4097, -2.4097,  ..., -0.5100, -0.5100, -0.5100],
-          [-2.4097, -2.4097, -2.4097,  ..., -0.5100, -0.5100, -0.5100],
-          [-2.4097, -2.4097, -2.4097,  ..., -0.5100, -0.5100, -0.5100],
-          ...,
-          [-2.1189, -2.1189, -2.1189,  ..., -0.0060, -0.0060, -0.0060],
-          [-2.1189, -2.1189, -2.1189,  ..., -0.0060, -0.0060, -0.0060],
-          [-2.1189, -2.1189, -2.1189,  ..., -0.0060, -0.0060, -0.0060]],
-
-         [[-2.3986, -2.3986, -2.3986,  ..., -0.3139, -0.3139, -0.3139],
-          [-2.3986, -2.3986, -2.3986,  ..., -0.3139, -0.3139, -0.3139],
-          [-2.3986, -2.3986, -2.3986,  ..., -0.3139, -0.3139, -0.3139],
-          ...,
-          [-2.0446, -2.0446, -2.0446,  ...,  0.3941,  0.3941,  0.3941],
-          [-2.0446, -2.0446, -2.0446,  ...,  0.3941,  0.3941,  0.3941],
-          [-2.0446, -2.0446, -2.0446,  ...,  0.3941,  0.3941,  0.3941]],
-
-         [[-2.2019, -2.2019, -2.2019,  ..., -1.3434, -1.3434, -1.3434],
-          [-2.2019, -2.2019, -2.2019,  ..., -1.3434, -1.3434, -1.3434],
-          [-2.2019, -2.2019, -2.2019,  ..., -1.3434, -1.3434, -1.3434],
-          ...,
-          [-1.9873, -1.9873, -1.9873,  ..., -0.9337, -0.9337, -0.9337],
-          [-1.9873, -1.9873, -1.9873,  ..., -0.9337, -0.9337, -0.9337],
-          [-1.9873, -1.9873, -1.9873,  ..., -0.9337, -0.9337, -0.9337]]]]) 
+        [[[ 1.8744e+00,  1.8744e+00,  1.8744e+00,  ...,  2.3009e+00,
+            2.3009e+00,  2.3009e+00],
+          [ 1.8744e+00,  1.8744e+00,  1.8744e+00,  ...,  2.3009e+00,
+            2.3009e+00,  2.3009e+00],
+          [ 1.8744e+00,  1.8744e+00,  1.8744e+00,  ...,  2.3009e+00,
+            2.3009e+00,  2.3009e+00],
+          ...,
+          [ 1.0214e+00,  1.0214e+00,  1.0214e+00,  ...,  1.0214e+00,
+            1.0214e+00,  1.0214e+00],
+          [ 1.0214e+00,  1.0214e+00,  1.0214e+00,  ...,  1.0214e+00,
+            1.0214e+00,  1.0214e+00],
+          [ 1.0214e+00,  1.0214e+00,  1.0214e+00,  ...,  1.0214e+00,
+            1.0214e+00,  1.0214e+00]],
+
+         [[ 2.1248e+00,  2.1248e+00,  2.1248e+00,  ...,  2.3805e+00,
+            2.3805e+00,  2.3805e+00],
+          [ 2.1248e+00,  2.1248e+00,  2.1248e+00,  ...,  2.3805e+00,
+            2.3805e+00,  2.3805e+00],
+          [ 2.1248e+00,  2.1248e+00,  2.1248e+00,  ...,  2.3805e+00,
+            2.3805e+00,  2.3805e+00],
+          ...,
+          [ 9.8411e-01,  9.8411e-01,  9.8411e-01,  ...,  1.0431e+00,
+            1.0431e+00,  1.0431e+00],
+          [ 9.8411e-01,  9.8411e-01,  9.8411e-01,  ...,  1.0431e+00,
+            1.0431e+00,  1.0431e+00],
+          [ 9.8411e-01,  9.8411e-01,  9.8411e-01,  ...,  1.0431e+00,
+            1.0431e+00,  1.0431e+00]],
+
+         [[ 2.4611e+00,  2.4611e+00,  2.4611e+00,  ...,  2.5391e+00,
+            2.5391e+00,  2.5391e+00],
+          [ 2.4611e+00,  2.4611e+00,  2.4611e+00,  ...,  2.5391e+00,
+            2.5391e+00,  2.5391e+00],
+          [ 2.4611e+00,  2.4611e+00,  2.4611e+00,  ...,  2.5391e+00,
+            2.5391e+00,  2.5391e+00],
+          ...,
+          [ 1.1539e+00,  1.1539e+00,  1.1539e+00,  ...,  1.2319e+00,
+            1.2319e+00,  1.2319e+00],
+          [ 1.1539e+00,  1.1539e+00,  1.1539e+00,  ...,  1.2319e+00,
+            1.2319e+00,  1.2319e+00],
+          [ 1.1539e+00,  1.1539e+00,  1.1539e+00,  ...,  1.2319e+00,
+            1.2319e+00,  1.2319e+00]]],
+
+
+        [[[-1.7700e+00, -1.7700e+00, -1.7700e+00,  ..., -1.4017e+00,
+           -1.4017e+00, -1.4017e+00],
+          [-1.7700e+00, -1.7700e+00, -1.7700e+00,  ..., -1.4017e+00,
+           -1.4017e+00, -1.4017e+00],
+          [-1.7700e+00, -1.7700e+00, -1.7700e+00,  ..., -1.4017e+00,
+           -1.4017e+00, -1.4017e+00],
+          ...,
+          [-2.0414e+00, -2.0414e+00, -2.0414e+00,  ..., -1.5374e+00,
+           -1.5374e+00, -1.5374e+00],
+          [-2.0414e+00, -2.0414e+00, -2.0414e+00,  ..., -1.5374e+00,
+           -1.5374e+00, -1.5374e+00],
+          [-2.0414e+00, -2.0414e+00, -2.0414e+00,  ..., -1.5374e+00,
+           -1.5374e+00, -1.5374e+00]],
+
+         [[ 2.1710e-01,  2.1710e-01,  2.1710e-01,  ...,  3.7444e-01,
+            3.7444e-01,  3.7444e-01],
+          [ 2.1710e-01,  2.1710e-01,  2.1710e-01,  ...,  3.7444e-01,
+            3.7444e-01,  3.7444e-01],
+          [ 2.1710e-01,  2.1710e-01,  2.1710e-01,  ...,  3.7444e-01,
+            3.7444e-01,  3.7444e-01],
+          ...,
+          [-1.1723e-01, -1.1723e-01, -1.1723e-01,  ...,  3.3510e-01,
+            3.3510e-01,  3.3510e-01],
+          [-1.1723e-01, -1.1723e-01, -1.1723e-01,  ...,  3.3510e-01,
+            3.3510e-01,  3.3510e-01],
+          [-1.1723e-01, -1.1723e-01, -1.1723e-01,  ...,  3.3510e-01,
+            3.3510e-01,  3.3510e-01]],
+
+         [[ 4.7103e-01,  4.7103e-01,  4.7103e-01,  ...,  7.0515e-01,
+            7.0515e-01,  7.0515e-01],
+          [ 4.7103e-01,  4.7103e-01,  4.7103e-01,  ...,  7.0515e-01,
+            7.0515e-01,  7.0515e-01],
+          [ 4.7103e-01,  4.7103e-01,  4.7103e-01,  ...,  7.0515e-01,
+            7.0515e-01,  7.0515e-01],
+          ...,
+          [ 1.1984e-01,  1.1984e-01,  1.1984e-01,  ...,  4.7103e-01,
+            4.7103e-01,  4.7103e-01],
+          [ 1.1984e-01,  1.1984e-01,  1.1984e-01,  ...,  4.7103e-01,
+            4.7103e-01,  4.7103e-01],
+          [ 1.1984e-01,  1.1984e-01,  1.1984e-01,  ...,  4.7103e-01,
+            4.7103e-01,  4.7103e-01]]],
+
+
+        [[[-8.0073e-01, -8.0073e-01, -8.0073e-01,  ..., -6.2627e-01,
+           -6.2627e-01, -6.2627e-01],
+          [-8.0073e-01, -8.0073e-01, -8.0073e-01,  ..., -6.2627e-01,
+           -6.2627e-01, -6.2627e-01],
+          [-8.0073e-01, -8.0073e-01, -8.0073e-01,  ..., -6.2627e-01,
+           -6.2627e-01, -6.2627e-01],
+          ...,
+          [-9.9458e-01, -9.9458e-01, -9.9458e-01,  ..., -1.0915e+00,
+           -1.0915e+00, -1.0915e+00],
+          [-9.9458e-01, -9.9458e-01, -9.9458e-01,  ..., -1.0915e+00,
+           -1.0915e+00, -1.0915e+00],
+          [-9.9458e-01, -9.9458e-01, -9.9458e-01,  ..., -1.0915e+00,
+           -1.0915e+00, -1.0915e+00]],
+
+         [[-7.6624e-01, -7.6624e-01, -7.6624e-01,  ..., -5.4990e-01,
+           -5.4990e-01, -5.4990e-01],
+          [-7.6624e-01, -7.6624e-01, -7.6624e-01,  ..., -5.4990e-01,
+           -5.4990e-01, -5.4990e-01],
+          [-7.6624e-01, -7.6624e-01, -7.6624e-01,  ..., -5.4990e-01,
+           -5.4990e-01, -5.4990e-01],
+          ...,
+          [-9.0391e-01, -9.0391e-01, -9.0391e-01,  ..., -9.8258e-01,
+           -9.8258e-01, -9.8258e-01],
+          [-9.0391e-01, -9.0391e-01, -9.0391e-01,  ..., -9.8258e-01,
+           -9.8258e-01, -9.8258e-01],
+          [-9.0391e-01, -9.0391e-01, -9.0391e-01,  ..., -9.8258e-01,
+           -9.8258e-01, -9.8258e-01]],
+
+         [[-8.3616e-01, -8.3616e-01, -8.3616e-01,  ..., -8.1665e-01,
+           -8.1665e-01, -8.1665e-01],
+          [-8.3616e-01, -8.3616e-01, -8.3616e-01,  ..., -8.1665e-01,
+           -8.1665e-01, -8.1665e-01],
+          [-8.3616e-01, -8.3616e-01, -8.3616e-01,  ..., -8.1665e-01,
+           -8.1665e-01, -8.1665e-01],
+          ...,
+          [-9.9224e-01, -9.9224e-01, -9.9224e-01,  ..., -1.1093e+00,
+           -1.1093e+00, -1.1093e+00],
+          [-9.9224e-01, -9.9224e-01, -9.9224e-01,  ..., -1.1093e+00,
+           -1.1093e+00, -1.1093e+00],
+          [-9.9224e-01, -9.9224e-01, -9.9224e-01,  ..., -1.1093e+00,
+           -1.1093e+00, -1.1093e+00]]]]) 
 images.shapetorch.Size([64, 3, 227, 227])
-[2025-02-24 23:32:30,227] [INFO] [CIFAR10.py:178:main] labels: 
-tensor([8, 7, 3, 9, 2, 2, 7, 8, 6, 0, 1, 0, 2, 2, 0, 5, 4, 2, 3, 4, 6, 4, 4, 3,
-        2, 0, 2, 2, 7, 3, 8, 5, 6, 4, 6, 5, 5, 4, 2, 5, 4, 8, 7, 2, 9, 6, 2, 8,
-        8, 6, 0, 4, 8, 8, 3, 9, 5, 8, 4, 1, 2, 7, 5, 2]) 
+[2025-02-25 11:48:49,053] [INFO] [CIFAR10.py:187:main] labels: 
+tensor([5, 8, 1, 4, 7, 8, 2, 4, 5, 9, 6, 4, 2, 5, 9, 3, 2, 0, 2, 7, 6, 3, 4, 1,
+        9, 2, 7, 4, 4, 3, 8, 2, 5, 2, 6, 3, 8, 5, 0, 4, 5, 1, 7, 8, 4, 4, 0, 9,
+        9, 9, 3, 5, 1, 3, 6, 8, 2, 9, 1, 0, 2, 8, 8, 4]) 
 labels.shapetorch.Size([64])
+[2025-02-25 11:49:10,439] [INFO] [CIFAR10.py:185:main] images: 
+tensor([[[[-0.0253, -0.0253, -0.0253,  ...,  2.4365,  2.4365,  2.4365],
+          [-0.0253, -0.0253, -0.0253,  ...,  2.4365,  2.4365,  2.4365],
+          [-0.0253, -0.0253, -0.0253,  ...,  2.4365,  2.4365,  2.4365],
+          ...,
+          [ 0.8276,  0.8276,  0.8276,  ...,  0.9633,  0.9633,  0.9633],
+          [ 0.8276,  0.8276,  0.8276,  ...,  0.9633,  0.9633,  0.9633],
+          [ 0.8276,  0.8276,  0.8276,  ...,  0.9633,  0.9633,  0.9633]],
+
+         [[-1.0416, -1.0416, -1.0416,  ...,  2.5378,  2.5378,  2.5378],
+          [-1.0416, -1.0416, -1.0416,  ...,  2.5378,  2.5378,  2.5378],
+          [-1.0416, -1.0416, -1.0416,  ...,  2.5378,  2.5378,  2.5378],
+          ...,
+          [-0.3532, -0.3532, -0.3532,  ..., -0.3926, -0.3926, -0.3926],
+          [-0.3532, -0.3532, -0.3532,  ..., -0.3926, -0.3926, -0.3926],
+          [-0.3532, -0.3532, -0.3532,  ..., -0.3926, -0.3926, -0.3926]],
+
+         [[-0.8362, -0.8362, -0.8362,  ...,  2.6172,  2.6172,  2.6172],
+          [-0.8362, -0.8362, -0.8362,  ...,  2.6172,  2.6172,  2.6172],
+          [-0.8362, -0.8362, -0.8362,  ...,  2.6172,  2.6172,  2.6172],
+          ...,
+          [-0.2704, -0.2704, -0.2704,  ..., -0.3679, -0.3679, -0.3679],
+          [-0.2704, -0.2704, -0.2704,  ..., -0.3679, -0.3679, -0.3679],
+          [-0.2704, -0.2704, -0.2704,  ..., -0.3679, -0.3679, -0.3679]]],
+
+
+        [[[-0.4906, -0.4906, -0.4906,  ..., -0.5487, -0.5487, -0.5487],
+          [-0.4906, -0.4906, -0.4906,  ..., -0.5487, -0.5487, -0.5487],
+          [-0.4906, -0.4906, -0.4906,  ..., -0.5487, -0.5487, -0.5487],
+          ...,
+          [-1.8087, -1.8087, -1.8087,  ..., -1.7700, -1.7700, -1.7700],
+          [-1.8087, -1.8087, -1.8087,  ..., -1.7700, -1.7700, -1.7700],
+          [-1.8087, -1.8087, -1.8087,  ..., -1.7700, -1.7700, -1.7700]],
+
+         [[-0.2156, -0.2156, -0.2156,  ..., -0.2942, -0.2942, -0.2942],
+          [-0.2156, -0.2156, -0.2156,  ..., -0.2942, -0.2942, -0.2942],
+          [-0.2156, -0.2156, -0.2156,  ..., -0.2942, -0.2942, -0.2942],
+          ...,
+          [-1.4939, -1.4939, -1.4939,  ..., -1.5136, -1.5136, -1.5136],
+          [-1.4939, -1.4939, -1.4939,  ..., -1.5136, -1.5136, -1.5136],
+          [-1.4939, -1.4939, -1.4939,  ..., -1.5136, -1.5136, -1.5136]],
+
+         [[ 2.3440,  2.3440,  2.3440,  ...,  2.3440,  2.3440,  2.3440],
+          [ 2.3440,  2.3440,  2.3440,  ...,  2.3440,  2.3440,  2.3440],
+          [ 2.3440,  2.3440,  2.3440,  ...,  2.3440,  2.3440,  2.3440],
+          ...,
+          [ 0.5881,  0.5881,  0.5881,  ...,  0.9588,  0.9588,  0.9588],
+          [ 0.5881,  0.5881,  0.5881,  ...,  0.9588,  0.9588,  0.9588],
+          [ 0.5881,  0.5881,  0.5881,  ...,  0.9588,  0.9588,  0.9588]]],
+
+
+        [[[ 1.6999,  1.6999,  1.6999,  ...,  1.6999,  1.6999,  1.6999],
+          [ 1.6999,  1.6999,  1.6999,  ...,  1.6999,  1.6999,  1.6999],
+          [ 1.6999,  1.6999,  1.6999,  ...,  1.6999,  1.6999,  1.6999],
+          ...,
+          [ 1.7387,  1.7387,  1.7387,  ...,  1.7968,  1.7968,  1.7968],
+          [ 1.7387,  1.7387,  1.7387,  ...,  1.7968,  1.7968,  1.7968],
+          [ 1.7387,  1.7387,  1.7387,  ...,  1.7968,  1.7968,  1.7968]],
+
+         [[ 1.9478,  1.9478,  1.9478,  ...,  1.8495,  1.8495,  1.8495],
+          [ 1.9478,  1.9478,  1.9478,  ...,  1.8495,  1.8495,  1.8495],
+          [ 1.9478,  1.9478,  1.9478,  ...,  1.8495,  1.8495,  1.8495],
+          ...,
+          [ 1.9871,  1.9871,  1.9871,  ...,  1.9478,  1.9478,  1.9478],
+          [ 1.9871,  1.9871,  1.9871,  ...,  1.9478,  1.9478,  1.9478],
+          [ 1.9871,  1.9871,  1.9871,  ...,  1.9478,  1.9478,  1.9478]],
+
+         [[ 2.0904,  2.0904,  2.0904,  ...,  2.0319,  2.0319,  2.0319],
+          [ 2.0904,  2.0904,  2.0904,  ...,  2.0319,  2.0319,  2.0319],
+          [ 2.0904,  2.0904,  2.0904,  ...,  2.0319,  2.0319,  2.0319],
+          ...,
+          [ 2.1294,  2.1294,  2.1294,  ...,  2.1294,  2.1294,  2.1294],
+          [ 2.1294,  2.1294,  2.1294,  ...,  2.1294,  2.1294,  2.1294],
+          [ 2.1294,  2.1294,  2.1294,  ...,  2.1294,  2.1294,  2.1294]]],
+
+
+        ...,
+
+
+        [[[ 1.2153,  1.2153,  1.2153,  ...,  1.3704,  1.3704,  1.3704],
+          [ 1.2153,  1.2153,  1.2153,  ...,  1.3704,  1.3704,  1.3704],
+          [ 1.2153,  1.2153,  1.2153,  ...,  1.3704,  1.3704,  1.3704],
+          ...,
+          [-2.1577, -2.1577, -2.1577,  ..., -2.1577, -2.1577, -2.1577],
+          [-2.1577, -2.1577, -2.1577,  ..., -2.1577, -2.1577, -2.1577],
+          [-2.1577, -2.1577, -2.1577,  ..., -2.1577, -2.1577, -2.1577]],
+
+         [[ 1.3578,  1.3578,  1.3578,  ...,  1.5348,  1.5348,  1.5348],
+          [ 1.3578,  1.3578,  1.3578,  ...,  1.5348,  1.5348,  1.5348],
+          [ 1.3578,  1.3578,  1.3578,  ...,  1.5348,  1.5348,  1.5348],
+          ...,
+          [-1.9659, -1.9659, -1.9659,  ..., -1.5332, -1.5332, -1.5332],
+          [-1.9659, -1.9659, -1.9659,  ..., -1.5332, -1.5332, -1.5332],
+          [-1.9659, -1.9659, -1.9659,  ..., -1.5332, -1.5332, -1.5332]],
+
+         [[ 1.5051,  1.5051,  1.5051,  ...,  1.7587,  1.7587,  1.7587],
+          [ 1.5051,  1.5051,  1.5051,  ...,  1.7587,  1.7587,  1.7587],
+          [ 1.5051,  1.5051,  1.5051,  ...,  1.7587,  1.7587,  1.7587],
+          ...,
+          [-1.3044, -1.3044, -1.3044,  ..., -0.9922, -0.9922, -0.9922],
+          [-1.3044, -1.3044, -1.3044,  ..., -0.9922, -0.9922, -0.9922],
+          [-1.3044, -1.3044, -1.3044,  ..., -0.9922, -0.9922, -0.9922]]],
+
+
+        [[[-1.6343, -1.6343, -1.6343,  ..., -1.8669, -1.8669, -1.8669],
+          [-1.6343, -1.6343, -1.6343,  ..., -1.8669, -1.8669, -1.8669],
+          [-1.6343, -1.6343, -1.6343,  ..., -1.8669, -1.8669, -1.8669],
+          ...,
+          [ 0.0328,  0.0328,  0.0328,  ...,  0.2461,  0.2461,  0.2461],
+          [ 0.0328,  0.0328,  0.0328,  ...,  0.2461,  0.2461,  0.2461],
+          [ 0.0328,  0.0328,  0.0328,  ...,  0.2461,  0.2461,  0.2461]],
+
+         [[-1.6316, -1.6316, -1.6316,  ..., -1.8282, -1.8282, -1.8282],
+          [-1.6316, -1.6316, -1.6316,  ..., -1.8282, -1.8282, -1.8282],
+          [-1.6316, -1.6316, -1.6316,  ..., -1.8282, -1.8282, -1.8282],
+          ...,
+          [-0.6089, -0.6089, -0.6089,  ..., -0.0779, -0.0779, -0.0779],
+          [-0.6089, -0.6089, -0.6089,  ..., -0.0779, -0.0779, -0.0779],
+          [-0.6089, -0.6089, -0.6089,  ..., -0.0779, -0.0779, -0.0779]],
+
+         [[-1.3629, -1.3629, -1.3629,  ..., -1.5776, -1.5776, -1.5776],
+          [-1.3629, -1.3629, -1.3629,  ..., -1.5776, -1.5776, -1.5776],
+          [-1.3629, -1.3629, -1.3629,  ..., -1.5776, -1.5776, -1.5776],
+          ...,
+          [-0.5240, -0.5240, -0.5240,  ..., -0.0753, -0.0753, -0.0753],
+          [-0.5240, -0.5240, -0.5240,  ..., -0.0753, -0.0753, -0.0753],
+          [-0.5240, -0.5240, -0.5240,  ..., -0.0753, -0.0753, -0.0753]]],
+
+
+        [[[ 2.5141,  2.5141,  2.5141,  ..., -0.2580, -0.2580, -0.2580],
+          [ 2.5141,  2.5141,  2.5141,  ..., -0.2580, -0.2580, -0.2580],
+          [ 2.5141,  2.5141,  2.5141,  ..., -0.2580, -0.2580, -0.2580],
+          ...,
+          [ 2.5141,  2.5141,  2.5141,  ..., -0.0835, -0.0835, -0.0835],
+          [ 2.5141,  2.5141,  2.5141,  ..., -0.0835, -0.0835, -0.0835],
+          [ 2.5141,  2.5141,  2.5141,  ..., -0.0835, -0.0835, -0.0835]],
+
+         [[ 2.5968,  2.5968,  2.5968,  ...,  0.5908,  0.5908,  0.5908],
+          [ 2.5968,  2.5968,  2.5968,  ...,  0.5908,  0.5908,  0.5908],
+          [ 2.5968,  2.5968,  2.5968,  ...,  0.5908,  0.5908,  0.5908],
+          ...,
+          [ 2.5968,  2.5968,  2.5968,  ..., -0.0386, -0.0386, -0.0386],
+          [ 2.5968,  2.5968,  2.5968,  ..., -0.0386, -0.0386, -0.0386],
+          [ 2.5968,  2.5968,  2.5968,  ..., -0.0386, -0.0386, -0.0386]],
+
+         [[ 2.7537,  2.7537,  2.7537,  ...,  2.4221,  2.4221,  2.4221],
+          [ 2.7537,  2.7537,  2.7537,  ...,  2.4221,  2.4221,  2.4221],
+          [ 2.7537,  2.7537,  2.7537,  ...,  2.4221,  2.4221,  2.4221],
+          ...,
+          [ 2.7537,  2.7537,  2.7537,  ...,  0.1784,  0.1784,  0.1784],
+          [ 2.7537,  2.7537,  2.7537,  ...,  0.1784,  0.1784,  0.1784],
+          [ 2.7537,  2.7537,  2.7537,  ...,  0.1784,  0.1784,  0.1784]]]]) 
+images.shapetorch.Size([64, 3, 227, 227])
+[2025-02-25 11:49:10,439] [INFO] [CIFAR10.py:186:main] labels: 
+tensor([3, 2, 2, 2, 3, 0, 7, 1, 7, 7, 6, 0, 3, 3, 6, 9, 7, 5, 5, 5, 7, 3, 9, 6,
+        9, 2, 9, 2, 6, 2, 2, 5, 6, 7, 1, 4, 9, 8, 8, 9, 4, 6, 1, 3, 8, 7, 3, 2,
+        7, 7, 3, 6, 9, 2, 6, 6, 9, 7, 0, 3, 0, 8, 7, 9]) 
+labels.shapetorch.Size([64])
+[2025-02-25 11:53:55,806] [INFO] [exp_basic.py:63:_acquire_device] Use GPU: mps
+[2025-02-25 11:53:55,810] [INFO] [exp_classification.py:62:_build_model] Number of parameters: 0.06M
+[2025-02-25 11:54:28,228] [INFO] [exp_basic.py:63:_acquire_device] Use GPU: mps
+[2025-02-25 11:54:28,229] [INFO] [exp_classification.py:62:_build_model] Number of parameters: 0.06M
+[2025-02-25 11:54:31,978] [INFO] [exp_classification.py:122:train] Epoch [1/10], Step [400/938], Train Loss: 0.3565
+[2025-02-25 11:54:35,440] [INFO] [exp_classification.py:122:train] Epoch [1/10], Step [800/938], Train Loss: 0.4034
+[2025-02-25 11:54:47,120] [INFO] [exp_basic.py:63:_acquire_device] Use GPU: mps
+[2025-02-25 11:54:47,122] [INFO] [exp_classification.py:62:_build_model] Number of parameters: 0.06M
+[2025-02-25 11:54:50,737] [INFO] [exp_classification.py:122:train] Epoch [1/10], Step [400/938], Train Loss: 0.4387
+[2025-02-25 11:54:54,235] [INFO] [exp_classification.py:122:train] Epoch [1/10], Step [800/938], Train Loss: 0.3909
+[2025-02-25 11:54:58,758] [INFO] [exp_classification.py:122:train] Epoch [2/10], Step [400/938], Train Loss: 0.2572
+[2025-02-25 11:55:01,884] [INFO] [exp_classification.py:122:train] Epoch [2/10], Step [800/938], Train Loss: 0.3947
+[2025-02-25 11:55:06,196] [INFO] [exp_classification.py:122:train] Epoch [3/10], Step [400/938], Train Loss: 0.3751
+[2025-02-25 11:55:09,386] [INFO] [exp_classification.py:122:train] Epoch [3/10], Step [800/938], Train Loss: 0.3385
+[2025-02-25 11:55:13,703] [INFO] [exp_classification.py:122:train] Epoch [4/10], Step [400/938], Train Loss: 0.3814
+[2025-02-25 11:55:16,904] [INFO] [exp_classification.py:122:train] Epoch [4/10], Step [800/938], Train Loss: 0.2914
+[2025-02-25 11:55:21,217] [INFO] [exp_classification.py:122:train] Epoch [5/10], Step [400/938], Train Loss: 0.3989
+[2025-02-25 11:55:24,387] [INFO] [exp_classification.py:122:train] Epoch [5/10], Step [800/938], Train Loss: 0.4163
+[2025-02-25 11:55:28,746] [INFO] [exp_classification.py:122:train] Epoch [6/10], Step [400/938], Train Loss: 0.3231
+[2025-02-25 11:55:32,028] [INFO] [exp_classification.py:122:train] Epoch [6/10], Step [800/938], Train Loss: 0.2740
+[2025-02-25 11:55:36,600] [INFO] [exp_classification.py:122:train] Epoch [7/10], Step [400/938], Train Loss: 0.3635
+[2025-02-25 11:55:40,158] [INFO] [exp_classification.py:122:train] Epoch [7/10], Step [800/938], Train Loss: 0.2960
+[2025-02-25 11:55:44,975] [INFO] [exp_classification.py:122:train] Epoch [8/10], Step [400/938], Train Loss: 0.3316
+[2025-02-25 11:55:48,426] [INFO] [exp_classification.py:122:train] Epoch [8/10], Step [800/938], Train Loss: 0.3586
+[2025-02-25 11:55:53,179] [INFO] [exp_classification.py:122:train] Epoch [9/10], Step [400/938], Train Loss: 0.3826
+[2025-02-25 11:55:56,658] [INFO] [exp_classification.py:122:train] Epoch [9/10], Step [800/938], Train Loss: 0.4599
+[2025-02-25 11:56:01,239] [INFO] [exp_classification.py:122:train] Epoch [10/10], Step [400/938], Train Loss: 0.3600
+[2025-02-25 11:56:04,514] [INFO] [exp_classification.py:122:train] Epoch [10/10], Step [800/938], Train Loss: 0.3957
+[2025-02-25 11:56:06,421] [INFO] [exp_classification.py:157:test] Accuracy of the network on the 157 test images: 95.03 %.
+[2025-02-25 11:56:12,130] [INFO] [exp_basic.py:63:_acquire_device] Use GPU: mps
+[2025-02-25 11:56:24,680] [INFO] [exp_basic.py:63:_acquire_device] Use GPU: mps
+[2025-02-25 11:56:55,892] [INFO] [exp_basic.py:63:_acquire_device] Use GPU: mps
+[2025-02-25 11:56:56,043] [INFO] [exp_classification.py:62:_build_model] Number of parameters: 58.33M
+[2025-02-25 14:14:05,866] [INFO] [exp_basic.py:63:_acquire_device] Use GPU: mps
+[2025-02-25 14:14:06,027] [INFO] [exp_classification.py:62:_build_model] Number of parameters: 58.33M
+[2025-02-25 14:16:09,763] [INFO] [exp_classification.py:122:train] Epoch [1/20], Step [400/704], Train Loss: 1.1724
+[2025-02-25 14:17:51,221] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 59.68 %.
+[2025-02-25 14:19:52,601] [INFO] [exp_classification.py:122:train] Epoch [2/20], Step [400/704], Train Loss: 0.8940
+[2025-02-25 14:21:33,253] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 68.1 %.
+[2025-02-25 14:23:33,400] [INFO] [exp_classification.py:122:train] Epoch [3/20], Step [400/704], Train Loss: 0.8135
+[2025-02-25 14:25:13,245] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 72.76 %.
+[2025-02-25 14:27:12,912] [INFO] [exp_classification.py:122:train] Epoch [4/20], Step [400/704], Train Loss: 0.6880
+[2025-02-25 14:28:51,702] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 74.58 %.
+[2025-02-25 14:30:50,873] [INFO] [exp_classification.py:122:train] Epoch [5/20], Step [400/704], Train Loss: 0.8027
+[2025-02-25 14:32:29,848] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 75.2 %.
+[2025-02-25 14:34:29,498] [INFO] [exp_classification.py:122:train] Epoch [6/20], Step [400/704], Train Loss: 0.6456
+[2025-02-25 14:36:09,052] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 77.68 %.
+[2025-02-25 14:38:08,492] [INFO] [exp_classification.py:122:train] Epoch [7/20], Step [400/704], Train Loss: 0.6337
+[2025-02-25 14:39:47,786] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 78.62 %.
+[2025-02-25 14:41:47,436] [INFO] [exp_classification.py:122:train] Epoch [8/20], Step [400/704], Train Loss: 0.6067
+[2025-02-25 14:43:26,486] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 80.08 %.
+[2025-02-25 14:45:26,004] [INFO] [exp_classification.py:122:train] Epoch [9/20], Step [400/704], Train Loss: 0.7067
+[2025-02-25 14:47:05,292] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 80.72 %.
+[2025-02-25 14:49:04,929] [INFO] [exp_classification.py:122:train] Epoch [10/20], Step [400/704], Train Loss: 0.2910
+[2025-02-25 14:50:44,296] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 80.82 %.
+[2025-02-25 14:52:45,571] [INFO] [exp_classification.py:122:train] Epoch [11/20], Step [400/704], Train Loss: 0.4780
+[2025-02-25 14:54:25,507] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 79.84 %.
+[2025-02-25 14:56:26,518] [INFO] [exp_classification.py:122:train] Epoch [12/20], Step [400/704], Train Loss: 0.5432
+[2025-02-25 14:58:13,783] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 80.02 %.
+[2025-02-25 15:00:28,970] [INFO] [exp_classification.py:122:train] Epoch [13/20], Step [400/704], Train Loss: 0.4190
+[2025-02-25 15:02:17,443] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 80.72 %.
+[2025-02-25 15:04:19,549] [INFO] [exp_classification.py:122:train] Epoch [14/20], Step [400/704], Train Loss: 0.2529
+[2025-02-25 15:06:01,434] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 81.16 %.
+[2025-02-25 15:08:01,663] [INFO] [exp_classification.py:122:train] Epoch [15/20], Step [400/704], Train Loss: 0.6213
+[2025-02-25 15:09:42,019] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 81.48 %.
+[2025-02-25 15:11:42,264] [INFO] [exp_classification.py:122:train] Epoch [16/20], Step [400/704], Train Loss: 0.3997
+[2025-02-25 15:13:22,634] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 81.34 %.
+[2025-02-25 15:15:22,619] [INFO] [exp_classification.py:122:train] Epoch [17/20], Step [400/704], Train Loss: 0.3416
+[2025-02-25 15:17:03,546] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 83.04 %.
+[2025-02-25 15:19:03,794] [INFO] [exp_classification.py:122:train] Epoch [18/20], Step [400/704], Train Loss: 0.4395
+[2025-02-25 15:20:44,133] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 81.86 %.
+[2025-02-25 15:22:43,773] [INFO] [exp_classification.py:122:train] Epoch [19/20], Step [400/704], Train Loss: 0.2909
+[2025-02-25 15:24:23,332] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 83.44 %.
+[2025-02-25 15:26:22,518] [INFO] [exp_classification.py:122:train] Epoch [20/20], Step [400/704], Train Loss: 0.2819
+[2025-02-25 15:28:02,186] [INFO] [exp_classification.py:141:valid] Accuracy of the network on the 79 validation images: 82.5 %.
+[2025-02-25 15:28:20,666] [INFO] [exp_classification.py:157:test] Accuracy of the network on the 157 test images: 82.14 %.

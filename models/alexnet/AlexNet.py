@@ -24,10 +24,10 @@ import torch.nn as nn
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-class AlexNet(nn.Module):
+class Model(nn.Module):
 
     def __init__(self, args) -> None:
-        super(AlexNet, self).__init__()
+        super(Model, self).__init__()
         
         self.layer1 = nn.Sequential(
             nn.Conv2d(3, 96, kernel_size = 11, stride = 4, padding = 0),  # 3@227x227 -> 96@55x55
@@ -78,7 +78,7 @@ class AlexNet(nn.Module):
         x = self.layer1(x)  # 3@227x227 -> 96@27x27
         x = self.layer2(x)  # 96@27x27 -> 256@13x13
         x = self.layer3(x)  # 256@13x13 -> 384@13x13
-        x = self.layer3(x)  # 384@13x13 -> 384@13x13
+        x = self.layer4(x)  # 384@13x13 -> 384@13x13
         x = self.layer5(x)  # 384@13x13 -> 256@6x6
         x = x.reshape(x.size(0), -1)  # 256@6x6 -> 9216
         x = self.fc1(x)  # 9216 -> 4096
@@ -103,7 +103,7 @@ def main():
     }
     args = DotDict(args)
     # model
-    model = AlexNet(args)
+    model = Model(args)
     logger.info(f"model: \n{model}")
 
 if __name__ == "__main__":
