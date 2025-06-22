@@ -25,7 +25,7 @@ import cv2
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-img = cv2.imread("D:/projects/computer_vision/cvproj/data/images/lena_gray.bmp", 0)
+img = cv2.imread("D:/projects/computer_vision/cvproj/dataset/images/lena_gray.bmp", 0)
 cv2.imshow("before", img)
 
 print(f"img 尺寸：{img.shape}")

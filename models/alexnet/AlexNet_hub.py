@@ -39,7 +39,7 @@ print(f"Using device: {device}.")
 # image path
 imageurl, imagename = (
     "https://github.com/pytorch/hub/raw/master/images/dog.jpg", 
-    "./data/dog.jpg"
+    "./dataset/dog.jpg"
 )
 # download image
 if not os.path.exists(imagename):
@@ -53,7 +53,7 @@ input_image = Image.open(imagename)
 labelurl, labelname, labelname_path = (
     "https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt", 
     "imagenet_classes.txt",
-    "./data/imagenet_classes.txt",
+    "./dataset/imagenet_classes.txt",
 )
 # labels download
 if not os.path.exists(labelname_path):

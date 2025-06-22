@@ -72,7 +72,7 @@ def github_file(url, save_name = None):
     return save_name
 
 
-def image_download(img_url: str, img_name: str, img_path: str = "./data/cv_clf_imgs/"):
+def image_download(img_url: str, img_name: str, img_path: str = "./dataset/cv_clf_imgs/"):
     """
     图像下载，转换为 Tensor
     """

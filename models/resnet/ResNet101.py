@@ -53,7 +53,7 @@ def main():
     # data
     img_url = "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/583309-Product-0-I-637800179303038345.jpg"
     img_name = "583309-Product-0-I-637800179303038345.jpg"
-    img_path = "./data/cv_clf_imgs/"
+    img_path = "./dataset/cv_clf_imgs/"
     image, image_tensor = image_download(img_url, img_name, img_path)
     print(image_tensor)
     # ------------------------------

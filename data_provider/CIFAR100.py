@@ -43,20 +43,20 @@ def __get_dataset(train_transforms, test_transforms, valid_transforms = None):
     Dataset
     """
     train_dataset = datasets.CIFAR100(
-        root = "./data/",
+        root = "./dataset/",
         train = True,
         download = True,
         transform = train_transforms,
     )
     test_dataset = datasets.CIFAR100(
-        root = "./data/",
+        root = "./dataset/",
         train = False,
         download = True,
         transform = test_transforms,
     )
     if valid_transforms:
         valid_dataset = datasets.CIFAR100(
-            root = "./data/",
+            root = "./dataset/",
             train = True,
             download = True,
             transform = valid_transforms,

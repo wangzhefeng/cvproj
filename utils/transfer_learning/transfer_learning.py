@@ -41,7 +41,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # data download
 img_url, img_path, img_file_name = (
     "http://vision.stanford.edu/aditya86/ImageNetDogs/images.tar",
-    "./data/",
+    "./dataset/",
     "images.tar",
 )
 if not os.path.exists(os.path.join(img_path, img_file_name)):

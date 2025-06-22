@@ -24,7 +24,7 @@ import cv2
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-lena = cv2.imread("D:/projects/computer_vision/cvproj/data/images/lena.jpg", 1)
+lena = cv2.imread("E:/projects/computer_vision/cvproj/dataset/images/lena.jpg", 1)
 print(type(lena))
 print(lena.shape)
 print(lena)

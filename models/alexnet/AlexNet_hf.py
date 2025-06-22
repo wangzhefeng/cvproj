@@ -38,7 +38,7 @@ print(f"Using device: {device}.")
 # image path
 imageurl, imagename = (
     "https://github.com/pytorch/hub/raw/master/images/dog.jpg", 
-    "./data/dog.jpg"
+    "./dataset/dog.jpg"
 )
 # download image
 if not os.path.exists(imagename):
@@ -90,7 +90,7 @@ def inference(input_image):
     labelurl, labelname, labelname_path = (
         "https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt", 
         "imagenet_classes.txt",
-        "./data/imagenet_classes.txt",
+        "./dataset/imagenet_classes.txt",
     )
     # labels download
     if not os.path.exists(labelname_path):
@@ -118,7 +118,7 @@ title = "ALEXNET"
 description = "Gradio demo for Alexnet, the 2012 ImageNet winner achieved a top-5 error of 15.3%, more than 10.8 percentage points lower than that of the runner up. To use it, simply upload your image, or click one of the examples to load them. Read more at the links below."
 article = "<p style='text-align: center'><a href='https://arxiv.org/abs/1404.5997'>One weird trick for parallelizing convolutional neural networks</a> | <a href='https://github.com/pytorch/vision/blob/master/torchvision/models/alexnet.py'>Github Repo</a></p>"
 examples = [
-    ["./data/dog.jpg"]
+    ["./dataset/dog.jpg"]
 ]
 
 gr.Interface(

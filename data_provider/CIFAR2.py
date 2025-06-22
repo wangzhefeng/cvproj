@@ -32,8 +32,8 @@ LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
 # data path
-train_dir = "./data/cifar2/train/"
-test_dir = "./data/cifar2/test/"
+train_dir = "./dataset/cifar2/train/"
+test_dir = "./dataset/cifar2/test/"
 
 
 class Cifar2Dataset(Dataset):

@@ -47,14 +47,14 @@ def __get_dataset(train_transform, test_transform, target_transform):
     Dataset
     """
     train_dataset = datasets.FashionMNIST(
-        root = "./data/",
+        root = "./dataset/",
         train = True,
         download = True,
         transform = train_transform,
         target_transform = target_transform,
     )
     test_dataset = datasets.FashionMNIST(
-        root = "./data/",
+        root = "./dataset/",
         train = False,
         download = True,
         transform = test_transform,

@@ -24,7 +24,7 @@ import cv2
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-img = cv2.imread("D:/projects/computer_vision/cvproj/data/images/lena.png")
+img = cv2.imread("E:/projects/computer_vision/cvproj/dataset/images/lena.png")
 cv2.imshow("before", img)
 
 print(f"访问 img[0, 0] = {img[0, 0]}")

@@ -70,7 +70,7 @@ apply(img, transforms.ColorJitter(
 ))
 
 # 使用图像增强进行训练
-all_images = datasets.CIFAR10(train = True, root = "../data", download = True)
+all_images = datasets.CIFAR10(train = True, root = "../dataset", download = True)
 d2l.show_images(
     [all_images[i][0] for i in range(32)], 
     4, 
