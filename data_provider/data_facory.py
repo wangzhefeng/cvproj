@@ -25,7 +25,10 @@ if str(ROOT) not in sys.path:
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-
+def data_provider(flag: str):
+    # params
+    shuffle = True if flag == "train" else False
+    drop_last = True if flag == "train" else False
 
 
 

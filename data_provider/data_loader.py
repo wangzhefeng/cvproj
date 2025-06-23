@@ -32,9 +32,6 @@ from torchvision import transforms
 
 # global variable
 LOGGING_LABEL = Path(__file__).name[:-3]
-os.environ['LOG_NAME'] = LOGGING_LABEL
-
-from utils.log_util import logger
 
 
 def get_dataloaders_cifar10(batch_size, 
@@ -43,23 +40,29 @@ def get_dataloaders_cifar10(batch_size,
                             train_transforms=None,
                             test_transforms=None,
                             download=True):
+    # transforms
     if train_transforms is None:
         train_transforms = transforms.ToTensor()
-
     if test_transforms is None:
         test_transforms = transforms.ToTensor()
-
-    train_dataset = datasets.CIFAR10(root='./dataset',
-                                     train=True,
-                                     transform=train_transforms,
-                                     download=download)
-    valid_dataset = datasets.CIFAR10(root='./dataset',
-                                     train=True,
-                                     transform=test_transforms)
-    test_dataset = datasets.CIFAR10(root='./dataset',
-                                    train=False,
-                                    transform=test_transforms)
-
+    # dataset
+    train_dataset = datasets.CIFAR10(
+        root='./dataset',
+        train=True,
+        transform=train_transforms,
+        download=download
+    )
+    valid_dataset = datasets.CIFAR10(
+        root='./dataset',
+        train=True,
+        transform=test_transforms
+    )
+    test_dataset = datasets.CIFAR10(
+        root='./dataset',
+        train=False,
+        transform=test_transforms
+    )
+    # dataloader
     if validation_fraction is not None:
         num = int(validation_fraction * 50000)
         train_indices = range(0, 50000 - num)
@@ -67,27 +70,37 @@ def get_dataloaders_cifar10(batch_size,
 
         train_sampler = SubsetRandomSampler(train_indices)
         valid_sampler = SubsetRandomSampler(valid_indices)
-        
-        valid_loader = DataLoader(dataset=valid_dataset,
-                                  batch_size=batch_size,
-                                  num_workers=num_workers,
-                                  sampler=valid_sampler)
-        train_loader = DataLoader(dataset=train_dataset,
-                                  batch_size=batch_size,
-                                  num_workers=num_workers,
-                                  drop_last=True,
-                                  sampler=train_sampler)
+ 
+        train_loader = DataLoader(
+            dataset=train_dataset,
+            batch_size=batch_size,
+            sampler=train_sampler,
+            drop_last=True,
+            num_workers=num_workers,
+        )
+        valid_loader = DataLoader(
+            dataset=valid_dataset,
+            batch_size=batch_size,
+            sampler=valid_sampler,
+            drop_last=False,
+            num_workers=num_workers,
+        )
     else:
-        train_loader = DataLoader(dataset=train_dataset,
-                                  batch_size=batch_size,
-                                  num_workers=num_workers,
-                                  drop_last=True,
-                                  shuffle=True)
-    test_loader = DataLoader(dataset=test_dataset,
-                             batch_size=batch_size,
-                             num_workers=num_workers,
-                             shuffle=False)
-
+        train_loader = DataLoader(
+            dataset=train_dataset,
+            batch_size=batch_size,
+            shuffle=True,
+            drop_last=True,
+            num_workers=num_workers,
+        )
+    test_loader = DataLoader(
+        dataset=test_dataset,
+        batch_size=batch_size,
+        shuffle=False,
+        drop_last=False,
+        num_workers=num_workers,
+    )
+    # return dataloader
     if validation_fraction is None:
         return train_loader, test_loader
     else:

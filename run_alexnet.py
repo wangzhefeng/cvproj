@@ -22,7 +22,7 @@ if ROOT not in sys.path:
     sys.path.append(ROOT)
 
 from exps.exp_classification import Exp_Classification
-from utils.argsparser_tools import DotDict
+from utils.args_tools import DotDict
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]

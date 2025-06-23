@@ -37,7 +37,7 @@ class Exp_Classification(Exp_Basic):
     def __init__(self, args):
         super().__init__(args)
 
-    def _build_data(self):
+    def _get_data(self):
         """
         build data
         """
@@ -99,7 +99,7 @@ class Exp_Classification(Exp_Basic):
 
     def train(self):
         # data
-        self._build_data()
+        self._get_data()
         # loss
         criterion = self._select_criterion()
         # optimizer

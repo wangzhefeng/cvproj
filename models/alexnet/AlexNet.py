@@ -91,7 +91,7 @@ class Model(nn.Module):
 
 # 测试代码 main 函数
 def main():
-    from utils.argsparser_tools import DotDict
+    from utils.args_tools import DotDict
     from utils.log_util import logger
     # args
     args = {
