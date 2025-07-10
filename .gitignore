@@ -137,3 +137,5 @@ data/
 dataset/
 logs/
 saved_results/
+.DS_Store
+utils/

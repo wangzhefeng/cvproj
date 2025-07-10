@@ -360,7 +360,7 @@ def main():
         "use_multi_gpu": 0,
         "devices": "0,1,2,3,4,5,6,7",
     }
-    from utils.args_tools import DotDict
+    from utils.cv.args_tools import DotDict
     args = DotDict(args)
     
     # precision

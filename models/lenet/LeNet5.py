@@ -79,7 +79,7 @@ class Model(nn.Module):
 
 # 测试代码 main 函数
 def main():
-    from utils.args_tools import DotDict
+    from utils.cv.args_tools import DotDict
     # args
     args = {
         "in_channels": 1,
