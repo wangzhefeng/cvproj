@@ -16,7 +16,8 @@ __all__ = []
 # python libraries
 import os
 import sys
-ROOT = os.getcwd()
+from pathlib import Path
+ROOT = str(Path.cwd())
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 import argparse
@@ -28,7 +29,7 @@ import torch.nn as nn
 from utils import device
 
 # global variable
-LOGGING_LABEL = __file__.split('/')[-1][:-3]
+LOGGING_LABEL = Path(__file__).name[:-3]
 
 # TODO params
 batch_size = 100

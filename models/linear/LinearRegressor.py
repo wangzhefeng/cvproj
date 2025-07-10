@@ -9,7 +9,6 @@
 # * Description : description
 # * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
-# * TODO        : 1.
 # ***************************************************
 
 __all__ = []
@@ -17,7 +16,8 @@ __all__ = []
 # python libraries
 import os
 import sys
-ROOT = os.getcwd()
+from pathlib import Path
+ROOT = str(Path.cwd())
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
@@ -25,7 +25,7 @@ import torch
 import torch.nn as nn
 
 # global variable
-LOGGING_LABEL = __file__.split('/')[-1][:-3]
+LOGGING_LABEL = Path(__file__).name[:-3]
 # device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device {device}.")

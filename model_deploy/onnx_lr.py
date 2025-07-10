@@ -14,7 +14,8 @@
 # python libraries
 import os
 import sys
-ROOT = os.getcwd()
+from pathlib import Path
+ROOT = str(Path.cwd())
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
@@ -29,7 +30,7 @@ from onnx.helper import (
 
 print(f"onnx_version = {onnx.version}, opset={onnx.defs.onnx_opset_version()}")
 # global variable
-LOGGING_LABEL = __file__.split('/')[-1][:-3]
+LOGGING_LABEL = Path(__file__).name[:-3]
 
 # tensor value info
 # 'X' is the name, TensorProto.FLOAT the type, [None, None] the shape

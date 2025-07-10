@@ -37,7 +37,7 @@ model.eval()
 
 # image class index
 img_class_map = None
-mapping_file_path = "/Users/wangzf/machinelearning/deeplearning/src/src_pytorch/deploy/deploy_flask/imagenet_class_index.json"
+mapping_file_path = "/Users/zfwang/projects/cvproj/deeplearning/src/src_pytorch/deploy/deploy_flask/imagenet_class_index.json"
 if os.path.isfile(mapping_file_path):
     with open(mapping_file_path) as f:
         img_class_map = json.load(f)
